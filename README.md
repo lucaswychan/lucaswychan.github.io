@@ -1,1 +1,3 @@
-# lucaswychan.github.io
+# Personal Portfolio
+
+Please visit [here](https://lucaswychan.github.io/)
