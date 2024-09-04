@@ -15,6 +15,7 @@ body {
     background-color: var(--background-color);
     margin: 0;
     padding: 0;
+    width: 100vw; /* Prevent horizontal scroll (At some point this line maybe risky)*/
 }
 
 .App {
@@ -238,9 +239,5 @@ footer {
     .nav-tabs .nav-link {
         padding: 8px 12px;
         margin-right: 8px;
-    }
-
-    .nav-tabs .nav-link::after {
-        bottom: -6px; /* Adjust the position of the underline */
     }
 }
