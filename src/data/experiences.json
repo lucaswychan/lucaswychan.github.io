@@ -1,0 +1,30 @@
+[
+    {
+        "position": "Research Analyst",
+        "company": "Rivermap Limited",
+        "duration": "Jun 2024 - Aug 2024",
+        "descriptions": [
+            "Implemented a Natural Language Processing (NLP) system to extract company revenue information from reports, achieving 83% accuracy.",
+            "Architected a custom knowledge graph and algorithms, boosting data retrieval rates by over 50%."
+        ]
+    },
+    {
+        "position": "AI R&D Intern",
+        "company": "Optix Solutions Limited",
+        "duration": "Jun 2023 - Aug 2023",
+        "descriptions": [
+            "Established NLP applications for document entities extraction, attaining 94% accuracy in data retrieval.",
+            "Developed a business product incorporating GenAI features through full stack development with Python and React.js, improving proposal writing efficiency.",
+            "Conducted in-depth research on emerging AI technologies, identifying potential implementation strategies."
+        ]
+    },
+    {
+        "position": "System Engineer",
+        "company": "Azeus Systems Limited",
+        "duration": "Apr 2023 - May 2024",
+        "descriptions": [
+            "Implemented, maintained, and supported system and network.",
+            "Administrated OS, servers and configuration, and Oracle database server."
+        ]
+    }
+]

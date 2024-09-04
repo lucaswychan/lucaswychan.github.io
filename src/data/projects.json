@@ -1,0 +1,14 @@
+[
+    {
+        "name": "Neural Stock Prophet",
+        "description": "LSTM-ARIMA with attention mechanism and multiplicative decomposition for sophisticated stock forecasting."
+    },
+    {
+        "name": "Federated Edge AI for 6G",
+        "description": "Combination of federated learning algorithm and 6G technology."
+    },
+    {
+        "name": "Car License Recognition",
+        "description": "Optical character recognition (OCR) for car license recognition"
+    }
+]

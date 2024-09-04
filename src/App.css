@@ -1,0 +1,246 @@
+/* App.css */
+:root {
+    --accent-color: #4a4a4a;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --sidebar-bg: #f4f4f4;
+    --light-accent: #f4f4f4;
+    --border-color: #e0e0e0;
+}
+
+body {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+}
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    display: flex;
+    flex: 1;
+}
+
+.main-content {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-content {
+    flex-grow: 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--accent-color);
+    font-weight: 300;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-bottom: 15px;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    margin-bottom: 40px;
+}
+
+header p {
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+/* Sidebar */
+.sidebar {
+    padding: 60px 40px;
+    background-color: var(--light-accent);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 30px;
+    border: 4px solid var(--background-color);
+}
+
+.profile-photo img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .skills ul {
+    gap: 8px;
+}
+
+.sidebar .skills li {
+    background-color: var(--background-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    color: var(--accent-color);
+}
+
+.sidebar .links ul {
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .links li {
+    margin-bottom: 10px;
+}
+
+.sidebar .links a.link-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Tab Navigation */
+.nav-tabs {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 5px;
+}
+
+.nav-tabs .nav-item {
+    flex: 0 0 auto;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    color: var(--text-color);
+    padding: 10px 20px;
+    margin-right: 20px;
+    font-weight: 300;
+    position: relative;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-tabs .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    bottom: -4px;
+}
+
+.nav-tabs .nav-link:hover,
+.nav-tabs .nav-link.active {
+    color: var(--accent-color);
+    background-color: transparent;
+}
+
+.nav-tabs .nav-link.active::after {
+    transform: scaleX(1);
+}
+
+/* Content */
+.item {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--light-accent);
+    color: var(--text-color);
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 300;
+}
+
+/* Media Query */
+@media (max-width: 768px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        padding: 40px 20px;
+    }
+
+    .main-content {
+        padding: 40px 20px;
+    }
+
+    .nav-tabs {
+        padding-bottom: 5px; /* Add some padding to ensure the animation is visible */
+    }
+
+    .nav-tabs .nav-link {
+        padding: 8px 12px;
+        margin-right: 8px;
+    }
+
+    .nav-tabs .nav-link::after {
+        bottom: -6px; /* Adjust the position of the underline */
+    }
+}
