@@ -1,6 +1,7 @@
 // components/Sidebar.js
 import React from "react";
 import Footer from "./Footer";
+import DynamicIcon from "./DynamicIcon";
 
 function Sidebar({ skills, links, photoUrl }) {
     return (
@@ -24,7 +25,10 @@ function Sidebar({ skills, links, photoUrl }) {
                     <ul className="list-unstyled text-center">
                         {links.map((link, index) => (
                             <li key={index} className="mb-2">
-                                <a href={link.url}>{link.name}</a>
+                                <a href={link.url} className="link-item">
+                                    <DynamicIcon name={link.name} />
+                                    {link.name}
+                                </a>
                             </li>
                         ))}
                     </ul>
