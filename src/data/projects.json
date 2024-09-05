@@ -1,14 +1,24 @@
 [
     {
         "name": "Neural Stock Prophet",
-        "description": "LSTM-ARIMA with attention mechanism and multiplicative decomposition for sophisticated stock forecasting."
+        "description": "LSTM-ARIMA with attention mechanism and multiplicative decomposition for sophisticated stock forecasting.",
+        "links": {
+            "GitHub": "https://github.com/lucaswychan/neural-stock-prophet",
+            "PyPI": "https://pypi.org/project/neuralstockprophet/"
+        }
     },
     {
         "name": "Federated Edge AI for 6G",
-        "description": "Combination of federated learning algorithm and 6G technology."
+        "description": "Combination of federated learning algorithm and 6G technology.",
+        "links": {
+            "GitHub": "https://github.com/lucaswychan/Federated-Edge-AI-For-6G"
+        }
     },
     {
         "name": "Car License Recognition",
-        "description": "Optical character recognition (OCR) for car license recognition"
+        "description": "Optical character recognition (OCR) for car license recognition using Transfer Learning.",
+        "links": {
+            "GitHub": "https://github.com/lucaswychan/car-plate-recognition"
+        }
     }
 ]

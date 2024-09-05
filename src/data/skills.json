@@ -1,1 +1,48 @@
-["JavaScript", "React", "Node.js", "HTML", "CSS", "Python", "Git", "Unix"]
+{
+    "skills": [
+        {
+            "category": "Frameworks",
+            "items": [
+                "PyTorch",
+                "TensorFlow",
+                "CVXPY",
+                "NumPy",
+                "Pandas",
+                "OpenCV",
+                "React.js",
+                "Node.js"
+            ]
+        },
+        {
+            "category": "AI Techniques",
+            "items": [
+                "Contrastive Learning",
+                "Transfer Learning",
+                "Ensemble Learning",
+                "Multimodal Learning"
+            ]
+        },
+        {
+            "category": "Software Development",
+            "items": [
+                "Python",
+                "C/C++",
+                "JavaScript",
+                "Java",
+                "MATLAB",
+                "HTML",
+                "CSS",
+                "Git",
+                "Unix"
+            ]
+        },
+        {
+            "category": "Financial Engineering",
+            "items": [
+                "Portfolio Optimization",
+                "Index Tracking",
+                "Time Series Modeling"
+            ]
+        }
+    ]
+}

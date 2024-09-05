@@ -12,13 +12,25 @@ function Sidebar({ skills, links, photoUrl }) {
                 </div>
                 <div className="skills mb-4">
                     <h3 className="h5 mb-3">Skills</h3>
-                    <ul className="list-unstyled d-flex flex-wrap justify-content-center gap-2">
-                        {skills.map((skill, index) => (
-                            <li key={index} className="badge">
-                                {skill}
-                            </li>
-                        ))}
-                    </ul>
+                    {skills.skills.map((skillCategory, categoryIndex) => (
+                        <div
+                            key={categoryIndex}
+                            className="skill-category mb-3"
+                        >
+                            <h4 className="h6 mb-2">
+                                {skillCategory.category}
+                            </h4>
+                            <ul className="list-unstyled d-flex flex-wrap justify-content-center gap-2">
+                                {skillCategory.items.map(
+                                    (skill, skillIndex) => (
+                                        <li key={skillIndex} className="badge">
+                                            {skill}
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </div>
+                    ))}
                 </div>
                 <div className="links">
                     <h3 className="h5 mb-3">Links</h3>

@@ -31,6 +31,25 @@ function TabContent({
                         <h3 className="h5 mb-2">{project.name}</h3>
                         <p className="text-muted mb-2">{project.date}</p>
                         <p>{project.description}</p>
+                        <p>
+                            {Object.entries(project.links).map(
+                                ([name, url], i) => (
+                                    <React.Fragment key={i}>
+                                        <a
+                                            href={url}
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="me-2"
+                                        >
+                                            {name}
+                                        </a>
+                                        {i <
+                                            Object.keys(project.links).length -
+                                                1 && "| "}
+                                    </React.Fragment>
+                                )
+                            )}
+                        </p>
                     </div>
                 ));
             case "education":

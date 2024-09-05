@@ -6,6 +6,9 @@
     --sidebar-bg: #f4f4f4;
     --light-accent: #f4f4f4;
     --border-color: #e0e0e0;
+    --text-color-muted: #666;
+    --border-color: #e0e0e0;
+    --text-color-muted: #777;
 }
 
 body {
@@ -111,39 +114,89 @@ header p {
     height: auto;
 }
 
+.sidebar {
+    padding: 1.5rem;
+}
+
+.sidebar h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
 .sidebar ul {
     list-style-type: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .sidebar .skills ul {
-    gap: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
 }
 
 .sidebar .skills li {
-    background-color: var(--background-color);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.9em;
-    color: var(--accent-color);
+    font-size: 0.75em;
+    font-weight: 400;
+    color: var(--text-color);
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    padding: 4px 10px;
+    border-radius: 16px;
+    transition: all 0.2s ease;
+}
+
+.sidebar .skill-category {
+    margin-bottom: 1rem;
+}
+
+.sidebar .skills li:hover {
+    background-color: var(--accent-color);
+    color: var(--background-color);
+    border-color: var(--accent-color);
+}
+
+.sidebar .skill-category h4 {
+    font-size: 0.9rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    text-align: center;
 }
 
 .sidebar .links ul {
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .sidebar .links li {
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
 }
 
 .sidebar .links a.link-item {
     display: flex;
     align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--text-color-muted);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sidebar .links a.link-item:hover {
+    color: var(--accent-color);
+}
+
+.sidebar .links a.link-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 8px;
 }
 
@@ -191,7 +244,6 @@ header p {
     color: var(--accent-color);
     background-color: transparent;
 }
-
 .nav-tabs .nav-link.active::after {
     transform: scaleX(1);
 }
