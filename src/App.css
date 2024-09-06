@@ -6,8 +6,6 @@
     --sidebar-bg: #f4f4f4;
     --light-accent: #f4f4f4;
     --border-color: #e0e0e0;
-    --text-color-muted: #666;
-    --border-color: #e0e0e0;
     --text-color-muted: #777;
 }
 
@@ -267,6 +265,50 @@ footer {
     text-align: center;
     font-size: 0.8em;
     font-weight: 300;
+}
+
+.cluster-map-container {
+    width: 100%;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.cluster-map-toggle {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    background-color: transparent;
+    color: var(--text-color-muted);
+    border: 1px solid var(--border-color);
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.cluster-map-toggle:hover,
+.cluster-map-toggle:focus {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.cluster-map-widget {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+.cluster-map-widget.expanded {
+    max-height: 300px; /* Adjust this value based on your map's height */
+    opacity: 1;
+}
+
+#clustrmaps-widget {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin: 1rem auto 0;
 }
 
 /* Media Query */

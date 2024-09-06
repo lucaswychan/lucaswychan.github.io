@@ -2,6 +2,7 @@
 import React from "react";
 import Footer from "./Footer";
 import DynamicIcon from "./DynamicIcon";
+import ClusterMap from "./ClusterMap";
 
 function Sidebar({ skills, links, photoUrl }) {
     return (
@@ -44,6 +45,9 @@ function Sidebar({ skills, links, photoUrl }) {
                             </li>
                         ))}
                     </ul>
+                </div>
+                <div className="cluster-map mb-4">
+                    <ClusterMap />
                 </div>
             </div>
             <Footer />
