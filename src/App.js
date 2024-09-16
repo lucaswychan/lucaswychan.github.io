@@ -1,7 +1,7 @@
 // App.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
-import TabNavigation from "./components/TabNavigation";
+import ScrollNavigation from "./components/ScrollNavigation";
 import TabContent from "./components/TabContent";
 import Sidebar from "./components/Sidebar";
 import "./App.css";
@@ -15,6 +15,7 @@ import linksData from "./data/links.json";
 
 function App() {
     const [activeTab, setActiveTab] = useState("about");
+    const photoUrl = "self_photo.jpg";
 
     const tabs = [
         { id: "about", label: "About" },
@@ -23,22 +24,48 @@ function App() {
         { id: "education", label: "Education" },
     ];
 
-    const photoUrl = "self_photo.jpg";
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: "-100px 0px -100px 0px",
+            threshold: 0,
+        };
+
+        const observerCallback = (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    setActiveTab(entry.target.id.replace("-header", ""));
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(
+            observerCallback,
+            observerOptions
+        );
+
+        tabs.forEach((tab) => {
+            const element = document.getElementById(`${tab.id}-header`);
+            if (element) observer.observe(element);
+        });
+
+        return () => observer.disconnect();
+    }, [tabs]);
 
     return (
         <div className="App">
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-md-3 p-0">
+                    <div className="col-md-4 p-0">
                         <Sidebar
                             skills={skillsData}
                             links={linksData}
                             photoUrl={photoUrl}
                         />
                     </div>
-                    <main className="col-md-9 p-5 p-lg-5 main-content">
+                    <main className="col-md-8 p-5 p-lg-5 main-content">
                         <Header />
-                        <TabNavigation
+                        <ScrollNavigation
                             tabs={tabs}
                             activeTab={activeTab}
                             setActiveTab={setActiveTab}

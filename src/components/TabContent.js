@@ -1,5 +1,6 @@
-// components/TabContent.js
 import React from "react";
+
+// components/TabContent.js
 
 function TabContent({
     activeTab,
@@ -8,12 +9,16 @@ function TabContent({
     educationData,
     projectsData,
 }) {
-    const renderContent = () => {
-        switch (activeTab) {
-            case "about":
-                return <p>{aboutData.description}</p>;
-            case "experiences":
-                return experiencesData.map((exp, index) => (
+    return (
+        <div className="tab-content">
+            <section id="about" className="content-section">
+                <h2>About Me</h2>
+                <p>{aboutData.description}</p>
+            </section>
+
+            <section id="experiences" className="content-section">
+                <h2>Experiences</h2>
+                {experiencesData.map((exp, index) => (
                     <div key={index} className="mb-4 pb-4 border-bottom">
                         <h2 className="h5 mb-2">{exp.position}</h2>
                         <p className="mb-1">{exp.company}</p>
@@ -24,9 +29,12 @@ function TabContent({
                             ))}
                         </ul>
                     </div>
-                ));
-            case "projects":
-                return projectsData.map((project, index) => (
+                ))}
+            </section>
+
+            <section id="projects" className="content-section">
+                <h2>Projects</h2>
+                {projectsData.map((project, index) => (
                     <div key={index} className="mb-4 pb-4 border-bottom">
                         <h3 className="h5 mb-2">{project.name}</h3>
                         <p className="text-muted mb-2">{project.date}</p>
@@ -51,30 +59,22 @@ function TabContent({
                             )}
                         </p>
                     </div>
-                ));
-            case "education":
-                return educationData.map((edu, index) => (
+                ))}
+            </section>
+
+            <section id="education" className="content-section">
+                <h2>Education</h2>
+                {educationData.map((edu, index) => (
                     <div key={index} className="mb-4 pb-4 border-bottom">
                         <h3 className="h5 mb-2">{edu.degree}</h3>
-                        <p className="mb-1">{edu.school}</p>
-                        <p className="text-muted mb-2">{edu.date}</p>
-                        <p>{edu.description}</p>
+                        <p className="mb-1">{edu.institution}</p>
+                        <p className="text-muted mb-2">{edu.duration}</p>
                         <p>
                             Grade : <b>{edu.grade}</b>
                         </p>
                     </div>
-                ));
-            default:
-                return null;
-        }
-    };
-
-    return (
-        <div className="tab-content">
-            <h2 className="h3 mb-4">
-                {activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}
-            </h2>
-            {renderContent()}
+                ))}
+            </section>
         </div>
     );
 }

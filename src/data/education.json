@@ -1,14 +1,14 @@
 [
     {
         "degree": "Master of Philosophy in Computer Science",
-        "school": "The Hong Kong University of Science and Technology",
-        "year": "2024 - 2026",
+        "institution": "The Hong Kong University of Science and Technology",
+        "duration": "2024 - 2026",
         "grade": "To be determined"
     },
     {
         "degree": "Bachelor of Science in Computer Science & Bachelor of Engineering in Electronic Engineering",
-        "school": "The Hong Kong University of Science and Technology",
-        "year": "2020 - 2024",
+        "institution": "The Hong Kong University of Science and Technology",
+        "duration": "2020 - 2024",
         "grade": "First Class Honours"
     }
 ]
