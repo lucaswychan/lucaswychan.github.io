@@ -57,7 +57,7 @@ function TabContent({
                     <div key={index} className="mb-4 pb-4 border-bottom">
                         <h3 className="h5 mb-2">{edu.degree}</h3>
                         <p className="mb-1">{edu.school}</p>
-                        <p className="text-muted mb-2">{edu.date}</p>
+                        <p className="text-muted mb-2">{edu.year}</p>
                         <p>{edu.description}</p>
                         <p>
                             Grade : <b>{edu.grade}</b>
