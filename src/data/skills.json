@@ -5,10 +5,15 @@
             "items": [
                 "PyTorch",
                 "TensorFlow",
+                "Transformers",
+                "SciPy",
                 "CVXPY",
                 "NumPy",
                 "Pandas",
+                "Scikit-learn",
                 "OpenCV",
+                "Flask",
+                "BeautifulSoup4",
                 "React.js",
                 "Node.js"
             ]
@@ -16,10 +21,10 @@
         {
             "category": "AI Techniques",
             "items": [
-                "Contrastive Learning",
+                "Multimodal Learning",
                 "Transfer Learning",
-                "Ensemble Learning",
-                "Multimodal Learning"
+                "Contrastive Learning",
+                "Ensemble Learning"
             ]
         },
         {
@@ -33,7 +38,8 @@
                 "HTML",
                 "CSS",
                 "Git",
-                "Unix"
+                "Unix",
+                "Docker"
             ]
         },
         {
@@ -41,7 +47,8 @@
             "items": [
                 "Portfolio Optimization",
                 "Index Tracking",
-                "Time Series Modeling"
+                "Time Series Modeling",
+                "Option Pricing"
             ]
         }
     ]
