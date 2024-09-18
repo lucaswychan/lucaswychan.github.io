@@ -34,13 +34,16 @@ function Sidebar({ skills, links, photoUrl }) {
                     ))}
                 </div>
                 <div className="links">
-                    <h3 className="h5 mb-3">Links</h3>
-                    <ul className="list-unstyled text-center">
+                    <hr className="my-4" />
+                    <ul className="list-unstyled d-flex justify-content-center">
                         {links.map((link, index) => (
-                            <li key={index} className="mb-2">
-                                <a href={link.url} className="link-item">
+                            <li key={index} className="mx-2">
+                                <a
+                                    href={link.url}
+                                    className="link-item"
+                                    title={link.name}
+                                >
                                     <DynamicIcon name={link.name} />
-                                    {link.name}
                                 </a>
                             </li>
                         ))}

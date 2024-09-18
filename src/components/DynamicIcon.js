@@ -2,7 +2,7 @@ import * as Icons from "react-icons/fa6";
 import React from "react";
 
 const iconMapping = {
-    gmail: Icons.FaGoogle,
+    gmail: Icons.FaEnvelope,
     github: Icons.FaGithub,
     linkedin: Icons.FaLinkedin,
     "x.com": Icons.FaXTwitter,
@@ -17,7 +17,7 @@ const DynamicIcon = ({ name }) => {
         return null;
     }
 
-    return <IconComponent style={{ fontSize: "14px" }} />;
+    return <IconComponent />;
 };
 
 export default DynamicIcon;

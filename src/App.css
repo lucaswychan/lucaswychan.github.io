@@ -169,8 +169,15 @@ header p {
 
 .sidebar .links ul {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.sidebar .links ul li {
+    flex: 0 0 auto;
 }
 
 .sidebar .links li {
@@ -320,6 +327,10 @@ footer {
     .sidebar {
         width: 100%;
         padding: 40px 20px;
+    }
+
+    .sidebar .links ul {
+        gap: 10px;
     }
 
     .main-content {
