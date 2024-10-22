@@ -4,26 +4,17 @@ import React from "react";
 function TabContent({
     activeTab,
     aboutData,
+    projectsData,
     experiencesData,
     educationData,
-    projectsData,
 }) {
     const renderContent = () => {
         switch (activeTab) {
             case "about":
-                return <p>{aboutData.description}</p>;
-            case "experiences":
-                return experiencesData.map((exp, index) => (
-                    <div key={index} className="mb-4 pb-4 border-bottom">
-                        <h2 className="h5 mb-2">{exp.position}</h2>
-                        <p className="mb-1">{exp.company}</p>
-                        <p className="text-muted mb-2">{exp.duration}</p>
-                        <ul>
-                            {exp.descriptions.map((responsibility, i) => (
-                                <li key={i}>{responsibility}</li>
-                            ))}
-                        </ul>
-                    </div>
+                return aboutData.description.map((data, index) => (
+                    <p key={index} className="mb-4 pb-3">
+                        {data}
+                    </p>
                 ));
             case "projects":
                 return projectsData.map((project, index) => (
@@ -50,6 +41,19 @@ function TabContent({
                                 )
                             )}
                         </p>
+                    </div>
+                ));
+            case "experiences":
+                return experiencesData.map((exp, index) => (
+                    <div key={index} className="mb-4 pb-4 border-bottom">
+                        <h2 className="h5 mb-2">{exp.position}</h2>
+                        <p className="mb-1">{exp.company}</p>
+                        <p className="text-muted mb-2">{exp.duration}</p>
+                        <ul>
+                            {exp.descriptions.map((responsibility, i) => (
+                                <li key={i}>{responsibility}</li>
+                            ))}
+                        </ul>
                     </div>
                 ));
             case "education":

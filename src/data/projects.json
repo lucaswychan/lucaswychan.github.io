@@ -8,6 +8,13 @@
         }
     },
     {
+        "name": "quant-lvlm",
+        "description": "Multimodal large vision language model for quantitative analysis",
+        "links": {
+            "GitHub": "https://github.com/lucaswychan/quant-lvlm"
+        }
+    },
+    {
         "name": "Federated Edge AI for 6G",
         "description": "Combination of federated learning algorithm and 6G technology.",
         "links": {
