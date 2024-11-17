@@ -18,8 +18,8 @@ function App() {
 
     const tabs = [
         { id: "about", label: "About" },
-        { id: "projects", label: "Projects" },
         { id: "experiences", label: "Experiences" },
+        { id: "projects", label: "Projects" },
         { id: "education", label: "Education" },
     ];
 
@@ -46,9 +46,9 @@ function App() {
                         <TabContent
                             activeTab={activeTab}
                             aboutData={aboutData}
-                            projectsData={projectsData}
                             experiencesData={experiencesData}
                             educationData={educationData}
+                            projectsData={projectsData}
                         />
                     </main>
                 </div>
