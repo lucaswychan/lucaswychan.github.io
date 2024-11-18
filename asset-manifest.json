@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/luckydraw/static/css/main.281b4285.css",
-    "main.js": "/luckydraw/static/js/main.530e22ab.js",
-    "static/js/453.b21437c2.chunk.js": "/luckydraw/static/js/453.b21437c2.chunk.js",
-    "static/media/drum-roll-2-228358.mp3": "/luckydraw/static/media/drum-roll-2-228358.1945d53d7bc9edaed008.mp3",
-    "static/media/winning-218995.mp3": "/luckydraw/static/media/winning-218995.d635dfce0d908b66cc52.mp3",
-    "index.html": "/luckydraw/index.html",
-    "main.281b4285.css.map": "/luckydraw/static/css/main.281b4285.css.map",
-    "main.530e22ab.js.map": "/luckydraw/static/js/main.530e22ab.js.map",
-    "453.b21437c2.chunk.js.map": "/luckydraw/static/js/453.b21437c2.chunk.js.map"
+    "main.css": "/static/css/main.281b4285.css",
+    "main.js": "/static/js/main.1e578df5.js",
+    "static/js/453.b21437c2.chunk.js": "/static/js/453.b21437c2.chunk.js",
+    "static/media/drum-roll-2-228358.mp3": "/static/media/drum-roll-2-228358.1945d53d7bc9edaed008.mp3",
+    "static/media/winning-218995.mp3": "/static/media/winning-218995.d635dfce0d908b66cc52.mp3",
+    "index.html": "/index.html",
+    "main.281b4285.css.map": "/static/css/main.281b4285.css.map",
+    "main.1e578df5.js.map": "/static/js/main.1e578df5.js.map",
+    "453.b21437c2.chunk.js.map": "/static/js/453.b21437c2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.281b4285.css",
-    "static/js/main.530e22ab.js"
+    "static/js/main.1e578df5.js"
   ]
 }
