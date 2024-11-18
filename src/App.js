@@ -1,9 +1,11 @@
 // App.js
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import TabNavigation from "./components/TabNavigation";
 import TabContent from "./components/TabContent";
 import Sidebar from "./components/Sidebar";
+import LuckyDraw from "./luckydraw/LuckyDraw";
 import "./App.css";
 
 import aboutData from "./data/about.json";
@@ -25,7 +27,7 @@ function App() {
 
     const photoUrl = "self_photo.jpg";
 
-    return (
+    const Mainlayout = () => (
         <div className="App">
             <div className="container-fluid">
                 <div className="row">
@@ -54,6 +56,16 @@ function App() {
                 </div>
             </div>
         </div>
+    );
+
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Mainlayout />} />
+                <Route path="/luckydraw" element={<LuckyDraw />} />
+                {/* Your other existing routes */}
+            </Routes>
+        </Router>
     );
 }
 
