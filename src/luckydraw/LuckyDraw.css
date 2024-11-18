@@ -97,7 +97,7 @@
     text-align: center;
 }
 
-button {
+button .draw-button {
     background: #f5fb7bdb;
     color: rgb(0, 0, 0);
     border: none;
@@ -109,11 +109,11 @@ button {
     margin: 0.5rem;
 }
 
-button:hover {
+button:hover .draw-button {
     background: #f0f631;
 }
 
-button:disabled {
+button:disabled .draw-button {
     background: #cccccc;
     cursor: not-allowed;
 }

@@ -27,10 +27,16 @@ const DrawControls = ({
                 />
             </div>
             {error && <div className="error">{error}</div>}
-            <button onClick={onDraw} disabled={disabled}>
+            <button
+                className="draw-button"
+                onClick={onDraw}
+                disabled={disabled}
+            >
                 Draw Number
             </button>
-            <button onClick={onReset}>Reset</button>
+            <button className="draw-button" onClick={onReset}>
+                Reset
+            </button>
         </div>
     );
 };
