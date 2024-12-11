@@ -1,5 +1,12 @@
 [
     {
+        "name": "NeuralNet CPP",
+        "description": "Neural Network implementation in pure C++ without PyTorch and TensorFlow.",
+        "links": {
+            "GitHub": "https://github.com/lucaswychan/neuralnet-cpp"
+        }
+    },
+    {
         "name": "Neural Stock Prophet",
         "description": "LSTM-ARIMA with attention mechanism and multiplicative decomposition for sophisticated stock forecasting.",
         "links": {
