@@ -1,15 +1,16 @@
 {
     "skills": [
         {
-            "category": "Frameworks",
+            "category": "Frameworks and Libraries",
             "items": [
                 "PyTorch",
                 "TensorFlow",
                 "Transformers",
-                "SciPy",
-                "CVXPY",
                 "NumPy",
                 "Pandas",
+                "PyArrrow",
+                "SciPy",
+                "CVXPY",
                 "Scikit-learn",
                 "OpenCV",
                 "Flask",
@@ -22,8 +23,9 @@
             "category": "AI Techniques",
             "items": [
                 "Multimodal Learning",
-                "Transfer Learning",
                 "Contrastive Learning",
+                "Reinforcement Learning",
+                "Transfer Learning",
                 "Ensemble Learning"
             ]
         },
@@ -32,8 +34,8 @@
             "items": [
                 "Python",
                 "C/C++",
-                "JavaScript",
                 "Java",
+                "JavaScript",
                 "MATLAB",
                 "HTML",
                 "CSS",

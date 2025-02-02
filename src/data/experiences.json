@@ -5,7 +5,8 @@
         "duration": "Jun 2024 - Aug 2024",
         "descriptions": [
             "Implemented a Natural Language Processing (NLP) system to extract company revenue information from reports, achieving 83% accuracy.",
-            "Architected a custom knowledge graph and algorithms, boosting data retrieval rates by over 50%."
+            "Architected a custom knowledge graph and algorithms from scratch, boosting data retrieval rates by over 50%.",
+            "Collaborated with cross-functional teams to design and implement data extraction workflows."
         ]
     },
     {
@@ -23,8 +24,8 @@
         "company": "Azeus Systems Limited",
         "duration": "Apr 2023 - May 2024",
         "descriptions": [
-            "Implemented, maintained, and supported system and network.",
-            "Administrated OS, servers and configuration, and Oracle database server."
+            "Architected, maintained, and supported complex system and network infrastructures.",
+            "Administered operating systems, managed server configurations, and oversaw Oracle database server operations."
         ]
     }
 ]

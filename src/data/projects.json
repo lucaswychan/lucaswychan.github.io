@@ -1,13 +1,23 @@
 [
     {
         "name": "NeuralNet CPP",
-        "description": "Neural Network implementation in pure C++ without PyTorch and TensorFlow.",
+        "tools": ["C++", "Calculus", "C++ STL"],
+        "description": "A PyTorch-like neural network framework in pure C++ from scratch, using only C++ STL.",
         "links": {
             "GitHub": "https://github.com/lucaswychan/neuralnet-cpp"
         }
     },
     {
         "name": "Neural Stock Prophet",
+        "tools": [
+            "Python",
+            "TensorFlow",
+            "LSTM",
+            "ARIMA",
+            "Attention",
+            "Multiplicative Decomposition",
+            "PyPI"
+        ],
         "description": "LSTM-ARIMA with attention mechanism and multiplicative decomposition for sophisticated stock forecasting.",
         "links": {
             "GitHub": "https://github.com/lucaswychan/neural-stock-prophet",
@@ -16,6 +26,7 @@
     },
     {
         "name": "quant-lvlm",
+        "tools": ["Python", "PyTorch", "Transformers", "Multimodal Agents"],
         "description": "Multimodal large vision language model for quantitative analysis",
         "links": {
             "GitHub": "https://github.com/lucaswychan/quant-lvlm"
@@ -23,13 +34,21 @@
     },
     {
         "name": "Federated Edge AI for 6G",
-        "description": "Combination of federated learning algorithm and 6G technology.",
+        "tools": [
+            "Python",
+            "PyTorch",
+            "Federated Learning",
+            "Reconfigurable Intelligent Surface",
+            "6G"
+        ],
+        "description": "Fusion of federated leaerning algorithm and reconfigurable intelligent surface from 6G.",
         "links": {
             "GitHub": "https://github.com/lucaswychan/Federated-Edge-AI-For-6G"
         }
     },
     {
         "name": "Car License Recognition",
+        "tools": ["Python", "PyTorch", "Transfer Learning", "OCR"],
         "description": "Optical character recognition (OCR) for car license recognition using Transfer Learning.",
         "links": {
             "GitHub": "https://github.com/lucaswychan/car-plate-recognition"
