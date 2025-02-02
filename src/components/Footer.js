@@ -5,7 +5,7 @@ function Footer() {
     return (
         <footer className="text-center mt-auto py-3">
             <p className="mb-0">
-                &copy; 2024 Lucas Wun-Yu Chan. All rights reserved.
+                &copy; 2025 Lucas Wun-Yu Chan. All rights reserved.
             </p>
         </footer>
     );
