@@ -6,7 +6,6 @@ import TabContent from "./components/TabContent";
 import Sidebar from "./components/Sidebar";
 import "./App.css";
 
-import aboutData from "./data/about.json";
 import educationData from "./data/education.json";
 import experiencesData from "./data/experiences.json";
 import skillsData from "./data/skills.json";
@@ -14,16 +13,16 @@ import projectsData from "./data/projects.json";
 import linksData from "./data/links.json";
 
 function App() {
-    const [activeTab, setActiveTab] = useState("about");
+    const [activeTab, setActiveTab] = useState("biography");
 
     const tabs = [
-        { id: "about", label: "About" },
-        { id: "projects", label: "Projects" },
-        { id: "experiences", label: "Experiences" },
+        { id: "biography", label: "Biography" },
+        { id: "project", label: "Project" },
+        { id: "experience", label: "Experience" },
         { id: "education", label: "Education" },
     ];
 
-    const photoUrl = "self_photo.jpg";
+    const photoUrl = "self_photo_2.jpg";
 
     return (
         <div className="App">
@@ -45,7 +44,6 @@ function App() {
                         />
                         <TabContent
                             activeTab={activeTab}
-                            aboutData={aboutData}
                             projectsData={projectsData}
                             experiencesData={experiencesData}
                             educationData={educationData}
