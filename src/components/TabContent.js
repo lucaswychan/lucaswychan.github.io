@@ -54,7 +54,7 @@ function TabContent({
                         </p>
                         <p>
                             Beyond my academic research, I'm particularly drawn
-                            to the intersection of <b>machine learning</b> and
+                            to the intersection of <b>machine learning</b> and{" "}
                             <b>quantitative finance</b>. I've been exploring how
                             ML can transform traditional financial practices -
                             from developing more sophisticated financial models
