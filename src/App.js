@@ -4,16 +4,26 @@ import { Container, Row, Col, Nav, Button } from "react-bootstrap";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
+import MusicPlayer from "./components/MusicPlayer";
 import "./App.css";
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FaArrowUp } from 'react-icons/fa';
 
 import educationData from "./data/education.json";
 import experiencesData from "./data/experiences.json";
 import skillsData from "./data/skills.json";
 import projectsData from "./data/projects.json";
 import linksData from "./data/links.json";
+import songData from "./data/songData";
 
 function App() {
     const [activeSection, setActiveSection] = useState("biography");
+    const [isHeaderExpanded, setIsHeaderExpanded] = useState(false);
+    const [isScrolling, setIsScrolling] = useState(false);
+    const [showButton, setShowButton] = useState(false);
+    const [showPlayer, setShowPlayer] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     
     // Create refs outside useMemo
     const biographyRef = useRef(null);
@@ -29,9 +39,12 @@ function App() {
         education: educationRef
     }), []);
     
-    const [isScrolling, setIsScrolling] = useState(false);
-    const [showScrollTop, setShowScrollTop] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
     
+    // Check if we're on the homepage
+    const isHomePage = location.pathname === "/";
+
     const scrollToSection = (sectionId) => {
         setActiveSection(sectionId);
         setIsScrolling(true);
@@ -47,13 +60,23 @@ function App() {
         }
     };
 
-    // Update the active section based on scroll position
+    // Handle scroll events and manage visibility
     useEffect(() => {
+        setIsMounted(true);
+        
+        // Only show music player on homepage initially
+        setShowPlayer(isHomePage);
+        
         const handleScroll = () => {
             if (isScrolling) return;
             
             // Show/hide scroll-to-top button
-            setShowScrollTop(window.scrollY > 300);
+            setShowButton(window.scrollY > 100);
+            
+            // Hide music player after scrolling 200px, but only on homepage
+            if (isHomePage) {
+                setShowPlayer(window.scrollY <= 200);
+            }
             
             // Determine active section based on scroll position
             const scrollPosition = window.scrollY + 100; // offset
@@ -74,12 +97,27 @@ function App() {
 
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [isScrolling, sectionRefs]);
+    }, [isScrolling, sectionRefs, isHomePage, location.pathname]);
+
+    // Update player visibility when route changes
+    useEffect(() => {
+        // Only show music player on homepage
+        const isHomePage = location.pathname === '/';
+        setShowPlayer(isHomePage);
+    }, [location.pathname]);
 
     const photoUrl = "self_photo_2.jpg";
     
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // Position the music player in the top right corner
+    const musicPlayerStyle = {
+        position: 'fixed',
+        top: '1rem',
+        right: '1rem',
+        zIndex: 1040
     };
 
     return (
@@ -108,7 +146,13 @@ function App() {
                             zIndex: '0'
                         }}></div>
                         
-                        <Header />
+                        {/* Header */}
+                        <Header 
+                            isExpanded={isHeaderExpanded} 
+                            setIsExpanded={setIsHeaderExpanded}
+                            activeSection={activeSection}
+                            scrollToSection={scrollToSection}
+                        />
                         
                         {/* Navigation */}
                         <Nav 
@@ -284,21 +328,24 @@ function App() {
                 </Row>
             </Container>
             
-            {/* Scroll to top button */}
-            <Button 
-                onClick={scrollToTop} 
-                className={`scroll-to-top position-fixed ${showScrollTop ? 'visible' : ''}`}
-                style={{ 
-                    right: '1.5rem', 
-                    bottom: '1.5rem',
-                    zIndex: 1030
-                }}
-                aria-label="Scroll to top"
-            >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="m18 15-6-6-6 6"/>
-                </svg>
-            </Button>
+            {isMounted && (
+                <>
+                    <div 
+                        className={`music-player-container ${showPlayer ? 'visible' : 'hidden'}`} 
+                        style={musicPlayerStyle}
+                    >
+                        <MusicPlayer songData={songData} />
+                    </div>
+                    
+                    <button 
+                        className={`scroll-to-top ${showButton ? 'visible' : ''}`} 
+                        onClick={scrollToTop}
+                        style={{ bottom: '2rem', right: '2rem' }}
+                    >
+                        <FaArrowUp />
+                    </button>
+                </>
+            )}
         </div>
     );
 }

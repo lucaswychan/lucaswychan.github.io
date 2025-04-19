@@ -19,6 +19,7 @@
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   --hover-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   --text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --spotify-green: #1DB954;
 }
 
 /* Base styling improvements */
@@ -353,43 +354,51 @@ section:hover h2::after {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
 }
 
-/* Beautiful scroll-to-top button */
-.scroll-to-top {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: var(--primary-gradient);
-  color: white;
-  box-shadow: 0 5px 20px rgba(26, 110, 160, 0.3);
-  opacity: 0;
-  transform: scale(0.9);
-  transition: all 0.4s ease;
-  pointer-events: none;
-  border: none;
+/* Music Player */
+.music-player-container {
+    position: fixed;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.scroll-to-top.visible {
-  opacity: 0.9;
-  transform: scale(1);
-  pointer-events: auto;
+.music-player-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+
+.music-player-container.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+    z-index: 1030;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .scroll-to-top:hover {
-  opacity: 1;
-  transform: scale(1.1) translateY(-3px);
-  background: var(--primary-gradient);
-  box-shadow: 0 8px 25px rgba(26, 110, 160, 0.4);
+    background-color: var(--primary-dark);
 }
 
-.scroll-to-top svg {
-  transition: transform 0.3s ease;
-}
-
-.scroll-to-top:hover svg {
-  transform: translateY(-2px);
+.scroll-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
 }
 
 /* Enhanced section title underline effect */
@@ -470,4 +479,94 @@ section:hover h2::after {
   transform: translateY(-3px);
   box-shadow: 0 7px 14px rgba(26, 110, 160, 0.2);
   color: white;
+}
+
+/* Music Player Styling */
+.music-player {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  z-index: 1050;
+  width: 350px;
+  max-width: calc(100vw - 2rem);
+}
+
+.music-player:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.album-cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.album-cover img {
+  transition: all 0.4s ease;
+}
+
+.album-cover:hover img {
+  transform: scale(1.08);
+}
+
+/* Music player now playing animation */
+.playing-animation {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 15px;
+  width: 15px;
+  padding: 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.playing-animation span {
+  display: block;
+  width: 2px;
+  margin: 0 1px;
+  background: var(--accent);
+  animation: playing-animation 1.2s ease infinite alternate;
+}
+
+.playing-animation span:nth-child(1) {
+  height: 6px;
+  animation-delay: 0s;
+}
+
+.playing-animation span:nth-child(2) {
+  height: 10px;
+  animation-delay: 0.3s;
+}
+
+.playing-animation span:nth-child(3) {
+  height: 4px;
+  animation-delay: 0.6s;
+}
+
+@keyframes playing-animation {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Spotify button styling */
+.text-success {
+  color: var(--spotify-green) !important;
+}
+
+/* Responsive styling for music player */
+@media (max-width: 576px) {
+  .music-player {
+    width: calc(100vw - 2rem) !important;
+  }
+  
+  .album-cover {
+    width: 50px !important;
+    height: 50px !important;
+  }
 }

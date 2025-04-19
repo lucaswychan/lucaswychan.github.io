@@ -1,6 +1,6 @@
 // components/MusicPlayer.js
 import React, { useState, useRef, useEffect } from "react";
-import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute } from "react-icons/fa";
+import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute, FaSpotify } from "react-icons/fa";
 
 const MusicPlayer = ({ songData }) => {
     const [isPlaying, setIsPlaying] = useState(false);
@@ -76,13 +76,23 @@ const MusicPlayer = ({ songData }) => {
             <audio ref={audioRef} src={songData.audioUrl} preload="metadata" />
             
             <div className="d-flex align-items-center mb-2">
-                <div className="album-cover me-3">
+                <div className="album-cover me-3 position-relative">
                     <img 
                         src={songData.coverArt} 
                         alt={`${songData.title} cover art`} 
                         className="rounded shadow-sm"
                         style={{ width: '60px', height: '60px', objectFit: 'cover' }} 
                     />
+                    
+                    {isPlaying && (
+                        <div className="position-absolute top-0 end-0 mt-1 me-1">
+                            <div className="playing-animation">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <div className="song-info flex-grow-1">
                     <h5 className="m-0 small title-underline" style={{ color: 'var(--primary)' }}>Currently Listening</h5>
@@ -100,12 +110,24 @@ const MusicPlayer = ({ songData }) => {
                     </button>
                     <button 
                         onClick={toggleMute} 
-                        className="btn btn-sm text-primary rounded-circle"
+                        className="btn btn-sm text-primary me-2 rounded-circle"
                         style={{ width: '36px', height: '36px', backgroundColor: 'rgba(26, 110, 160, 0.1)' }}
                         aria-label={isMuted ? "Unmute" : "Mute"}
                     >
                         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
                     </button>
+                    {songData.spotifyLink && (
+                        <a 
+                            href={songData.spotifyLink} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="btn btn-sm text-success rounded-circle d-flex align-items-center justify-content-center"
+                            style={{ width: '36px', height: '36px', backgroundColor: 'rgba(30, 215, 96, 0.1)' }}
+                            aria-label="Open in Spotify"
+                        >
+                            <FaSpotify />
+                        </a>
+                    )}
                 </div>
             </div>
             
