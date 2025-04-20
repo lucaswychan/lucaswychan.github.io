@@ -12,7 +12,8 @@ function Footer() {
                 background: 'linear-gradient(to right, transparent, var(--muted) 20%, var(--muted) 80%, transparent)',
                 opacity: '0.2',
                 top: '0',
-                left: '0'
+                left: '0',
+                borderRadius: 'var(--border-radius-sm)'
             }}></div>
             <p className="mb-2">
                 © {currentYear} <span style={{ 

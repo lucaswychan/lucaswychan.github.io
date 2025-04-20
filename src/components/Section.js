@@ -13,7 +13,7 @@ function Section({ id, title, children, reference }) {
                 height: '150px',
                 background: 'var(--primary)',
                 opacity: '0.03',
-                borderRadius: '30% 70% 70% 30% / 30% 30% 70% 70%',
+                borderRadius: 'var(--border-radius-xl)',
                 top: '10px',
                 right: '-30px',
                 zIndex: '-1',
@@ -41,7 +41,7 @@ function Section({ id, title, children, reference }) {
                 height: '80px',
                 background: 'var(--accent)',
                 opacity: '0.05',
-                borderRadius: '50%',
+                borderRadius: 'var(--border-radius-xl)',
                 bottom: '40px',
                 left: '-40px',
                 zIndex: '-1'

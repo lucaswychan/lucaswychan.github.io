@@ -44,7 +44,7 @@ function App() {
     
     const location = useLocation();
     
-    // Check if we're on the homepage
+    // eslint-disable-next-line no-unused-vars
     const isHomePage = location.pathname === "/";
 
     const scrollToSection = (sectionId) => {

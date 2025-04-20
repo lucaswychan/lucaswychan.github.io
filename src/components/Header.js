@@ -1,9 +1,9 @@
 // components/Header.js
 import React from "react";
 
-function Header() {
+function Header({ isExpanded, setIsExpanded, activeSection, scrollToSection, visible }) {
     return (
-        <header className="mb-5 pb-2 animate-fade-in">
+        <header className={`mb-5 pb-2 animate-fade-in transition-all ${visible ? 'opacity-100' : 'opacity-0'}`}>
             <div className="position-relative">
                 <h1 className="display-4 fw-bold mb-3">
                     <span className="position-relative">
@@ -14,7 +14,7 @@ function Header() {
                             height: '50px',
                             background: 'var(--accent)',
                             opacity: '0.1',
-                            borderRadius: '50%',
+                            borderRadius: 'var(--border-radius-xl)',
                             top: '-10px',
                             left: '-15px',
                             zIndex: '-1'
@@ -26,7 +26,7 @@ function Header() {
                     height: '120px',
                     background: 'var(--primary)',
                     opacity: '0.05',
-                    borderRadius: '50%',
+                    borderRadius: 'var(--border-radius-xl)',
                     bottom: '-30px',
                     right: '10%',
                     zIndex: '-1'
@@ -45,7 +45,7 @@ function Header() {
                             bottom: '-5px', 
                             left: 0, 
                             opacity: 0.7,
-                            borderRadius: '3px'
+                            borderRadius: 'var(--border-radius-sm)'
                         }} 
                     />
                 </span>
@@ -54,7 +54,8 @@ function Header() {
                     color: 'var(--primary)',
                     fontWeight: '400',
                     paddingTop: '0.15rem',
-                    paddingBottom: '0.15rem'
+                    paddingBottom: '0.15rem',
+                    borderRadius: 'var(--border-radius-pill)'
                 }}>
                     HKUST
                 </span>

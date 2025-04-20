@@ -171,7 +171,12 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
                         src={songData.coverArt} 
                         alt={`${songData.title} cover art`} 
                         className="rounded shadow-sm"
-                        style={{ width: '60px', height: '60px', objectFit: 'cover' }} 
+                        style={{ 
+                            width: '60px', 
+                            height: '60px', 
+                            objectFit: 'cover',
+                            borderRadius: 'var(--border-radius-md)'
+                        }} 
                     />
                     {isPlaying && (
                         <div className="position-absolute bottom-0 end-0 mb-1 me-1">
@@ -194,55 +199,88 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
                     className="progress mb-1" 
                     ref={progressRef}
                     onClick={setProgressManually}
-                    style={{ height: '4px', cursor: 'pointer', backgroundColor: 'rgba(0,0,0,0.1)' }}
+                    style={{ 
+                        height: '4px', 
+                        cursor: 'pointer', 
+                        backgroundColor: 'rgba(0,0,0,0.1)',
+                        borderRadius: 'var(--border-radius-pill)'
+                    }}
                 >
                     <div 
                         className="progress-bar" 
-                        role="progressbar"
+                        role="progressbar" 
                         style={{ 
                             width: `${progress}%`, 
-                            backgroundColor: 'var(--primary)' 
-                        }}
+                            backgroundColor: 'var(--primary)',
+                            borderRadius: 'var(--border-radius-pill)'
+                        }} 
                         aria-valuenow={progress} 
                         aria-valuemin="0" 
                         aria-valuemax="100"
                     ></div>
                 </div>
-                <div className="d-flex justify-content-between small text-muted">
-                    <span>{formatTime(audioRef.current ? audioRef.current.currentTime : 0)}</span>
-                    <span>{formatTime(duration)}</span>
+                <div className="d-flex justify-content-between align-items-center px-1">
+                    <span className="small text-muted">
+                        {formatTime(duration * progress / 100)}
+                    </span>
+                    <span className="small text-muted">
+                        {formatTime(duration)}
+                    </span>
                 </div>
             </div>
             
             <div className="d-flex justify-content-between align-items-center">
-                <button 
-                    onClick={toggleMute} 
-                    className="btn btn-sm text-primary rounded-circle"
-                    style={{ width: '36px', height: '36px', backgroundColor: 'rgba(26, 110, 160, 0.1)' }}
-                    title={isMuted ? "Unmute" : "Mute"}
-                >
-                    {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
-                </button>
+                <div>
+                    <button 
+                        onClick={togglePlay} 
+                        className="btn btn-sm me-2"
+                        style={{
+                            backgroundColor: isPlaying ? 'var(--primary)' : 'rgba(26, 110, 160, 0.1)',
+                            color: isPlaying ? 'white' : 'var(--primary)',
+                            width: '38px',
+                            height: '38px',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: 'var(--border-radius-pill)',
+                            border: 'none',
+                            boxShadow: isPlaying ? '0 2px 5px rgba(0,0,0,0.1)' : 'none'
+                        }}
+                    >
+                        {isPlaying ? <FaPause /> : <FaPlay />}
+                    </button>
+                    <button 
+                        onClick={toggleMute} 
+                        className="btn btn-sm" 
+                        style={{
+                            backgroundColor: 'rgba(0,0,0,0.05)',
+                            color: isMuted ? 'var(--muted)' : 'var(--dark-text)',
+                            width: '38px',
+                            height: '38px',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: 'var(--border-radius-pill)',
+                            border: 'none'
+                        }}
+                    >
+                        {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
+                    </button>
+                </div>
                 
-                <button 
-                    onClick={togglePlay} 
-                    className="btn btn-primary rounded-circle"
-                    style={{ width: '50px', height: '50px' }}
-                    title={isPlaying ? "Pause" : "Play"}
-                >
-                    {isPlaying ? <FaPause /> : <FaPlay />}
-                </button>
-                
-                {songData.spotifyLink && (
+                {songData.spotifyUrl && (
                     <a 
-                        href={songData.spotifyLink} 
+                        href={songData.spotifyUrl} 
                         target="_blank" 
                         rel="noreferrer"
-                        className="btn btn-sm text-success rounded-circle d-flex align-items-center justify-content-center"
-                        style={{ width: '36px', height: '36px', backgroundColor: 'rgba(30, 215, 96, 0.1)' }}
-                        title="Listen on Spotify"
+                        className="btn btn-sm d-flex align-items-center text-success"
+                        style={{ 
+                            fontSize: '0.8rem', 
+                            borderRadius: 'var(--border-radius-pill)',
+                            backgroundColor: 'rgba(29, 185, 84, 0.1)'
+                        }}
                     >
-                        <FaSpotify />
+                        <FaSpotify className="me-1" /> Listen
                     </a>
                 )}
             </div>

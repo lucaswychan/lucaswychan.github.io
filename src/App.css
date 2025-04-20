@@ -1,7 +1,7 @@
 /* App.css */
 /* Enhanced styles to create a more beautiful design */
 
-/* Custom color variables */
+/* Custom color variables - refined color palette */
 :root {
   --primary: #1a6ea0;
   --primary-light: #3a94c5;
@@ -15,11 +15,16 @@
   --muted: #8896a6;
   --light-bg: #f8f9fa;
   --sidebar-bg: #f5f7f9;
-  --sidebar-gradient: linear-gradient(180deg, #f5f7f9, #e9f0f5);
+  --sidebar-gradient: linear-gradient(160deg, #f8f9fa, #e9f0f5);
   --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   --hover-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   --text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   --spotify-green: #1DB954;
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --border-radius-xl: 32px;
+  --border-radius-pill: 50px;
 }
 
 /* Base styling improvements */
@@ -28,6 +33,7 @@ body {
   background-color: #fff;
   line-height: 1.7;
   letter-spacing: 0.01em;
+  overflow-x: hidden;
 }
 
 /* Animation for section transitions */
@@ -70,10 +76,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Glass effect styling */
 .glass-effect {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  border-radius: var(--border-radius-sm);
 }
 
 /* Make the lead text more elegant */
@@ -110,6 +118,7 @@ a.underline-effect::after {
   transform: scaleX(0);
   transform-origin: bottom right;
   transition: transform 0.3s ease-out;
+  border-radius: 2px;
 }
 
 a.underline-effect:hover::after {
@@ -127,10 +136,12 @@ a.underline-effect:hover::after {
   margin: 0 0.25rem;
   position: relative;
   overflow: hidden;
+  border-radius: var(--border-radius-sm);
 }
 
 .nav-link-custom:hover {
   color: var(--primary);
+  /* border-bottom: 2px solid var(--primary); */
 }
 
 .nav-link-custom::before {
@@ -143,6 +154,7 @@ a.underline-effect:hover::after {
   background-color: rgba(26, 110, 160, 0.1);
   transition: height 0.3s ease;
   z-index: -1;
+  border-radius: var(--border-radius-sm);
 }
 
 .nav-link-custom:hover::before {
@@ -152,11 +164,39 @@ a.underline-effect:hover::after {
 .nav-link-custom.active {
   border-bottom-color: var(--accent);
   color: var(--primary);
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
 }
 
 .nav-link-custom.active::before {
   height: 100%;
   background-color: rgba(248, 169, 120, 0.1);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Custom styling for sidebar navigation links */
+.nav-link.cursor-pointer {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.7rem 1rem;
+  border-radius: var(--border-radius-md);
+  color: var(--dark-text);
+  margin-bottom: 0.3rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.nav-link.cursor-pointer:hover {
+  background-color: rgba(26, 110, 160, 0.08);
+  color: var(--primary);
+  transform: translateX(5px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.nav-link.cursor-pointer.active {
+  background-color: rgba(26, 110, 160, 0.12);
+  color: var(--primary);
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 /* Enhanced styling for skill badges */
@@ -170,11 +210,11 @@ a.underline-effect:hover::after {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: 30px;
-  background-color: var(--secondary);
+  border-radius: var(--border-radius-pill);
+  background-color: rgba(26, 110, 160, 0.08);
   color: var(--primary);
   transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -190,12 +230,13 @@ a.underline-effect:hover::after {
   background: var(--primary-gradient);
   transition: all 0.4s ease;
   z-index: -1;
+  border-radius: var(--border-radius-pill);
 }
 
 .skill-badge:hover {
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.06);
 }
 
 .skill-badge:hover::before {
@@ -216,7 +257,7 @@ a.underline-effect:hover::after {
 /* Custom styling for cards */
 .card {
   border: none;
-  border-radius: 12px;
+  border-radius: var(--border-radius-lg);
   transition: all 0.4s ease;
   box-shadow: var(--card-shadow);
   overflow: hidden;
@@ -233,6 +274,7 @@ a.underline-effect:hover::after {
 
 .card-body {
   padding: 1.8rem;
+  border-radius: var(--border-radius-lg);
 }
 
 /* Beautiful profile photo styling */
@@ -240,7 +282,9 @@ a.underline-effect:hover::after {
   position: relative;
   overflow: hidden;
   border-radius: 50%;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.5s ease;
+  border: 5px solid rgba(255, 255, 255, 0.8);
 }
 
 .profile-photo-container img {
@@ -291,7 +335,7 @@ section h2::after {
   width: 60px;
   height: 4px;
   background: var(--accent-gradient);
-  border-radius: 2px;
+  border-radius: 4px;
   transition: width 0.4s ease, transform 0.4s ease;
 }
 
@@ -308,10 +352,10 @@ section:hover h2::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--secondary);
+  background-color: rgba(26, 110, 160, 0.08);
   color: var(--primary);
   transition: all 0.4s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -328,12 +372,13 @@ section:hover h2::after {
   opacity: 0;
   transition: opacity 0.4s ease;
   z-index: -1;
+  border-radius: 50%;
 }
 
 .social-icon-btn:hover {
   color: white;
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
 }
 
 .social-icon-btn:hover::before {
@@ -351,7 +396,8 @@ section:hover h2::after {
 /* Enhanced sidebar styling */
 .sidebar-container {
   background: var(--sidebar-gradient);
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
 }
 
 /* Music Player */
@@ -379,30 +425,34 @@ section:hover h2::after {
   right: 20px;
   width: 300px;
   background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius-xl);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
   padding: 15px;
   z-index: 1000;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .music-player-mini {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
   background: white;
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 .mini-album-container {
@@ -432,7 +482,7 @@ section:hover h2::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -446,7 +496,7 @@ section:hover h2::after {
   background: transparent;
   border: none;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
   padding: 0;
   margin: 0;
@@ -457,20 +507,20 @@ section:hover h2::after {
   bottom: 5px;
   right: 5px;
   display: flex;
-  gap: 5px;
+  gap: 3px;
 }
 
 .mini-controls button {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
   border-radius: 50%;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   cursor: pointer;
   padding: 0;
 }
@@ -488,36 +538,75 @@ section:hover h2::after {
 .playing-animation {
   display: flex;
   align-items: flex-end;
-  height: 15px;
-  gap: 1px;
+  height: 12px;
+  gap: 2px;
 }
 
 .playing-animation span {
   display: inline-block;
-  width: 3px;
-  height: 5px;
+  width: 2px;
+  height: 3px;
   background-color: var(--primary);
-  border-radius: 1px;
+  border-radius: 2px;
   animation: playing 0.8s infinite alternate;
 }
 
 .playing-animation span:nth-child(2) {
   animation-delay: 0.2s;
-  height: 8px;
+  height: 6px;
 }
 
 .playing-animation span:nth-child(3) {
   animation-delay: 0.4s;
-  height: 5px;
+  height: 4px;
 }
 
 @keyframes playing {
   0% {
-    height: 5px;
+    height: 3px;
   }
   100% {
-    height: 15px;
+    height: 12px;
   }
+}
+
+/* Music player text styling */
+.music-player p {
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Progress bar styling */
+.progress {
+  height: 4px !important;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  background-color: var(--primary) !important;
+  transition: width 0.1s linear;
+  border-radius: 10px;
+}
+
+/* Button hover effects */
+.music-player button {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  border-radius: var(--border-radius-pill);
+}
+
+.music-player button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.music-player-mini:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 /* Spotify button styling */
@@ -529,10 +618,59 @@ section:hover h2::after {
 @media (max-width: 576px) {
   .music-player {
     width: calc(100vw - 2rem) !important;
+    border-radius: var(--border-radius-lg);
   }
   
   .album-cover {
     width: 50px !important;
     height: 50px !important;
+    border-radius: 12px;
   }
+}
+
+/* Scroll to top button styling */
+.scroll-to-top {
+  position: fixed;
+  width: 45px;
+  height: 45px;
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom button styles with rounded borders */
+.btn {
+  border-radius: var(--border-radius-pill);
+  overflow: hidden;
+}
+
+.custom-btn {
+  border-radius: var(--border-radius-pill);
+  padding: 0.5rem 1.2rem;
+}
+
+/* Badge styling with more rounded corners */
+.badge {
+  border-radius: var(--border-radius-pill);
+  padding: 0.5em 1em;
 }
