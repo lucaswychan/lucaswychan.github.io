@@ -1,12 +1,12 @@
 // App.js
-import React, { useState, useRef, useEffect, useMemo } from "react";
-import { Container, Row, Col, Nav, Button } from "react-bootstrap";
+import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import { Container, Row, Col, Nav } from "react-bootstrap";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
 import MusicPlayer from "./components/MusicPlayer";
 import "./App.css";
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaArrowUp } from 'react-icons/fa';
 
@@ -18,12 +18,15 @@ import linksData from "./data/links.json";
 import songData from "./data/songData";
 
 function App() {
-    const [activeSection, setActiveSection] = useState("biography");
+    const [activeSection, setActiveSection] = useState("home");
     const [isHeaderExpanded, setIsHeaderExpanded] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
     const [showButton, setShowButton] = useState(false);
-    const [showPlayer, setShowPlayer] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
+    const [showMusicPlayer, setShowMusicPlayer] = useState(true);
+    const [playerMinimized, setPlayerMinimized] = useState(false);
+    const [isMounted, setIsMounted] = useState(true);
+    const [prevScrollPos, setPrevScrollPos] = useState(window.pageYOffset);
+    const [visible, setVisible] = useState(true);
     
     // Create refs outside useMemo
     const biographyRef = useRef(null);
@@ -40,7 +43,6 @@ function App() {
     }), []);
     
     const location = useLocation();
-    const navigate = useNavigate();
     
     // Check if we're on the homepage
     const isHomePage = location.pathname === "/";
@@ -60,51 +62,68 @@ function App() {
         }
     };
 
+    const handleScroll = useCallback(() => {
+        const currentScrollPos = window.pageYOffset;
+        setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+        setPrevScrollPos(currentScrollPos);
+
+        if (isScrolling) return;
+        
+        // Show/hide scroll-to-top button
+        setShowButton(window.scrollY > 100);
+        
+        // Minimize music player when scrolling down
+        if (currentScrollPos > 100) {
+            setPlayerMinimized(true);
+        } else {
+            setPlayerMinimized(false);
+        }
+        
+        // Determine active section based on scroll position
+        const scrollPosition = window.scrollY + 100; // offset
+
+        for (const section in sectionRefs) {
+            const sectionElement = sectionRefs[section].current;
+            if (!sectionElement) continue;
+            
+            const sectionTop = sectionElement.offsetTop;
+            const sectionBottom = sectionTop + sectionElement.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                setActiveSection(section);
+                break;
+            }
+        }
+    }, [isScrolling, sectionRefs, prevScrollPos]);
+
+    // Check window size on load and resize
+    useEffect(() => {
+        const checkWindowSize = () => {
+            // Auto-minimize on small screens
+            if (window.innerWidth < 768) {
+                setPlayerMinimized(true);
+            }
+        };
+        
+        // Check initially
+        checkWindowSize();
+        
+        // Also check on resize
+        window.addEventListener('resize', checkWindowSize);
+        
+        return () => window.removeEventListener('resize', checkWindowSize);
+    }, []);
+
     // Handle scroll events and manage visibility
     useEffect(() => {
         setIsMounted(true);
         
-        // Only show music player on homepage initially
-        setShowPlayer(isHomePage);
+        // Always show music player initially
+        setShowMusicPlayer(true);
         
-        const handleScroll = () => {
-            if (isScrolling) return;
-            
-            // Show/hide scroll-to-top button
-            setShowButton(window.scrollY > 100);
-            
-            // Hide music player after scrolling 200px, but only on homepage
-            if (isHomePage) {
-                setShowPlayer(window.scrollY <= 200);
-            }
-            
-            // Determine active section based on scroll position
-            const scrollPosition = window.scrollY + 100; // offset
-
-            for (const section in sectionRefs) {
-                const sectionElement = sectionRefs[section].current;
-                if (!sectionElement) continue;
-                
-                const sectionTop = sectionElement.offsetTop;
-                const sectionBottom = sectionTop + sectionElement.offsetHeight;
-                
-                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                    setActiveSection(section);
-                    break;
-                }
-            }
-        };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [isScrolling, sectionRefs, isHomePage, location.pathname]);
-
-    // Update player visibility when route changes
-    useEffect(() => {
-        // Only show music player on homepage
-        const isHomePage = location.pathname === '/';
-        setShowPlayer(isHomePage);
-    }, [location.pathname]);
+    }, [handleScroll]);
 
     const photoUrl = "self_photo_2.jpg";
     
@@ -117,7 +136,17 @@ function App() {
         position: 'fixed',
         top: '1rem',
         right: '1rem',
-        zIndex: 1040
+        zIndex: 500
+    };
+
+    // Function to toggle music player visibility
+    const toggleMusicPlayer = () => {
+        setShowMusicPlayer(!showMusicPlayer);
+    };
+
+    // Function to handle music player minimization
+    const handlePlayerMinimize = (isMinimized) => {
+        setPlayerMinimized(isMinimized);
     };
 
     return (
@@ -130,6 +159,10 @@ function App() {
                             skills={skillsData}
                             links={linksData}
                             photoUrl={photoUrl}
+                            activeSection={activeSection}
+                            handleSectionClick={scrollToSection}
+                            toggleMusicPlayer={toggleMusicPlayer}
+                            showMusicPlayer={showMusicPlayer}
                         />
                     </Col>
                     
@@ -152,6 +185,7 @@ function App() {
                             setIsExpanded={setIsHeaderExpanded}
                             activeSection={activeSection}
                             scrollToSection={scrollToSection}
+                            visible={visible}
                         />
                         
                         {/* Navigation */}
@@ -179,7 +213,7 @@ function App() {
                             reference={sectionRefs.biography}
                         >
                             <div className="mb-4">
-                                <p className="lead">
+                                <p>
                                     I'm Lucas Chan, an MPhil student at{" "}
                                     <a href="https://hkust.edu.hk" className="underline-effect">HKUST</a>, working
                                     under the guidance of{" "}
@@ -328,23 +362,28 @@ function App() {
                 </Row>
             </Container>
             
+            {/* Music Player - Positioned in upper right corner */}
+            <div 
+                className={`music-player-container ${showMusicPlayer ? 'visible' : 'hidden'}`} 
+                style={musicPlayerStyle}
+            >
+                <MusicPlayer 
+                    songData={songData}
+                    visible={showMusicPlayer}
+                    onClose={() => setShowMusicPlayer(false)}
+                    onMinimize={handlePlayerMinimize}
+                    isMinimized={playerMinimized}
+                />
+            </div>
+            
             {isMounted && (
-                <>
-                    <div 
-                        className={`music-player-container ${showPlayer ? 'visible' : 'hidden'}`} 
-                        style={musicPlayerStyle}
-                    >
-                        <MusicPlayer songData={songData} />
-                    </div>
-                    
-                    <button 
-                        className={`scroll-to-top ${showButton ? 'visible' : ''}`} 
-                        onClick={scrollToTop}
-                        style={{ bottom: '2rem', right: '2rem' }}
-                    >
-                        <FaArrowUp />
-                    </button>
-                </>
+                <button 
+                    className={`scroll-to-top ${showButton ? 'visible' : ''}`} 
+                    onClick={scrollToTop}
+                    style={{ bottom: '2rem', right: '2rem' }}
+                >
+                    <FaArrowUp />
+                </button>
             )}
         </div>
     );
