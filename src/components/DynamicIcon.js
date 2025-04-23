@@ -10,6 +10,7 @@ import {
   FaGraduationCap,
   FaMusic
 } from "react-icons/fa";
+import * as Icons from "react-icons/fa6";
 
 function DynamicIcon({ name }) {
     const iconSize = 18;
@@ -20,6 +21,10 @@ function DynamicIcon({ name }) {
             return <FaGithub size={iconSize} style={iconStyle} />;
         case "linkedin":
             return <FaLinkedin size={iconSize} style={iconStyle} />;
+        case "gmail":
+            return <FaEnvelope size={iconSize} style={iconStyle} />;
+        case "x.com":
+            return <Icons.FaXTwitter size={iconSize} style={iconStyle} />;
         case "google scholar":
         case "google":
             return <FaGraduationCap size={iconSize} style={iconStyle} />;

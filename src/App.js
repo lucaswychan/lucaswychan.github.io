@@ -75,7 +75,8 @@ function App() {
         // Minimize music player when scrolling down
         if (currentScrollPos > 100) {
             setPlayerMinimized(true);
-        } else {
+        } else if (currentScrollPos < 50) {
+            // Only un-minimize when near the top of the page
             setPlayerMinimized(false);
         }
         
@@ -129,14 +130,6 @@ function App() {
     
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
-    };
-
-    // Position the music player in the top right corner
-    const musicPlayerStyle = {
-        position: 'fixed',
-        top: '1rem',
-        right: '1rem',
-        zIndex: 500
     };
 
     // Function to toggle music player visibility
@@ -363,10 +356,7 @@ function App() {
             </Container>
             
             {/* Music Player - Positioned in upper right corner */}
-            <div 
-                className={`music-player-container ${showMusicPlayer ? 'visible' : 'hidden'}`} 
-                style={musicPlayerStyle}
-            >
+            <div className={`music-player-container ${showMusicPlayer ? 'visible' : 'hidden'}`}>
                 <MusicPlayer 
                     songData={songData}
                     visible={showMusicPlayer}

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import DynamicIcon from "./DynamicIcon";
 import ClusterMap from "./ClusterMap";
-import { FaMusic } from "react-icons/fa";
+import { FaMusic, FaUser, FaProjectDiagram, FaBriefcase, FaGraduationCap } from "react-icons/fa";
 
 function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, toggleMusicPlayer, showMusicPlayer }) {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -21,6 +21,14 @@ function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, t
         window.addEventListener('resize', checkScreenSize);
         return () => window.removeEventListener('resize', checkScreenSize);
     }, []);
+    
+    // Map section names to their corresponding icons
+    const sectionIcons = {
+        biography: <FaUser size={16} />,
+        project: <FaProjectDiagram size={16} />,
+        experience: <FaBriefcase size={16} />,
+        education: <FaGraduationCap size={16} />
+    };
     
     return (
         <aside className="h-100 p-4 p-md-5 d-flex flex-column">
@@ -49,29 +57,65 @@ function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, t
                     <div className="mt-2">
                         <span className="badge py-2 px-3" style={{
                             background: 'rgba(248, 169, 120, 0.15)',
-                            color: 'var(--accent)',
+                            color: "var(--primary)",
                             fontWeight: '500',
                             letterSpacing: '0.5px',
                             borderRadius: 'var(--border-radius-pill)'
                         }}>
-                            MPhil Student
+                            I am learning instead of machine learning
                         </span>
                     </div>
                 </div>
                 
                 {/* Navigation Links */}
                 <div className="mb-4 mt-4">
-                    <h5 className="text-muted small mb-3 ps-3">NAVIGATION</h5>
-                    <ul className="nav flex-column">
+                    <h5 className="text-muted small mb-3 ps-3 d-flex align-items-center">
+                        <span className="nav-section-line me-2"></span>
+                        NAVIGATION
+                        <span className="nav-section-line ms-2"></span>
+                    </h5>
+                    <ul className="nav flex-column navigation-menu">
                         {['biography', 'project', 'experience', 'education'].map((section) => (
                             <li className="nav-item" key={section}>
-                                <a
-                                    className={`nav-link cursor-pointer ${activeSection === section ? 'active fw-medium' : ''}`}
+                                <button
+                                    className={`nav-link cursor-pointer border-0 bg-transparent text-start w-100 d-flex align-items-center ${activeSection === section ? 'active fw-medium' : ''}`}
                                     onClick={() => handleSectionClick(section)}
-                                    style={{ borderRadius: 'var(--border-radius-md)' }}
+                                    style={{ 
+                                        borderRadius: 'var(--border-radius-md)',
+                                        padding: '0.8rem 1rem',
+                                        marginBottom: '0.3rem',
+                                        transition: 'all 0.3s ease'
+                                    }}
                                 >
-                                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                                </a>
+                                    <span className="nav-icon-container me-3" style={{
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        width: '30px',
+                                        height: '30px',
+                                        borderRadius: 'var(--border-radius-sm)',
+                                        background: activeSection === section 
+                                            ? 'var(--primary)' 
+                                            : 'rgba(26, 110, 160, 0.08)',
+                                        color: activeSection === section ? 'white' : 'var(--primary)',
+                                        transition: 'all 0.3s ease'
+                                    }}>
+                                        {sectionIcons[section]}
+                                    </span>
+                                    <span style={{ position: 'relative' }}>
+                                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                                        {activeSection === section && (
+                                            <span className="position-absolute" style={{
+                                                height: '3px',
+                                                width: '30%',
+                                                background: 'var(--accent-gradient)',
+                                                bottom: '-5px',
+                                                left: '0',
+                                                borderRadius: 'var(--border-radius-pill)'
+                                            }}></span>
+                                        )}
+                                    </span>
+                                </button>
                             </li>
                         ))}
                     </ul>
@@ -79,42 +123,89 @@ function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, t
                 
                 {/* Social Links */}
                 <div className="mt-4 mb-5">
-                    <h5 className="text-muted small mb-3 ps-3">CONNECT</h5>
-                    <ul className="d-flex justify-content-start ps-3 gap-3 list-unstyled">
-                        {links.map((link, index) => (
-                            <li key={index}>
+                    <h5 className="text-muted small mb-3 ps-3 d-flex align-items-center">
+                        <span className="nav-section-line me-2"></span>
+                        CONNECT
+                        <span className="nav-section-line ms-2"></span>
+                    </h5>
+                    <div className="social-links-container ps-3">
+                        <div className="d-flex flex-wrap gap-2">
+                            {links.map((link, index) => (
                                 <a
+                                    key={index}
                                     href={link.url}
                                     target="_blank"
                                     rel="noreferrer"
                                     className="social-icon-btn"
                                     title={link.name}
                                     aria-label={link.name}
+                                    style={{
+                                        width: '42px',
+                                        height: '42px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        borderRadius: 'var(--border-radius-md)',
+                                        background: 'rgba(26, 110, 160, 0.08)',
+                                        color: 'var(--primary)',
+                                        transition: 'all 0.3s ease',
+                                        position: 'relative',
+                                        overflow: 'hidden'
+                                    }}
                                 >
-                                    <DynamicIcon name={link.name} />
+                                    <span className="icon-wrapper">
+                                        <DynamicIcon name={link.name} />
+                                    </span>
+                                    <span className="social-tooltip">{link.name}</span>
                                 </a>
-                            </li>
-                        ))}
-                    </ul>
+                            ))}
+                        </div>
+                        <div className="connect-decoration position-relative mt-3">
+                            <div className="connect-line" aria-hidden="true"></div>
+                        </div>
+                    </div>
                 </div>
                 
                 {/* Music Player Toggle */}
                 <div className="mb-5 ps-3">
                     <button 
-                        className={`btn btn-sm ${showMusicPlayer ? 'btn-outline-primary' : 'custom-btn'}`}
+                        className={`btn ${showMusicPlayer ? 'btn-primary' : 'btn-outline-primary'} shadow-sm`}
                         onClick={toggleMusicPlayer}
                         style={{
                             display: 'flex',
                             alignItems: 'center',
-                            gap: '8px',
+                            justifyContent: 'center',
+                            gap: '10px',
                             borderRadius: 'var(--border-radius-pill)',
-                            padding: '8px 16px',
+                            padding: '10px 18px',
                             fontSize: '0.85rem',
-                            transition: 'all 0.3s ease'
+                            fontWeight: '500',
+                            letterSpacing: '0.01em',
+                            transition: 'all 0.3s ease',
+                            width: '100%',
+                            maxWidth: '220px',
+                            overflow: 'hidden',
+                            position: 'relative',
+                            border: showMusicPlayer ? 'none' : '1px solid var(--primary-light)'
                         }}
                     >
-                        <FaMusic size={14} />
-                        {showMusicPlayer ? 'Hide Music Player' : 'Show Music Player'}
+                        <span className="music-icon-wrapper" style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: '24px',
+                            height: '24px',
+                            borderRadius: '50%',
+                            background: showMusicPlayer 
+                                ? 'rgba(255, 255, 255, 0.2)' 
+                                : 'rgba(26, 110, 160, 0.1)',
+                            padding: '4px'
+                        }}>
+                            <FaMusic size={14} />
+                        </span>
+                        <span style={{ flexGrow: 1, textAlign: 'center' }}>
+                            {showMusicPlayer ? 'Hide Music Player' : 'Show Music Player'}
+                        </span>
                     </button>
                 </div>
                 

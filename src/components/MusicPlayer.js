@@ -7,6 +7,7 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
     const [isMuted, setIsMuted] = useState(false);
     const [progress, setProgress] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [playError, setPlayError] = useState(false);
     const audioRef = useRef(null);
     const progressRef = useRef(null);
     
@@ -46,6 +47,11 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
                 setProgress(0);
                 audioElement.currentTime = 0;
             });
+            
+            // Reset play error when audio is loaded
+            audioElement.addEventListener('canplaythrough', () => {
+                setPlayError(false);
+            });
         }
         
         return () => {
@@ -53,6 +59,7 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
                 audioElement.removeEventListener('timeupdate', updateProgress);
                 audioElement.removeEventListener('loadedmetadata', () => {});
                 audioElement.removeEventListener('ended', () => {});
+                audioElement.removeEventListener('canplaythrough', () => {});
             }
         };
     }, []);
@@ -63,13 +70,35 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
         }
     }, [isMuted]);
     
-    const togglePlay = () => {
-        if (isPlaying) {
-            audioRef.current.pause();
-        } else {
-            audioRef.current.play();
+    const togglePlay = async () => {
+        if (!audioRef.current) return;
+        
+        try {
+            if (isPlaying) {
+                audioRef.current.pause();
+                setIsPlaying(false);
+            } else {
+                // Use the Promise returned by play() to handle autoplay restrictions
+                const playPromise = audioRef.current.play();
+                
+                if (playPromise !== undefined) {
+                    playPromise
+                        .then(() => {
+                            setIsPlaying(true);
+                            setPlayError(false);
+                        })
+                        .catch(error => {
+                            console.error("Playback error:", error);
+                            setPlayError(true);
+                            setIsPlaying(false);
+                        });
+                }
+            }
+        } catch (error) {
+            console.error("Error toggling play state:", error);
+            setPlayError(true);
+            setIsPlaying(false);
         }
-        setIsPlaying(!isPlaying);
     };
     
     const toggleMute = () => {
@@ -191,6 +220,11 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
                 <div className="flex-grow-1">
                     <p className="mb-0 fw-semibold">{songData.title}</p>
                     <p className="text-muted small mb-0">{songData.artist}</p>
+                    {playError && (
+                        <p className="text-danger small mb-0">
+                            Playback blocked by browser. Interact with the page first.
+                        </p>
+                    )}
                 </div>
             </div>
             
@@ -268,9 +302,9 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
                     </button>
                 </div>
                 
-                {songData.spotifyUrl && (
+                {songData.spotifyLink && (
                     <a 
-                        href={songData.spotifyUrl} 
+                        href={songData.spotifyLink} 
                         target="_blank" 
                         rel="noreferrer"
                         className="btn btn-sm d-flex align-items-center text-success"

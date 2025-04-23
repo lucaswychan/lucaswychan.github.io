@@ -35,7 +35,7 @@ function Header({ isExpanded, setIsExpanded, activeSection, scrollToSection, vis
             
             <p className="lead" style={{ color: 'var(--light-text)' }}>
                 <span style={{ position: 'relative', display: 'inline-block' }}>
-                    Machine Learning Researcher
+                    MPhil in Computer Science
                     <span 
                         style={{ 
                             position: 'absolute', 
