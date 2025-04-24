@@ -1,7 +1,7 @@
 // components/MusicPlayer.js
 import React, { useState, useRef, useEffect } from "react";
 import { FaPlay, FaPause, FaVolumeUp, FaVolumeMute, FaSpotify, FaTimes, FaWindowMinimize, FaWindowMaximize } from "react-icons/fa";
-
+import "../styles/MusicPlayer.css";
 const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [isMuted, setIsMuted] = useState(false);

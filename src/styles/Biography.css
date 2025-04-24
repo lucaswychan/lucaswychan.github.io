@@ -1,0 +1,184 @@
+/* Biography Section Styling */
+.biography-container {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: var(--border-radius-lg);
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border-left: 3px solid transparent;
+  z-index: 1;
+}
+
+.biography-container:hover {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  transform: translateY(-5px);
+  border-left-color: var(--primary);
+}
+
+/* Background decorative elements */
+.biography-container::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(26, 110, 160, 0.08) 0%, rgba(26, 110, 160, 0.01) 70%);
+  z-index: -1;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+.biography-container:hover::before {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+.biography-container::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 169, 120, 0.08) 0%, rgba(248, 169, 120, 0.01) 70%);
+  z-index: -1;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+}
+
+.biography-container:hover::after {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
+/* Biography paragraph styling */
+.biography-paragraph {
+  margin-bottom: 1.2rem;
+  position: relative;
+  color: var(--dark-text);
+  line-height: 1.8;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.biography-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Styled emphasis in biography */
+.biography-emphasis {
+  position: relative;
+  font-weight: 600;
+  color: var(--primary);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.biography-emphasis::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(26, 110, 160, 0.1);
+  border-radius: 2px;
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+
+.biography-emphasis:hover {
+  color: var(--primary-dark);
+}
+
+.biography-emphasis:hover::after {
+  background-color: rgba(248, 169, 120, 0.2);
+  height: 8px;
+  bottom: 0;
+}
+
+/* Link styling in biography */
+.biography-link {
+  position: relative;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+  padding: 0 2px;
+}
+
+.biography-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent);
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+  border-radius: 2px;
+}
+
+.biography-link:hover {
+  color: var(--accent);
+}
+
+.biography-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* Intro paragraph with special styling */
+.biography-intro {
+  position: relative;
+  font-size: 1.1rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
+  line-height: 1.8;
+  border-left: 3px solid var(--primary-light);
+  font-weight: 500;
+}
+
+/* Animated bullet point connectors for paragraphs */
+.biography-bullet-container {
+  position: relative;
+}
+
+.biography-bullet-connector {
+  position: absolute;
+  left: -15px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--primary-light), transparent);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.biography-bullet {
+  position: absolute;
+  left: -19px;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.biography-paragraph:hover .biography-bullet {
+  transform: scale(1.5);
+  background: var(--accent);
+  opacity: 1;
+}

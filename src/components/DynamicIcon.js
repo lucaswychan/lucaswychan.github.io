@@ -36,7 +36,7 @@ import {
 import * as Icons from "react-icons/fa6";
 import { SiTensorflow, SiPytorch, SiKeras, SiCplusplus, SiMongodb, SiPostgresql, SiMysql, SiRedis, SiTypescript, SiOpencv, SiRabbitmq, SiNginx } from "react-icons/si";
 
-function DynamicIcon({ name, size = 18 }) {
+function DynamicIcon({ name, size = 18, use_default = false }) {
     const iconSize = size;
     const iconStyle = { transition: 'transform 0.3s ease' };
     
@@ -172,11 +172,10 @@ function DynamicIcon({ name, size = 18 }) {
             return <FaTerminal size={iconSize} style={iconStyle} />;
         case "file":
         case "document":
-            return <FaFileCode size={iconSize} style={iconStyle} />;
-            
+            return <FaFileCode size={iconSize} style={iconStyle} />;            
         default:
             // For tools without a specific icon, return the first letter of the tool name
-            return <span className="small">{name.charAt(0).toUpperCase()}</span>;
+            return use_default ? <span className="small">{name.charAt(0).toUpperCase()}</span> : null;
     }
 }
 

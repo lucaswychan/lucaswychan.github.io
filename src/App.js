@@ -7,10 +7,15 @@ import Section from "./components/Section";
 import MusicPlayer from "./components/MusicPlayer";
 import DynamicIcon from "./components/DynamicIcon";
 import Gallery from "./components/Gallery";
-import "./App.css";
 import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaArrowUp, FaCode, FaGithub, FaExternalLinkAlt, FaFileAlt, FaDesktop, FaBriefcase, FaCalendarAlt, FaBuilding, FaGraduationCap, FaUniversity, FaMedal, FaClipboardList, FaUserAlt, FaFlask, FaLaptopCode, FaBrain, FaChartLine, FaCamera } from 'react-icons/fa';
+
+import "./styles/Biography.css";
+import "./styles/Project.css";
+import "./styles/Experience.css";
+import "./styles/Education.css";
+import "./App.css";
 
 import educationData from "./data/education.json";
 import experiencesData from "./data/experiences.json";
@@ -151,7 +156,10 @@ function App() {
             <Container fluid className="p-0">
                 <Row className="m-0">
                     {/* Sidebar */}
-                    <Col lg={3} className="p-0 position-lg-fixed h-lg-100 overflow-auto sidebar-container">
+                    <Col
+                        lg={3}
+                        className="p-0 position-lg-fixed h-lg-100 overflow-auto sidebar-container"
+                    >
                         <Sidebar
                             skills={skillsData}
                             links={linksData}
@@ -162,109 +170,205 @@ function App() {
                             showMusicPlayer={showMusicPlayer}
                         />
                     </Col>
-                    
+
                     {/* Main Content */}
                     <Col lg={9} className="p-4 p-md-5 ms-lg-auto">
-                        <div className="position-absolute d-none d-lg-block" style={{
-                            width: '300px',
-                            height: '300px',
-                            background: 'var(--primary)',
-                            borderRadius: '50%',
-                            top: '10%',
-                            right: '-150px',
-                            opacity: '0.02',
-                            zIndex: '0'
-                        }}></div>
-                        
+                        <div
+                            className="position-absolute d-none d-lg-block"
+                            style={{
+                                width: "300px",
+                                height: "300px",
+                                background: "var(--primary)",
+                                borderRadius: "50%",
+                                top: "10%",
+                                right: "-150px",
+                                opacity: "0.02",
+                                zIndex: "0",
+                            }}
+                        ></div>
+
                         {/* Header */}
-                        <Header 
-                            isExpanded={isHeaderExpanded} 
+                        <Header
+                            isExpanded={isHeaderExpanded}
                             setIsExpanded={setIsHeaderExpanded}
                             activeSection={activeSection}
                             scrollToSection={scrollToSection}
                             visible={visible}
                         />
-                        
+
                         {/* Navigation */}
-                        <Nav 
-                            className="sticky-top py-3 mb-5 bg-white border-bottom overflow-auto no-scrollbar glass-effect" 
-                            style={{ top: '0', zIndex: 1020, backdropFilter: 'blur(8px)' }}
+                        <Nav
+                            className="sticky-top py-3 mb-5 bg-white border-bottom overflow-auto no-scrollbar glass-effect"
+                            style={{
+                                top: "0",
+                                zIndex: 1020,
+                                backdropFilter: "blur(8px)",
+                            }}
                         >
-                            {['biography', 'project', 'experience', 'education', 'gallery'].map((section) => (
+                            {[
+                                "biography",
+                                "project",
+                                "experience",
+                                "education",
+                                "gallery",
+                            ].map((section) => (
                                 <Nav.Item key={section}>
-                                    <Nav.Link 
+                                    <Nav.Link
                                         onClick={() => scrollToSection(section)}
                                         active={activeSection === section}
                                         className="text-decoration-none position-relative nav-link-custom"
                                     >
-                                        {section.charAt(0).toUpperCase() + section.slice(1)}
+                                        {section.charAt(0).toUpperCase() +
+                                            section.slice(1)}
                                     </Nav.Link>
                                 </Nav.Item>
                             ))}
                         </Nav>
-                        
+
                         {/* Biography Section */}
-                        <Section 
+                        <Section
                             id="biography"
                             title="Biography"
                             reference={sectionRefs.biography}
                         >
                             <div className="biography-container">
                                 <p className="biography-intro">
-                                    <FaUserAlt className="me-2" style={{ fontSize: '0.9em', opacity: 0.7 }} />
-                                    I'm Lucas Chan, an MPhil student at HKUST, working under the guidance of Professor Yangqiu Song.
+                                    <FaUserAlt
+                                        className="me-2"
+                                        style={{
+                                            fontSize: "0.9em",
+                                            opacity: 0.7,
+                                        }}
+                                    />
+                                    I'm Lucas Chan, an MPhil student at HKUST,
+                                    working under the guidance of Professor
+                                    Yangqiu Song.
                                 </p>
-                                
+
                                 <div className="biography-bullet-container">
                                     <div className="biography-bullet-connector"></div>
-                                    
+
                                     <div className="biography-paragraph">
                                         <div className="biography-bullet"></div>
-                                        I'm absolutely fascinated by <span className="biography-emphasis">machine learning</span> and its potential. 
-                                        My research focuses on embedding models and LLM reasoning, with a special interest in 
-                                        <span className="biography-emphasis"> natural language processing</span> applications.
+                                        I'm absolutely fascinated by{" "}
+                                        <span className="biography-emphasis">
+                                            machine learning
+                                        </span>{" "}
+                                        and its potential. My research focuses
+                                        on embedding models and LLM reasoning,
+                                        with a special interest in{" "}
+                                        <span className="biography-emphasis">
+                                            {" "}
+                                            natural language processing
+                                        </span>{" "}
+                                        applications.
                                     </div>
-                                    
+
                                     <div className="biography-paragraph">
                                         <div className="biography-bullet"></div>
-                                        I completed my Bachelor's degree at <a href="https://hkust.edu.hk" className="biography-link">HKUST</a> with a double major in 
-                                        Computer Science and Electronic Engineering, graduating with <span className="biography-emphasis">First Class Honours</span>. 
-                                        This strong foundation has propelled me into cutting-edge research, where I'm currently 
-                                        developing high-quality question generation systems using <span className="biography-emphasis">Multimodal LVLMs</span> agents.
+                                        I completed my Bachelor's degree at{" "}
+                                        <a
+                                            href="https://hkust.edu.hk"
+                                            className="biography-link"
+                                        >
+                                            HKUST
+                                        </a>{" "}
+                                        with a double major in Computer Science
+                                        and Electronic Engineering, graduating
+                                        with{" "}
+                                        <span className="biography-emphasis">
+                                            First Class Honours
+                                        </span>
+                                        . This strong foundation has propelled
+                                        me into cutting-edge research.
                                     </div>
-                                    
+
                                     <div className="biography-paragraph">
                                         <div className="biography-bullet"></div>
-                                        <FaLaptopCode className="me-2" style={{ color: 'var(--primary)', opacity: 0.8 }} />
-                                        I'm also working on some exciting <a href="https://github.com/lucaswychan" className="biography-link">side projects</a> alongside 
-                                        my studies. My main project right now is <a href="https://github.com/lucaswychan/neuralnet-cpp" className="biography-link">NeuralNet CPP</a> - 
-                                        I'm basically building a neural network framework from the ground up in C++, similar to PyTorch, 
-                                        using only pure C++ STL.
+                                        <FaLaptopCode
+                                            className="me-2"
+                                            style={{
+                                                color: "var(--primary)",
+                                                opacity: 0.8,
+                                            }}
+                                        />
+                                        I'm also working on some exciting{" "}
+                                        <a
+                                            href="https://github.com/lucaswychan"
+                                            className="biography-link"
+                                        >
+                                            side projects
+                                        </a>{" "}
+                                        alongside my studies. My main project
+                                        right now is{" "}
+                                        <a
+                                            href="https://github.com/lucaswychan/neuralnet-cpp"
+                                            className="biography-link"
+                                        >
+                                            NeuralNet CPP
+                                        </a>{" "}
+                                        - I'm basically building a neural
+                                        network framework from the ground up in
+                                        C++, similar to PyTorch, using only pure
+                                        C++ STL.
                                     </div>
-                                    
+
                                     <div className="biography-paragraph">
                                         <div className="biography-bullet"></div>
-                                        <FaChartLine className="me-2" style={{ color: 'var(--accent)', opacity: 0.8 }} />
-                                        Beyond my academic research, I'm particularly drawn to the intersection of 
-                                        <span className="biography-emphasis"> machine learning</span> and 
-                                        <span className="biography-emphasis"> quantitative finance</span>. I've been exploring how ML can transform 
-                                        traditional financial practices and create innovative solutions for market analysis.
+                                        <FaChartLine
+                                            className="me-2"
+                                            style={{
+                                                color: "var(--accent)",
+                                                opacity: 0.8,
+                                            }}
+                                        />
+                                        Beyond my academic research, I'm
+                                        particularly drawn to the intersection
+                                        of{" "}
+                                        <span className="biography-emphasis">
+                                            machine learning
+                                        </span>{" "}
+                                        and{" "}
+                                        <span className="biography-emphasis">
+                                            quantitative finance
+                                        </span>
+                                        . I've been exploring how ML can
+                                        transform traditional financial
+                                        practices and create innovative
+                                        solutions for market analysis.
                                     </div>
-                                    
+
                                     <div className="biography-paragraph">
                                         <div className="biography-bullet"></div>
-                                        <FaBrain className="me-2" style={{ color: 'var(--primary)', opacity: 0.8 }} />
-                                        My research interests include <span className="biography-emphasis">deep learning</span>, 
-                                        <span className="biography-emphasis"> natural language processing</span>, and 
-                                        <span className="biography-emphasis"> multimodal learning</span>, with a focus on developing 
-                                        systems that can understand and generate human-like text and visual content.
+                                        <FaBrain
+                                            className="me-2"
+                                            style={{
+                                                color: "var(--primary)",
+                                                opacity: 0.8,
+                                            }}
+                                        />
+                                        My research interests include{" "}
+                                        <span className="biography-emphasis">
+                                            deep learning
+                                        </span>
+                                        ,{" "}
+                                        <span className="biography-emphasis">
+                                            natural language processing
+                                        </span>
+                                        , and{" "}
+                                        <span className="biography-emphasis">
+                                            multimodal learning
+                                        </span>
+                                        , with a focus on developing systems
+                                        that can understand and generate
+                                        human-like text and visual content.
                                     </div>
                                 </div>
                             </div>
                         </Section>
-                        
+
                         {/* Projects Section */}
-                        <Section 
+                        <Section
                             id="project"
                             title="Projects"
                             reference={sectionRefs.project}
@@ -272,61 +376,102 @@ function App() {
                             {projectsData.map((project, index) => (
                                 <div key={index} className="project-card">
                                     <div className="project-card-body">
-                                        <h3 className="project-title">{project.name}</h3>
-                                        
+                                        <h3 className="project-title">
+                                            {project.name}
+                                        </h3>
+
                                         {/* Tools Section with Icons */}
-                                        <div className="tools-container">
+                                        <div className="project-tools-container">
                                             {project.tools.map((tool, idx) => (
-                                                <div key={idx} className="tool-badge">
-                                                    <span className="tool-icon">
-                                                        <DynamicIcon name={tool} size={14} />
+                                                <div
+                                                    key={idx}
+                                                    className="project-tool-badge"
+                                                >
+                                                    <span className="project-tool-icon">
+                                                        <DynamicIcon
+                                                            name={tool}
+                                                            size={14}
+                                                        />
                                                     </span>
                                                     {tool}
                                                 </div>
                                             ))}
                                         </div>
-                                        
+
                                         {/* Project Description */}
-                                        <p className="project-description">{project.description}</p>
-                                        
+                                        <p className="project-description">
+                                            {project.description}
+                                        </p>
+
                                         {/* Project Links with Icons */}
                                         <div className="project-links">
-                                            {Object.entries(project.links).map(([name, url], i) => {
-                                                // Choose appropriate icon based on link type
-                                                let icon;
-                                                if (name.toLowerCase().includes('github')) {
-                                                    icon = <FaGithub className="project-link-icon" />;
-                                                } else if (name.toLowerCase().includes('demo') || name.toLowerCase().includes('live')) {
-                                                    icon = <FaDesktop className="project-link-icon" />;
-                                                } else if (name.toLowerCase().includes('doc')) {
-                                                    icon = <FaFileAlt className="project-link-icon" />;
-                                                } else if (name.toLowerCase().includes('code')) {
-                                                    icon = <FaCode className="project-link-icon" />;
-                                                } else {
-                                                    icon = <FaExternalLinkAlt className="project-link-icon" />;
+                                            {Object.entries(project.links).map(
+                                                ([name, url], i) => {
+                                                    // Choose appropriate icon based on link type
+                                                    let icon;
+                                                    if (
+                                                        name
+                                                            .toLowerCase()
+                                                            .includes("github")
+                                                    ) {
+                                                        icon = (
+                                                            <FaGithub className="project-link-icon" />
+                                                        );
+                                                    } else if (
+                                                        name
+                                                            .toLowerCase()
+                                                            .includes("demo") ||
+                                                        name
+                                                            .toLowerCase()
+                                                            .includes("live")
+                                                    ) {
+                                                        icon = (
+                                                            <FaDesktop className="project-link-icon" />
+                                                        );
+                                                    } else if (
+                                                        name
+                                                            .toLowerCase()
+                                                            .includes("doc")
+                                                    ) {
+                                                        icon = (
+                                                            <FaFileAlt className="project-link-icon" />
+                                                        );
+                                                    } else if (
+                                                        name
+                                                            .toLowerCase()
+                                                            .includes("code")
+                                                    ) {
+                                                        icon = (
+                                                            <FaCode className="project-link-icon" />
+                                                        );
+                                                    } else {
+                                                        icon = (
+                                                            <FaExternalLinkAlt className="project-link-icon" />
+                                                        );
+                                                    }
+
+                                                    return (
+                                                        <a
+                                                            key={i}
+                                                            href={url}
+                                                            target="_blank"
+                                                            rel="noreferrer"
+                                                            className="project-link-btn"
+                                                        >
+                                                            {icon}
+                                                            {name}
+                                                        </a>
+                                                    );
                                                 }
-                                                
-                                                return (
-                                                    <a
-                                                        key={i}
-                                                        href={url}
-                                                        target="_blank"
-                                                        rel="noreferrer"
-                                                        className="project-link-btn"
-                                                    >
-                                                        {icon}
-                                                        {name}
-                                                    </a>
-                                                );
-                                            })}
+                                            )}
                                         </div>
                                     </div>
                                 </div>
                             ))}
                         </Section>
-                        
+
                         {/* Experience Section */}
-                        <Section 
+                        <Section
                             id="experience"
                             title="Experience"
                             reference={sectionRefs.experience}
@@ -334,17 +479,29 @@ function App() {
                             <div className="experience-timeline-container">
                                 <div className="experience-timeline-connector"></div>
                                 {experiencesData.map((exp, index) => (
-                                    <div key={index} className="experience-card">
+                                    <div
+                                        key={index}
+                                        className="experience-card"
+                                    >
                                         <div className="card-body">
                                             <div className="experience-header">
                                                 <h3 className="experience-position">
-                                                    <FaBriefcase className="me-2" 
-                                                        style={{ fontSize: '0.8em', opacity: 0.7 }} 
+                                                    <FaBriefcase
+                                                        className="me-2"
+                                                        style={{
+                                                            fontSize: "0.8em",
+                                                            opacity: 0.7,
+                                                        }}
                                                     />
                                                     {exp.position}
                                                 </h3>
                                                 <span className="experience-duration">
-                                                    <FaCalendarAlt className="me-1" style={{ fontSize: '0.9em' }} />
+                                                    <FaCalendarAlt
+                                                        className="me-1"
+                                                        style={{
+                                                            fontSize: "0.9em",
+                                                        }}
+                                                    />
                                                     {exp.duration}
                                                 </span>
                                             </div>
@@ -352,19 +509,23 @@ function App() {
                                                 <FaBuilding className="experience-company-icon" />
                                                 {exp.company}
                                             </div>
-                                            <ul className="responsibility-list">
-                                                {exp.descriptions.map((responsibility, i) => (
-                                                    <li key={i}>{responsibility}</li>
-                                                ))}
+                                            <ul className="experience-responsibility-list">
+                                                {exp.descriptions.map(
+                                                    (responsibility, i) => (
+                                                        <li key={i}>
+                                                            {responsibility}
+                                                        </li>
+                                                    )
+                                                )}
                                             </ul>
                                         </div>
                                     </div>
                                 ))}
                             </div>
                         </Section>
-                        
+
                         {/* Education Section */}
-                        <Section 
+                        <Section
                             id="education"
                             title="Education"
                             reference={sectionRefs.education}
@@ -374,13 +535,22 @@ function App() {
                                     <div className="card-body">
                                         <div className="education-header">
                                             <h3 className="education-degree">
-                                                <FaGraduationCap className="me-2" 
-                                                    style={{ fontSize: '0.8em', opacity: 0.7 }} 
+                                                <FaGraduationCap
+                                                    className="me-2"
+                                                    style={{
+                                                        fontSize: "0.8em",
+                                                        opacity: 0.7,
+                                                    }}
                                                 />
                                                 {edu.degree}
                                             </h3>
                                             <span className="education-year">
-                                                <FaCalendarAlt className="me-1" style={{ fontSize: '0.9em' }} />
+                                                <FaCalendarAlt
+                                                    className="me-1"
+                                                    style={{
+                                                        fontSize: "0.9em",
+                                                    }}
+                                                />
                                                 {edu.year}
                                             </span>
                                         </div>
@@ -388,18 +558,30 @@ function App() {
                                             <FaUniversity className="education-school-icon" />
                                             {edu.school}
                                         </div>
-                                        <p className="education-description">{edu.description}</p>
+                                        <p className="education-description">
+                                            {edu.description}
+                                        </p>
                                         <div className="education-grade">
                                             <FaMedal className="education-grade-icon" />
-                                            Grade: <span className="fw-semibold ms-1">{edu.grade}</span>
+                                            Grade:{" "}
+                                            <span className="fw-semibold ms-1">
+                                                {edu.grade}
+                                            </span>
                                         </div>
                                         <div className="mt-4">
                                             <h4 className="activities-title">
-                                                <FaClipboardList className="me-2" style={{ fontSize: '0.9em' }} />
+                                                <FaClipboardList
+                                                    className="me-2"
+                                                    style={{
+                                                        fontSize: "0.9em",
+                                                    }}
+                                                />
                                                 Activities
                                             </h4>
                                             <ul className="activities-list">
-                                                {Object.entries(edu.activities).map(([name, url], i) => (
+                                                {Object.entries(
+                                                    edu.activities
+                                                ).map(([name, url], i) => (
                                                     <li key={i}>
                                                         <a
                                                             href={url}
@@ -416,17 +598,25 @@ function App() {
                                 </div>
                             ))}
                         </Section>
-                        
+
                         {/* Gallery Section */}
-                        <Section 
+                        <Section
                             id="gallery"
                             title="Daily Life Gallery"
                             reference={sectionRefs.gallery}
                         >
                             <div className="section-intro mb-4">
                                 <p className="lead">
-                                    <FaCamera className="me-2" style={{ color: 'var(--accent)', opacity: 0.8 }} />
-                                    A glimpse into my daily life through photos. These moments capture what inspires me and keeps me motivated.
+                                    <FaCamera
+                                        className="me-2"
+                                        style={{
+                                            color: "var(--accent)",
+                                            opacity: 0.8,
+                                        }}
+                                    />
+                                    A glimpse into my daily life through photos.
+                                    These moments capture what inspires me and
+                                    keeps me motivated.
                                 </p>
                             </div>
                             <Gallery />
@@ -434,10 +624,14 @@ function App() {
                     </Col>
                 </Row>
             </Container>
-            
+
             {/* Music Player - Positioned in upper right corner */}
-            <div className={`music-player-container ${showMusicPlayer ? 'visible' : 'hidden'}`}>
-                <MusicPlayer 
+            <div
+                className={`music-player-container ${
+                    showMusicPlayer ? "visible" : "hidden"
+                }`}
+            >
+                <MusicPlayer
                     songData={songData}
                     visible={showMusicPlayer}
                     onClose={() => setShowMusicPlayer(false)}
@@ -445,12 +639,12 @@ function App() {
                     isMinimized={playerMinimized}
                 />
             </div>
-            
+
             {isMounted && (
-                <button 
-                    className={`scroll-to-top ${showButton ? 'visible' : ''}`} 
+                <button
+                    className={`scroll-to-top ${showButton ? "visible" : ""}`}
                     onClick={scrollToTop}
-                    style={{ bottom: '2rem', right: '2rem' }}
+                    style={{ bottom: "2rem", right: "2rem" }}
                 >
                     <FaArrowUp />
                 </button>
