@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import DynamicIcon from "./DynamicIcon";
 import ClusterMap from "./ClusterMap";
-import { FaMusic, FaUser, FaProjectDiagram, FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import "../styles/Sidebar.css";
+import { FaMusic, FaUser, FaProjectDiagram, FaBriefcase, FaGraduationCap, FaCamera } from "react-icons/fa";
 
 function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, toggleMusicPlayer, showMusicPlayer }) {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -27,7 +28,8 @@ function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, t
         biography: <FaUser size={16} />,
         project: <FaProjectDiagram size={16} />,
         experience: <FaBriefcase size={16} />,
-        education: <FaGraduationCap size={16} />
+        education: <FaGraduationCap size={16} />,
+        gallery: <FaCamera size={16} />
     };
     
     return (
@@ -53,8 +55,7 @@ function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, t
                             zIndex: '-1',
                         }}></div>
                     </div>
-                    <h3 className="h4 mt-4 mb-1">Lucas Chan</h3>
-                    <div className="mt-2">
+                    <div className="mt-4">
                         <span className="badge py-2 px-3" style={{
                             background: 'rgba(248, 169, 120, 0.15)',
                             color: "var(--primary)",
@@ -75,7 +76,7 @@ function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, t
                         <span className="nav-section-line ms-2"></span>
                     </h5>
                     <ul className="nav flex-column navigation-menu">
-                        {['biography', 'project', 'experience', 'education'].map((section) => (
+                        {['biography', 'project', 'experience', 'education', 'gallery'].map((section) => (
                             <li className="nav-item" key={section}>
                                 <button
                                     className={`nav-link cursor-pointer border-0 bg-transparent text-start w-100 d-flex align-items-center ${activeSection === section ? 'active fw-medium' : ''}`}

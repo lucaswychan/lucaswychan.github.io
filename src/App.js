@@ -6,10 +6,11 @@ import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
 import MusicPlayer from "./components/MusicPlayer";
 import DynamicIcon from "./components/DynamicIcon";
+import Gallery from "./components/Gallery";
 import "./App.css";
 import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaArrowUp, FaCode, FaGithub, FaExternalLinkAlt, FaFileAlt, FaDesktop, FaBriefcase, FaCalendarAlt, FaBuilding, FaGraduationCap, FaUniversity, FaMedal, FaClipboardList, FaUserAlt, FaFlask, FaLaptopCode, FaBrain, FaChartLine } from 'react-icons/fa';
+import { FaArrowUp, FaCode, FaGithub, FaExternalLinkAlt, FaFileAlt, FaDesktop, FaBriefcase, FaCalendarAlt, FaBuilding, FaGraduationCap, FaUniversity, FaMedal, FaClipboardList, FaUserAlt, FaFlask, FaLaptopCode, FaBrain, FaChartLine, FaCamera } from 'react-icons/fa';
 
 import educationData from "./data/education.json";
 import experiencesData from "./data/experiences.json";
@@ -34,13 +35,15 @@ function App() {
     const projectRef = useRef(null);
     const experienceRef = useRef(null);
     const educationRef = useRef(null);
+    const galleryRef = useRef(null);
     
     // Use useMemo to create the object with the refs
     const sectionRefs = useMemo(() => ({
         biography: biographyRef,
         project: projectRef,
         experience: experienceRef,
-        education: educationRef
+        education: educationRef,
+        gallery: galleryRef
     }), []);
     
     const location = useLocation();
@@ -187,7 +190,7 @@ function App() {
                             className="sticky-top py-3 mb-5 bg-white border-bottom overflow-auto no-scrollbar glass-effect" 
                             style={{ top: '0', zIndex: 1020, backdropFilter: 'blur(8px)' }}
                         >
-                            {['biography', 'project', 'experience', 'education'].map((section) => (
+                            {['biography', 'project', 'experience', 'education', 'gallery'].map((section) => (
                                 <Nav.Item key={section}>
                                     <Nav.Link 
                                         onClick={() => scrollToSection(section)}
@@ -412,6 +415,21 @@ function App() {
                                     </div>
                                 </div>
                             ))}
+                        </Section>
+                        
+                        {/* Gallery Section */}
+                        <Section 
+                            id="gallery"
+                            title="Daily Life Gallery"
+                            reference={sectionRefs.gallery}
+                        >
+                            <div className="section-intro mb-4">
+                                <p className="lead">
+                                    <FaCamera className="me-2" style={{ color: 'var(--accent)', opacity: 0.8 }} />
+                                    A glimpse into my daily life through photos. These moments capture what inspires me and keeps me motivated.
+                                </p>
+                            </div>
+                            <Gallery />
                         </Section>
                     </Col>
                 </Row>
