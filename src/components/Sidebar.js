@@ -169,43 +169,17 @@ function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, t
                 {/* Music Player Toggle */}
                 <div className="mb-5 ps-3">
                     <button 
-                        className={`btn ${showMusicPlayer ? 'btn-primary' : 'btn-outline-primary'} shadow-sm`}
+                        className={`btn ${showMusicPlayer ? 'btn-primary' : 'btn-outline-primary'} music-player-toggle`}
                         onClick={toggleMusicPlayer}
                         style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            gap: '10px',
-                            borderRadius: 'var(--border-radius-pill)',
-                            padding: '10px 18px',
-                            fontSize: '0.85rem',
-                            fontWeight: '500',
-                            letterSpacing: '0.01em',
-                            transition: 'all 0.3s ease',
                             width: '100%',
                             maxWidth: '220px',
-                            overflow: 'hidden',
-                            position: 'relative',
-                            border: showMusicPlayer ? 'none' : '1px solid var(--primary-light)'
                         }}
                     >
-                        <span className="music-icon-wrapper" style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            width: '24px',
-                            height: '24px',
-                            borderRadius: '50%',
-                            background: showMusicPlayer 
-                                ? 'rgba(255, 255, 255, 0.2)' 
-                                : 'rgba(26, 110, 160, 0.1)',
-                            padding: '4px'
-                        }}>
-                            <FaMusic size={14} />
+                        <span className="music-icon-wrapper">
+                            <FaMusic size={16} />
                         </span>
-                        <span style={{ flexGrow: 1, textAlign: 'center' }}>
-                            {showMusicPlayer ? 'Hide Music Player' : 'Show Music Player'}
-                        </span>
+                        {showMusicPlayer ? 'Hide Music Player' : 'Show Music Player'}
                     </button>
                 </div>
                 

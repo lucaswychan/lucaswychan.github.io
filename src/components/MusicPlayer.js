@@ -149,8 +149,8 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
                         className={`mini-album ${isPlaying ? 'spinning' : ''}`}
                     />
                     <div className="mini-overlay">
-                        <button className="mini-play-btn" onClick={togglePlay}>
-                            {isPlaying ? <FaPause /> : <FaPlay />}
+                        <button className="mini-play-btn" onClick={togglePlay} title={isPlaying ? "Pause" : "Play"}>
+                            {isPlaying ? <FaPause style={{ fontSize: '16px' }} /> : <FaPlay style={{ fontSize: '16px' }} />}
                         </button>
                     </div>
                     
@@ -267,36 +267,15 @@ const MusicPlayer = ({ songData, visible, onClose, onMinimize, isMinimized }) =>
                 <div>
                     <button 
                         onClick={togglePlay} 
-                        className="btn btn-sm me-2"
-                        style={{
-                            backgroundColor: isPlaying ? 'var(--primary)' : 'rgba(26, 110, 160, 0.1)',
-                            color: isPlaying ? 'white' : 'var(--primary)',
-                            width: '38px',
-                            height: '38px',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            borderRadius: 'var(--border-radius-pill)',
-                            border: 'none',
-                            boxShadow: isPlaying ? '0 2px 5px rgba(0,0,0,0.1)' : 'none'
-                        }}
+                        className={`music-control-btn play-btn ${isPlaying ? 'playing' : ''} me-2`}
+                        title={isPlaying ? "Pause" : "Play"}
                     >
                         {isPlaying ? <FaPause /> : <FaPlay />}
                     </button>
                     <button 
-                        onClick={toggleMute} 
-                        className="btn btn-sm" 
-                        style={{
-                            backgroundColor: 'rgba(0,0,0,0.05)',
-                            color: isMuted ? 'var(--muted)' : 'var(--dark-text)',
-                            width: '38px',
-                            height: '38px',
-                            display: 'inline-flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            borderRadius: 'var(--border-radius-pill)',
-                            border: 'none'
-                        }}
+                        onClick={toggleMute}
+                        className={`music-control-btn mute-btn ${isMuted ? 'muted' : ''}`}
+                        title={isMuted ? "Unmute" : "Mute"}
                     >
                         {isMuted ? <FaVolumeMute /> : <FaVolumeUp />}
                     </button>

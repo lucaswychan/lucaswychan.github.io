@@ -5,10 +5,11 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
 import MusicPlayer from "./components/MusicPlayer";
+import DynamicIcon from "./components/DynamicIcon";
 import "./App.css";
 import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaArrowUp } from 'react-icons/fa';
+import { FaArrowUp, FaCode, FaGithub, FaExternalLinkAlt, FaFileAlt, FaDesktop, FaBriefcase, FaCalendarAlt, FaBuilding, FaGraduationCap, FaUniversity, FaMedal, FaClipboardList, FaUserAlt, FaFlask, FaLaptopCode, FaBrain, FaChartLine } from 'react-icons/fa';
 
 import educationData from "./data/education.json";
 import experiencesData from "./data/experiences.json";
@@ -205,47 +206,57 @@ function App() {
                             title="Biography"
                             reference={sectionRefs.biography}
                         >
-                            <div className="mb-4">
-                                <p>
-                                    I'm Lucas Chan, an MPhil student at{" "}
-                                    <a href="https://hkust.edu.hk" className="underline-effect">HKUST</a>, working
-                                    under the guidance of{" "}
-                                    <a href="https://www.cse.ust.hk/~yqsong/" className="underline-effect">
-                                        Professor Yangqiu Song
-                                    </a>.
-                                    I'm absolutely fascinated by <span className="fw-semibold">machine learning</span>{" "}
-                                    and its potential. My research focuses on embedding model and LLM reasoning.
+                            <div className="biography-container">
+                                <p className="biography-intro">
+                                    <FaUserAlt className="me-2" style={{ fontSize: '0.9em', opacity: 0.7 }} />
+                                    I'm Lucas Chan, an MPhil student at HKUST, working under the guidance of Professor Yangqiu Song.
                                 </p>
-                                <p>
-                                    I completed my
-                                    Bachelor's degree at HKUST with a double major in
-                                    Computer Science and Electronic Engineering,
-                                    graduating with <span className="fw-semibold">First Class Honours</span>. This
-                                    strong foundation has propelled me into cutting-edge
-                                    machine learning research, where I'm currently
-                                    developing high-quality question generation systems
-                                    using Multimodal LVLMs agents.
-                                </p>
-                                <p>
-                                    I'm also working on some exciting{" "}
-                                    <a href="https://github.com/lucaswychan" className="underline-effect">
-                                        side projects
-                                    </a>{" "}
-                                    alongside my studies to dive deeper into machine
-                                    learning. My main project right now is{" "}
-                                    <a href="https://github.com/lucaswychan/neuralnet-cpp" className="underline-effect">
-                                        NeuralNet CPP
-                                    </a>
-                                    - I'm basically building a neural network framework
-                                    from the ground up in C++, similar to PyTorch, using
-                                    only pure C++ STL.
-                                </p>
-                                <p>
-                                    Beyond my academic research, I'm particularly drawn
-                                    to the intersection of <span className="fw-semibold">machine learning</span> and{" "}
-                                    <span className="fw-semibold">quantitative finance</span>. I've been exploring how
-                                    ML can transform traditional financial practices.
-                                </p>
+                                
+                                <div className="biography-bullet-container">
+                                    <div className="biography-bullet-connector"></div>
+                                    
+                                    <div className="biography-paragraph">
+                                        <div className="biography-bullet"></div>
+                                        I'm absolutely fascinated by <span className="biography-emphasis">machine learning</span> and its potential. 
+                                        My research focuses on embedding models and LLM reasoning, with a special interest in 
+                                        <span className="biography-emphasis"> natural language processing</span> applications.
+                                    </div>
+                                    
+                                    <div className="biography-paragraph">
+                                        <div className="biography-bullet"></div>
+                                        I completed my Bachelor's degree at <a href="https://hkust.edu.hk" className="biography-link">HKUST</a> with a double major in 
+                                        Computer Science and Electronic Engineering, graduating with <span className="biography-emphasis">First Class Honours</span>. 
+                                        This strong foundation has propelled me into cutting-edge research, where I'm currently 
+                                        developing high-quality question generation systems using <span className="biography-emphasis">Multimodal LVLMs</span> agents.
+                                    </div>
+                                    
+                                    <div className="biography-paragraph">
+                                        <div className="biography-bullet"></div>
+                                        <FaLaptopCode className="me-2" style={{ color: 'var(--primary)', opacity: 0.8 }} />
+                                        I'm also working on some exciting <a href="https://github.com/lucaswychan" className="biography-link">side projects</a> alongside 
+                                        my studies. My main project right now is <a href="https://github.com/lucaswychan/neuralnet-cpp" className="biography-link">NeuralNet CPP</a> - 
+                                        I'm basically building a neural network framework from the ground up in C++, similar to PyTorch, 
+                                        using only pure C++ STL.
+                                    </div>
+                                    
+                                    <div className="biography-paragraph">
+                                        <div className="biography-bullet"></div>
+                                        <FaChartLine className="me-2" style={{ color: 'var(--accent)', opacity: 0.8 }} />
+                                        Beyond my academic research, I'm particularly drawn to the intersection of 
+                                        <span className="biography-emphasis"> machine learning</span> and 
+                                        <span className="biography-emphasis"> quantitative finance</span>. I've been exploring how ML can transform 
+                                        traditional financial practices and create innovative solutions for market analysis.
+                                    </div>
+                                    
+                                    <div className="biography-paragraph">
+                                        <div className="biography-bullet"></div>
+                                        <FaBrain className="me-2" style={{ color: 'var(--primary)', opacity: 0.8 }} />
+                                        My research interests include <span className="biography-emphasis">deep learning</span>, 
+                                        <span className="biography-emphasis"> natural language processing</span>, and 
+                                        <span className="biography-emphasis"> multimodal learning</span>, with a focus on developing 
+                                        systems that can understand and generate human-like text and visual content.
+                                    </div>
+                                </div>
                             </div>
                         </Section>
                         
@@ -256,26 +267,55 @@ function App() {
                             reference={sectionRefs.project}
                         >
                             {projectsData.map((project, index) => (
-                                <div key={index} className="card">
-                                    <div className="card-body">
-                                        <h3 className="h5 mb-3">{project.name}</h3>
-                                        <div className="mb-3 text-muted small">
-                                            <span className="fw-medium">Tools:</span>{" "}
-                                            {project.tools.join(", ")}
-                                        </div>
-                                        <p className="mb-4">{project.description}</p>
-                                        <div className="d-flex flex-wrap gap-2">
-                                            {Object.entries(project.links).map(([name, url], i) => (
-                                                <a
-                                                    key={i}
-                                                    href={url}
-                                                    target="_blank"
-                                                    rel="noreferrer"
-                                                    className="custom-btn btn-sm"
-                                                >
-                                                    {name}
-                                                </a>
+                                <div key={index} className="project-card">
+                                    <div className="project-card-body">
+                                        <h3 className="project-title">{project.name}</h3>
+                                        
+                                        {/* Tools Section with Icons */}
+                                        <div className="tools-container">
+                                            {project.tools.map((tool, idx) => (
+                                                <div key={idx} className="tool-badge">
+                                                    <span className="tool-icon">
+                                                        <DynamicIcon name={tool} size={14} />
+                                                    </span>
+                                                    {tool}
+                                                </div>
                                             ))}
+                                        </div>
+                                        
+                                        {/* Project Description */}
+                                        <p className="project-description">{project.description}</p>
+                                        
+                                        {/* Project Links with Icons */}
+                                        <div className="project-links">
+                                            {Object.entries(project.links).map(([name, url], i) => {
+                                                // Choose appropriate icon based on link type
+                                                let icon;
+                                                if (name.toLowerCase().includes('github')) {
+                                                    icon = <FaGithub className="project-link-icon" />;
+                                                } else if (name.toLowerCase().includes('demo') || name.toLowerCase().includes('live')) {
+                                                    icon = <FaDesktop className="project-link-icon" />;
+                                                } else if (name.toLowerCase().includes('doc')) {
+                                                    icon = <FaFileAlt className="project-link-icon" />;
+                                                } else if (name.toLowerCase().includes('code')) {
+                                                    icon = <FaCode className="project-link-icon" />;
+                                                } else {
+                                                    icon = <FaExternalLinkAlt className="project-link-icon" />;
+                                                }
+                                                
+                                                return (
+                                                    <a
+                                                        key={i}
+                                                        href={url}
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        className="project-link-btn"
+                                                    >
+                                                        {icon}
+                                                        {name}
+                                                    </a>
+                                                );
+                                            })}
                                         </div>
                                     </div>
                                 </div>
@@ -288,25 +328,36 @@ function App() {
                             title="Experience"
                             reference={sectionRefs.experience}
                         >
-                            {experiencesData.map((exp, index) => (
-                                <div key={index} className="card">
-                                    <div className="card-body">
-                                        <div className="d-flex flex-wrap justify-content-between mb-2">
-                                            <h3 className="h5 mb-0">{exp.position}</h3>
-                                            <span className="badge py-1 px-2" style={{ 
-                                                backgroundColor: 'rgba(26, 110, 160, 0.1)',
-                                                color: 'var(--primary)'
-                                            }}>{exp.duration}</span>
+                            <div className="experience-timeline-container">
+                                <div className="experience-timeline-connector"></div>
+                                {experiencesData.map((exp, index) => (
+                                    <div key={index} className="experience-card">
+                                        <div className="card-body">
+                                            <div className="experience-header">
+                                                <h3 className="experience-position">
+                                                    <FaBriefcase className="me-2" 
+                                                        style={{ fontSize: '0.8em', opacity: 0.7 }} 
+                                                    />
+                                                    {exp.position}
+                                                </h3>
+                                                <span className="experience-duration">
+                                                    <FaCalendarAlt className="me-1" style={{ fontSize: '0.9em' }} />
+                                                    {exp.duration}
+                                                </span>
+                                            </div>
+                                            <div className="experience-company">
+                                                <FaBuilding className="experience-company-icon" />
+                                                {exp.company}
+                                            </div>
+                                            <ul className="responsibility-list">
+                                                {exp.descriptions.map((responsibility, i) => (
+                                                    <li key={i}>{responsibility}</li>
+                                                ))}
+                                            </ul>
                                         </div>
-                                        <p className="text-muted mb-3">{exp.company}</p>
-                                        <ul className="custom-list mb-0">
-                                            {exp.descriptions.map((responsibility, i) => (
-                                                <li key={i}>{responsibility}</li>
-                                            ))}
-                                        </ul>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </Section>
                         
                         {/* Education Section */}
@@ -316,30 +367,41 @@ function App() {
                             reference={sectionRefs.education}
                         >
                             {educationData.map((edu, index) => (
-                                <div key={index} className="card">
+                                <div key={index} className="education-card">
                                     <div className="card-body">
-                                        <div className="d-flex flex-wrap justify-content-between mb-2">
-                                            <h3 className="h5 mb-0">{edu.degree}</h3>
-                                            <span className="badge py-1 px-2" style={{ 
-                                                backgroundColor: 'rgba(248, 169, 120, 0.15)',
-                                                color: 'var(--accent)' 
-                                            }}>{edu.year}</span>
+                                        <div className="education-header">
+                                            <h3 className="education-degree">
+                                                <FaGraduationCap className="me-2" 
+                                                    style={{ fontSize: '0.8em', opacity: 0.7 }} 
+                                                />
+                                                {edu.degree}
+                                            </h3>
+                                            <span className="education-year">
+                                                <FaCalendarAlt className="me-1" style={{ fontSize: '0.9em' }} />
+                                                {edu.year}
+                                            </span>
                                         </div>
-                                        <p className="text-muted mb-3">{edu.school}</p>
-                                        <p className="mb-3">{edu.description}</p>
-                                        <p className="mb-4">
-                                            Grade: <span className="fw-semibold">{edu.grade}</span>
-                                        </p>
-                                        <div className="mt-3">
-                                            <h4 className="h6 mb-3 title-underline">Activities</h4>
-                                            <ul className="custom-list mb-0">
+                                        <div className="education-school">
+                                            <FaUniversity className="education-school-icon" />
+                                            {edu.school}
+                                        </div>
+                                        <p className="education-description">{edu.description}</p>
+                                        <div className="education-grade">
+                                            <FaMedal className="education-grade-icon" />
+                                            Grade: <span className="fw-semibold ms-1">{edu.grade}</span>
+                                        </div>
+                                        <div className="mt-4">
+                                            <h4 className="activities-title">
+                                                <FaClipboardList className="me-2" style={{ fontSize: '0.9em' }} />
+                                                Activities
+                                            </h4>
+                                            <ul className="activities-list">
                                                 {Object.entries(edu.activities).map(([name, url], i) => (
                                                     <li key={i}>
                                                         <a
                                                             href={url}
                                                             target="_blank"
                                                             rel="noreferrer"
-                                                            className="underline-effect"
                                                         >
                                                             {name}
                                                         </a>
