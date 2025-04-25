@@ -6,33 +6,33 @@ import '../styles/Gallery.css';
 const galleryImages = [
   { 
     id: 1, 
-    src: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb', 
-    alt: 'Mountain Landscape', 
-    caption: 'Weekend hiking in the mountains' 
+    src: 'images/gallery/fuji_mountain.jpeg', 
+    alt: 'Fuji Mountain', 
+    caption: 'Fuji Mountain during my trip to Japan at Jan' 
   },
   { 
     id: 2, 
-    src: 'https://images.unsplash.com/photo-1501426029261-8c3e1b42aca6', 
-    alt: 'Coffee and Workspace', 
-    caption: 'Morning coffee at my favorite spot' 
+    src: 'images/gallery/dodgeball.jpeg', 
+    alt: 'Dodgeball', 
+    caption: 'Joint-Uni Dodgeball Competition at 2021' 
   },
   { 
     id: 3, 
-    src: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e', 
-    alt: 'Beach Sunset', 
-    caption: 'Beautiful sunset view from my window' 
+    src: 'images/gallery/ocamp.jpeg', 
+    alt: 'Ocamp', 
+    caption: 'ELEC OCamp 2024' 
   },
   { 
     id: 4, 
-    src: 'https://images.unsplash.com/photo-1593062096033-9a26b09da705', 
-    alt: 'Home Office Setup', 
-    caption: 'My workspace setup for productivity' 
+    src: 'images/gallery/graduation.jpeg', 
+    alt: 'Graduation', 
+    caption: 'Delivering graduation speech at HKUST' 
   },
   { 
     id: 5, 
-    src: 'https://images.unsplash.com/photo-1484402628941-0bb40fc029e7', 
-    alt: 'Breakfast Scene', 
-    caption: 'Healthy breakfast - part of my morning routine' 
+    src: 'images/gallery/japan_ship.jpeg', 
+    alt: 'Japan Ship', 
+    caption: 'Waiting for the ship to sail at Kyoto' 
   },
   { 
     id: 6, 
@@ -85,7 +85,8 @@ function Gallery() {
                 alt={image.alt} 
                 className="gallery-image" 
                 onError={(e) => {
-                  e.target.src = '/self_photo.jpg'; // Fallback image if placeholder is unavailable
+                  e.target.src =
+                      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"; // Fallback image if placeholder is unavailable
                   e.target.alt = 'Fallback image';
                 }}
               />
@@ -109,7 +110,8 @@ function Gallery() {
               alt={selectedImage.alt} 
               className="modal-image"
               onError={(e) => {
-                e.target.src = '/self_photo.jpg'; // Fallback image if placeholder is unavailable
+                e.target.src =
+                    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"; // Fallback image if placeholder is unavailable
                 e.target.alt = 'Fallback image';
               }}
             />

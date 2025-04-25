@@ -115,28 +115,21 @@
 
 /* Social media links enhancement */
 .social-icon-btn {
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: rgba(26, 110, 160, 0.08);
   color: var(--primary);
   transition: all 0.4s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
   position: relative;
   overflow: hidden;
   z-index: 1;
 }
 
 .social-icon-btn::before {
-  content: '';
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
   background: var(--primary-gradient);
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -299,17 +292,18 @@
 /* Social links styling */
 .social-links-container {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .social-icon-btn {
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
   position: relative;
   z-index: 1;
 }
 
 .social-icon-btn:hover {
   transform: translateY(-5px) scale(1.05) !important;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08) !important;
 }
 
 .icon-wrapper {
@@ -323,23 +317,6 @@
 
 
 /* Tooltip for social icons */
-.social-tooltip {
-  position: absolute;
-  bottom: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary);
-  color: white;
-  padding: 3px 8px;
-  border-radius: var(--border-radius-pill);
-  font-size: 0.65rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-  white-space: nowrap;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-  pointer-events: none;
-}
 
 .social-icon-btn:hover .social-tooltip {
   opacity: 1;

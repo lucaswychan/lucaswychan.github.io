@@ -25,7 +25,7 @@ import linksData from "./data/links.json";
 import songData from "./data/songData";
 
 function App() {
-    const [activeSection, setActiveSection] = useState("home");
+    const [activeSection, setActiveSection] = useState("biography");
     const [isHeaderExpanded, setIsHeaderExpanded] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
     const [showButton, setShowButton] = useState(false);
@@ -602,7 +602,7 @@ function App() {
                         {/* Gallery Section */}
                         <Section
                             id="gallery"
-                            title="Daily Life Gallery"
+                            title="Gallery"
                             reference={sectionRefs.gallery}
                         >
                             <div className="section-intro mb-4">
@@ -614,9 +614,7 @@ function App() {
                                             opacity: 0.8,
                                         }}
                                     />
-                                    A glimpse into my daily life through photos.
-                                    These moments capture what inspires me and
-                                    keeps me motivated.
+                                    Welcome to my gallery, a place where I share my life through photos.
                                 </p>
                             </div>
                             <Gallery />
