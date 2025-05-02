@@ -43,6 +43,4 @@
 ## Next Steps
 Consider implementing:
 - Analytics tracking to monitor SEO performance
-- Further image optimization
-- Page load speed improvements
 - Regular content updates to keep the site fresh for search engines 

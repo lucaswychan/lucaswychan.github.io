@@ -22,6 +22,6 @@
     "display": "standalone",
     "theme_color": "#1565c0",
     "background_color": "#ffffff",
-    "description": "Portfolio website of Lucas Chan, AI researcher and MPhil student at HKUST.",
+    "description": "Portfolio website of Lucas Chan, AI researcher at Amber Group and MPhil student at HKUST.",
     "categories": ["portfolio", "education", "research"]
 }
