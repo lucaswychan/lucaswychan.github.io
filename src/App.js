@@ -10,6 +10,7 @@ import Gallery from "./components/Gallery";
 import { useLocation } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaArrowUp, FaCode, FaGithub, FaExternalLinkAlt, FaFileAlt, FaDesktop, FaBriefcase, FaCalendarAlt, FaBuilding, FaGraduationCap, FaUniversity, FaMedal, FaClipboardList, FaUserAlt, FaFlask, FaLaptopCode, FaBrain, FaChartLine, FaCamera } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 
 import "./styles/Biography.css";
 import "./styles/Project.css";
@@ -153,12 +154,19 @@ function App() {
 
     return (
         <div className="min-vh-100 bg-white">
+            {/* Add Helmet for dynamic meta tags */}
+            <Helmet>
+                <title>Lucas Chan - {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</title>
+                <meta name="description" content={`Lucas Chan's portfolio - ${activeSection} section showcasing my work as an MPhil student at HKUST specializing in machine learning and NLP.`} />
+            </Helmet>
             <Container fluid className="p-0">
                 <Row className="m-0">
                     {/* Sidebar */}
                     <Col
                         lg={3}
                         className="p-0 position-lg-fixed h-lg-100 overflow-auto sidebar-container"
+                        as="aside"
+                        aria-label="Sidebar"
                     >
                         <Sidebar
                             skills={skillsData}
@@ -172,7 +180,7 @@ function App() {
                     </Col>
 
                     {/* Main Content */}
-                    <Col lg={9} className="p-4 p-md-5 ms-lg-auto">
+                    <Col lg={9} className="p-4 p-md-5 ms-lg-auto" as="main">
                         <div
                             className="position-absolute d-none d-lg-block"
                             style={{
@@ -185,6 +193,7 @@ function App() {
                                 opacity: "0.02",
                                 zIndex: "0",
                             }}
+                            aria-hidden="true"
                         ></div>
 
                         {/* Header */}
@@ -204,6 +213,8 @@ function App() {
                                 zIndex: 1020,
                                 backdropFilter: "blur(8px)",
                             }}
+                            as="nav"
+                            aria-label="Main navigation"
                         >
                             {[
                                 "biography",
@@ -217,6 +228,7 @@ function App() {
                                         onClick={() => scrollToSection(section)}
                                         active={activeSection === section}
                                         className="text-decoration-none position-relative nav-link-custom"
+                                        aria-current={activeSection === section ? "page" : undefined}
                                     >
                                         {section.charAt(0).toUpperCase() +
                                             section.slice(1)}
@@ -231,7 +243,7 @@ function App() {
                             title="Biography"
                             reference={sectionRefs.biography}
                         >
-                            <div className="biography-container">
+                            <article className="biography-container">
                                 <p className="biography-intro">
                                     <FaUserAlt
                                         className="me-2"
@@ -239,6 +251,7 @@ function App() {
                                             fontSize: "0.9em",
                                             opacity: 0.7,
                                         }}
+                                        aria-hidden="true"
                                     />
                                     I'm Lucas Chan, an MPhil student at HKUST,
                                     working under the guidance of Professor
@@ -364,7 +377,7 @@ function App() {
                                         human-like text and visual content.
                                     </div>
                                 </div>
-                            </div>
+                            </article>
                         </Section>
 
                         {/* Projects Section */}
@@ -374,7 +387,7 @@ function App() {
                             reference={sectionRefs.project}
                         >
                             {projectsData.map((project, index) => (
-                                <div key={index} className="project-card">
+                                <article key={index} className="project-card">
                                     <div className="project-card-body">
                                         <h3 className="project-title">
                                             {project.name}
@@ -466,7 +479,7 @@ function App() {
                                             )}
                                         </div>
                                     </div>
-                                </div>
+                                </article>
                             ))}
                         </Section>
 
@@ -479,34 +492,38 @@ function App() {
                             <div className="experience-timeline-container">
                                 <div className="experience-timeline-connector"></div>
                                 {experiencesData.map((exp, index) => (
-                                    <div
+                                    <article
                                         key={index}
                                         className="experience-card"
+                                        itemScope
+                                        itemType="http://schema.org/WorkExperience"
                                     >
                                         <div className="card-body">
                                             <div className="experience-header">
-                                                <h3 className="experience-position">
+                                                <h3 className="experience-position" itemProp="jobTitle">
                                                     <FaBriefcase
                                                         className="me-2"
                                                         style={{
                                                             fontSize: "0.8em",
                                                             opacity: 0.7,
                                                         }}
+                                                        aria-hidden="true"
                                                     />
                                                     {exp.position}
                                                 </h3>
-                                                <span className="experience-duration">
+                                                <span className="experience-duration" itemProp="duration">
                                                     <FaCalendarAlt
                                                         className="me-1"
                                                         style={{
                                                             fontSize: "0.9em",
                                                         }}
+                                                        aria-hidden="true"
                                                     />
                                                     {exp.duration}
                                                 </span>
                                             </div>
-                                            <div className="experience-company">
-                                                <FaBuilding className="experience-company-icon" />
+                                            <div className="experience-company" itemProp="organization">
+                                                <FaBuilding className="experience-company-icon" aria-hidden="true" />
                                                 {exp.company}
                                             </div>
                                             <ul className="experience-responsibility-list">
@@ -519,7 +536,7 @@ function App() {
                                                 )}
                                             </ul>
                                         </div>
-                                    </div>
+                                    </article>
                                 ))}
                             </div>
                         </Section>
@@ -531,7 +548,12 @@ function App() {
                             reference={sectionRefs.education}
                         >
                             {educationData.map((edu, index) => (
-                                <div key={index} className="education-card">
+                                <article 
+                                    key={index} 
+                                    className="education-card"
+                                    itemScope
+                                    itemType="http://schema.org/EducationalOrganization"
+                                >
                                     <div className="card-body">
                                         <div className="education-header">
                                             <h3 className="education-degree">
@@ -595,7 +617,7 @@ function App() {
                                             </ul>
                                         </div>
                                     </div>
-                                </div>
+                                </article>
                             ))}
                         </Section>
 
@@ -613,6 +635,7 @@ function App() {
                                             color: "var(--accent)",
                                             opacity: 0.8,
                                         }}
+                                        aria-hidden="true"
                                     />
                                     Welcome to my gallery, a place where I share my life through photos.
                                 </p>
@@ -643,8 +666,9 @@ function App() {
                     className={`scroll-to-top ${showButton ? "visible" : ""}`}
                     onClick={scrollToTop}
                     style={{ bottom: "2rem", right: "2rem" }}
+                    aria-label="Back to top"
                 >
-                    <FaArrowUp />
+                    <FaArrowUp aria-hidden="true" />
                 </button>
             )}
         </div>

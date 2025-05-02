@@ -3,7 +3,7 @@ import React from "react";
 
 function Header({ isExpanded, setIsExpanded, activeSection, scrollToSection, visible }) {
     return (
-        <header className={`mb-5 pb-2 animate-fade-in transition-all ${visible ? 'opacity-100' : 'opacity-0'}`}>
+        <header className={`mb-5 pb-2`}>
             <div className="position-relative">
                 <h1 className="display-4 fw-bold mb-3">
                     <span className="position-relative">
