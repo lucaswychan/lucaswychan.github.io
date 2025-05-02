@@ -1,29 +1,29 @@
 // App.js
-import React, { useState, useRef, useEffect, useMemo, useCallback } from "react";
+import React, { useState, useRef, useEffect, useMemo, useCallback, lazy, Suspense } from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
+import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import { FaArrowUp, FaCode, FaGithub, FaExternalLinkAlt, FaFileAlt, FaDesktop, FaBriefcase, FaCalendarAlt, FaBuilding, FaGraduationCap, FaUniversity, FaMedal, FaClipboardList, FaUserAlt, FaFlask, FaLaptopCode, FaBrain, FaChartLine, FaCamera } from 'react-icons/fa';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
-import MusicPlayer from "./components/MusicPlayer";
 import DynamicIcon from "./components/DynamicIcon";
-import Gallery from "./components/Gallery";
-import { useLocation } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { FaArrowUp, FaCode, FaGithub, FaExternalLinkAlt, FaFileAlt, FaDesktop, FaBriefcase, FaCalendarAlt, FaBuilding, FaGraduationCap, FaUniversity, FaMedal, FaClipboardList, FaUserAlt, FaFlask, FaLaptopCode, FaBrain, FaChartLine, FaCamera } from 'react-icons/fa';
-import { Helmet } from 'react-helmet';
-
 import "./styles/Biography.css";
 import "./styles/Project.css";
 import "./styles/Experience.css";
 import "./styles/Education.css";
 import "./App.css";
-
 import educationData from "./data/education.json";
 import experiencesData from "./data/experiences.json";
 import skillsData from "./data/skills.json";
 import projectsData from "./data/projects.json";
 import linksData from "./data/links.json";
 import songData from "./data/songData";
+
+// Lazy loaded components
+const MusicPlayer = lazy(() => import("./components/MusicPlayer"));
+const Gallery = lazy(() => import("./components/Gallery"));
 
 function App() {
     const [activeSection, setActiveSection] = useState("biography");
@@ -640,7 +640,9 @@ function App() {
                                     Welcome to my gallery, a place where I share my life through photos.
                                 </p>
                             </div>
-                            <Gallery />
+                            <Suspense fallback={<div className="loading-placeholder">Loading gallery...</div>}>
+                                <Gallery />
+                            </Suspense>
                         </Section>
                     </Col>
                 </Row>
@@ -652,13 +654,15 @@ function App() {
                     showMusicPlayer ? "visible" : "hidden"
                 }`}
             >
-                <MusicPlayer
-                    songData={songData}
-                    visible={showMusicPlayer}
-                    onClose={() => setShowMusicPlayer(false)}
-                    onMinimize={handlePlayerMinimize}
-                    isMinimized={playerMinimized}
-                />
+                <Suspense fallback={<div className="loading-placeholder">Loading music player...</div>}>
+                    <MusicPlayer
+                        songData={songData}
+                        visible={showMusicPlayer}
+                        onClose={() => setShowMusicPlayer(false)}
+                        onMinimize={handlePlayerMinimize}
+                        isMinimized={playerMinimized}
+                    />
+                </Suspense>
             </div>
 
             {isMounted && (

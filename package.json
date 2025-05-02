@@ -24,7 +24,8 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "optimize-images": "node optimize-images.js"
     },
     "eslintConfig": {
         "extends": [
@@ -45,6 +46,9 @@
         ]
     },
     "devDependencies": {
-        "gh-pages": "^6.1.1"
+        "fs-extra": "^11.2.0",
+        "gh-pages": "^6.1.1",
+        "glob": "^10.3.10",
+        "sharp": "^0.33.3"
     }
 }
