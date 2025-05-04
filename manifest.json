@@ -1,6 +1,6 @@
 {
-    "short_name": "React App",
-    "name": "Create React App Sample",
+    "short_name": "Lucas Chan",
+    "name": "Lucas Chan - MPhil Student & AI Researcher",
     "icons": [
         {
             "src": "favicon.ico",
@@ -20,6 +20,8 @@
     ],
     "start_url": ".",
     "display": "standalone",
-    "theme_color": "#000000",
-    "background_color": "#ffffff"
+    "theme_color": "#1565c0",
+    "background_color": "#ffffff",
+    "description": "Portfolio website of Lucas Chan, AI researcher at Amber Group and MPhil student at HKUST.",
+    "categories": ["portfolio", "education", "research"]
 }
