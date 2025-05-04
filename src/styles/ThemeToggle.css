@@ -1,0 +1,148 @@
+.theme-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  margin: 0;
+  outline: none;
+  transition: transform var(--transition-fast) ease;
+}
+
+.theme-toggle:active {
+  transform: scale(0.92);
+}
+
+.theme-toggle:focus-visible {
+  box-shadow: 0 0 0 2px var(--primary-300);
+  border-radius: var(--radius-full);
+}
+
+.toggle-track {
+  width: 50px;
+  height: 24px;
+  border-radius: var(--radius-full);
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  position: relative;
+  transition: all var(--transition-normal) var(--transition-ease-out);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+}
+
+/* Light theme (default) */
+.theme-toggle.light .toggle-track {
+  background-color: var(--primary-100);
+}
+
+/* Dark theme */
+.theme-toggle.dark .toggle-track {
+  background-color: var(--primary-800);
+}
+
+.toggle-thumb {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform var(--transition-normal) var(--transition-ease-out);
+  top: 1px;
+  left: 2px;
+}
+
+/* Position the thumb based on theme */
+.theme-toggle.light .toggle-thumb {
+  transform: translateX(0);
+  background-color: var(--primary-300);
+}
+
+.theme-toggle.dark .toggle-thumb {
+  transform: translateX(26px);
+  background-color: var(--primary-400);
+}
+
+/* Sun and moon icons */
+.toggle-sun,
+.toggle-moon {
+  height: 16px;
+  width: 16px;
+  color: var(--neutral-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal) var(--transition-ease-out);
+}
+
+.toggle-sun {
+  color: var(--warning);
+  opacity: 0;
+}
+
+.toggle-moon {
+  color: var(--neutral-300);
+  opacity: 0;
+}
+
+.theme-toggle.light .toggle-sun {
+  opacity: 1;
+  color: var(--warning);
+}
+
+.theme-toggle.dark .toggle-moon {
+  opacity: 1;
+  color: var(--neutral-200);
+}
+
+/* Animation for icon scaling on toggle */
+.theme-toggle.light .toggle-sun {
+  transform: scale(1);
+}
+
+.theme-toggle.light .toggle-moon {
+  transform: scale(0.7);
+}
+
+.theme-toggle.dark .toggle-sun {
+  transform: scale(0.7);
+}
+
+.theme-toggle.dark .toggle-moon {
+  transform: scale(1);
+}
+
+/* Position in the header */
+.theme-toggle-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Media query for small screens */
+@media (max-width: 576px) {
+  .toggle-track {
+    width: 40px;
+    height: 20px;
+  }
+  
+  .toggle-thumb {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .theme-toggle.dark .toggle-thumb {
+    transform: translateX(20px);
+  }
+  
+  .toggle-sun,
+  .toggle-moon {
+    height: 12px;
+    width: 12px;
+  }
+} 

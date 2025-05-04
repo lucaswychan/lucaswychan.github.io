@@ -1,0 +1,467 @@
+/*
+ * Design System
+ * A comprehensive collection of design tokens and variables
+ */
+
+:root {
+  /* 
+   * COLOR SYSTEM - LIGHT THEME (Default)
+   * Primary brand colors with semantic naming and systematic variations
+   */
+  
+  /* Primary Color Palette - Blues */
+  --primary-50: #e6f3fa;
+  --primary-100: #cce7f5;
+  --primary-200: #99cfe8;
+  --primary-300: #66b7dc;
+  --primary-400: #3a94c5;
+  --primary-500: #1a6ea0; /* Base primary */
+  --primary-600: #155a84;
+  --primary-700: #104568;
+  --primary-800: #0b314c;
+  --primary-900: #051a30;
+  
+  /* Accent Color Palette - Oranges */
+  --accent-50: #fff5ec;
+  --accent-100: #ffebd9;
+  --accent-200: #ffd7b2;
+  --accent-300: #ffbd8d;
+  --accent-400: #ffad77;
+  --accent-500: #f8a978; /* Base accent */
+  --accent-600: #e58d50;
+  --accent-700: #c46e39;
+  --accent-800: #a45226;
+  --accent-900: #703814;
+  
+  /* Neutrals - Grays */
+  --neutral-50: #f8f9fa;
+  --neutral-100: #e9ecef;
+  --neutral-200: #dee2e6;
+  --neutral-300: #ced4da;
+  --neutral-400: #adb5bd;
+  --neutral-500: #8896a6; /* Base neutral/muted */
+  --neutral-600: #5a6c7d; /* Light text */
+  --neutral-700: #495057;
+  --neutral-800: #343a40;
+  --neutral-900: #2c3e50; /* Dark text */
+  
+  /* Semantic Colors */
+  --success: #28a745;
+  --success-light: #d4edda;
+  --warning: #ffc107;
+  --warning-light: #fff3cd;
+  --danger: #dc3545;
+  --danger-light: #f8d7da;
+  --info: #17a2b8;
+  --info-light: #d1ecf1;
+  
+  /* UI Element Colors - Light Theme */
+  --background: #ffffff;
+  --background-alt: var(--neutral-50);
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-card: rgba(255, 255, 255, 0.95);
+  --border: var(--neutral-200);
+  --shadow: rgba(0, 0, 0, 0.05);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-muted: var(--neutral-500);
+  --text-on-primary: #ffffff;
+  --text-on-accent: #ffffff;
+  --divider: var(--neutral-200);
+  
+  /* Gradients */
+  --primary-gradient: linear-gradient(135deg, var(--primary-500), var(--primary-400));
+  --accent-gradient: linear-gradient(135deg, var(--accent-500), var(--accent-400));
+  --neutral-gradient: linear-gradient(135deg, var(--neutral-500), var(--neutral-400));
+  
+  /* Transparent Colors */
+  --primary-glass: rgba(26, 110, 160, 0.08);
+  --accent-glass: rgba(248, 169, 120, 0.08);
+  --dark-glass: rgba(44, 62, 80, 0.08);
+  
+  /* 
+   * TYPOGRAPHY
+   * A modular scale for typography with defined roles
+   */
+  
+  /* Font Families */
+  --font-primary: 'Helvetica Neue', Arial, sans-serif;
+  --font-secondary: Georgia, 'Times New Roman', serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  
+  /* Type Scale (1.25 ratio) */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.875rem;   /* 14px */
+  --text-base: 1rem;     /* 16px */
+  --text-md: 1.125rem;   /* 18px */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.5rem;     /* 24px */
+  --text-2xl: 1.875rem;  /* 30px */
+  --text-3xl: 2.25rem;   /* 36px */
+  --text-4xl: 3rem;      /* 48px */
+  --text-5xl: 4rem;      /* 64px */
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Font Weights */
+  --font-thin: 100;
+  --font-extralight: 200;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  --font-black: 900;
+  
+  /* Letter Spacing */
+  --tracking-tighter: -0.05em;
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.025em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+  
+  /* 
+   * SPACING SYSTEM
+   * Consistent spacing values in a geometric progression
+   */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-8: 3rem;      /* 48px */
+  --space-10: 4rem;     /* 64px */
+  --space-12: 6rem;     /* 96px */
+  --space-16: 8rem;     /* 128px */
+  --space-20: 10rem;    /* 160px */
+  
+  /* 
+   * BORDER RADIUS
+   * Consistent border radius values
+   */
+  --radius-none: 0;
+  --radius-sm: 0.125rem;  /* 2px */
+  --radius-md: 0.25rem;   /* 4px */
+  --radius-lg: 0.5rem;    /* 8px */
+  --radius-xl: 0.75rem;   /* 12px */
+  --radius-2xl: 1rem;     /* 16px */
+  --radius-3xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+  
+  /* 
+   * SHADOWS
+   * Elevation system with consistent shadows
+   */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  
+  /* 
+   * TRANSITIONS
+   * Consistent transition values
+   */
+  --transition-fast: 150ms;
+  --transition-normal: 300ms;
+  --transition-slow: 500ms;
+  --transition-slower: 1000ms;
+  --transition-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --transition-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  
+  /* Standard transitions */
+  --transition-all: all var(--transition-normal) var(--transition-bezier);
+  --transition-colors: background-color var(--transition-normal) var(--transition-bezier),
+                       border-color var(--transition-normal) var(--transition-bezier),
+                       color var(--transition-normal) var(--transition-bezier),
+                       fill var(--transition-normal) var(--transition-bezier),
+                       stroke var(--transition-normal) var(--transition-bezier);
+  --transition-transform: transform var(--transition-normal) var(--transition-bezier);
+  --transition-shadow: box-shadow var(--transition-normal) var(--transition-bezier);
+  
+  /* 
+   * Z-INDEX
+   * Z-index scale to avoid conflicts
+   */
+  --z-0: 0;
+  --z-10: 10;
+  --z-20: 20;
+  --z-30: 30;
+  --z-40: 40;
+  --z-50: 50;
+  --z-modal: 100;
+  --z-toast: 200;
+  --z-tooltip: 300;
+  --z-header: 400;
+  --z-dropdown: 500;
+  
+  /* 
+   * LEGACY VARIABLE MAPPING
+   * Map old variables to new system for backward compatibility
+   */
+  --primary: var(--primary-500);
+  --primary-light: var(--primary-400);
+  --primary-dark: var(--primary-600);
+  --accent: var(--accent-500);
+  --accent-light: var(--accent-400);
+  --dark-text: var(--text-primary);
+  --light-text: var(--text-secondary);
+  --muted: var(--text-muted);
+  --light-bg: var(--background-alt);
+  --border-radius-sm: var(--radius-lg);
+  --border-radius-md: var(--radius-2xl);
+  --border-radius-lg: var(--radius-3xl);
+  --border-radius-pill: var(--radius-full);
+  --global-transition: var(--transition-all);
+}
+
+/* 
+ * DARK THEME
+ * Overrides for dark mode using the prefers-color-scheme media query
+ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* UI Element Colors - Dark Theme */
+    --background: #1a1a2e;
+    --background-alt: #16213e;
+    --surface: #1f2937;
+    --surface-raised: #263345;
+    --surface-card: rgba(31, 41, 55, 0.95);
+    --border: #374151;
+    --shadow: rgba(0, 0, 0, 0.2);
+    --shadow-dark: rgba(0, 0, 0, 0.4);
+    --text-primary: #f3f4f6;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --divider: #374151;
+    
+    /* Adjust shadows for dark mode */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+    
+    /* Adjust glass effects for dark mode */
+    --primary-glass: rgba(58, 148, 197, 0.15);
+    --accent-glass: rgba(248, 169, 120, 0.15);
+    --dark-glass: rgba(150, 150, 150, 0.15);
+  }
+}
+
+/* 
+ * MANUALLY TOGGLE THEME
+ * Classes to manually override theme preference
+ */
+.theme-light {
+  /* Light theme colors (same as default) */
+  --background: #ffffff;
+  --background-alt: var(--neutral-50);
+  --surface: #ffffff;
+  --surface-raised: #ffffff;
+  --surface-card: rgba(255, 255, 255, 0.95);
+  --border: var(--neutral-200);
+  --shadow: rgba(0, 0, 0, 0.05);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-muted: var(--neutral-500);
+  --divider: var(--neutral-200);
+  
+  /* Default shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  
+  /* Default glass effects */
+  --primary-glass: rgba(26, 110, 160, 0.08);
+  --accent-glass: rgba(248, 169, 120, 0.08);
+  --dark-glass: rgba(44, 62, 80, 0.08);
+}
+
+.theme-dark {
+  /* Dark theme colors */
+  --background: #1a1a2e;
+  --background-alt: #16213e;
+  --surface: #1f2937;
+  --surface-raised: #263345;
+  --surface-card: rgba(31, 41, 55, 0.95);
+  --border: #374151;
+  --shadow: rgba(0, 0, 0, 0.2);
+  --shadow-dark: rgba(0, 0, 0, 0.4);
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --text-muted: #9ca3af;
+  --divider: #374151;
+  
+  /* Adjust shadows for dark mode */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  
+  /* Adjust glass effects for dark mode */
+  --primary-glass: rgba(58, 148, 197, 0.15);
+  --accent-glass: rgba(248, 169, 120, 0.15);
+  --dark-glass: rgba(150, 150, 150, 0.15);
+}
+
+/* 
+ * TYPOGRAPHY UTILITIES
+ * Reusable typography classes
+ */
+
+.text-xs { font-size: var(--text-xs); }
+.text-sm { font-size: var(--text-sm); }
+.text-base { font-size: var(--text-base); }
+.text-md { font-size: var(--text-md); }
+.text-lg { font-size: var(--text-lg); }
+.text-xl { font-size: var(--text-xl); }
+.text-2xl { font-size: var(--text-2xl); }
+.text-3xl { font-size: var(--text-3xl); }
+.text-4xl { font-size: var(--text-4xl); }
+.text-5xl { font-size: var(--text-5xl); }
+
+.font-thin { font-weight: var(--font-thin); }
+.font-extralight { font-weight: var(--font-extralight); }
+.font-light { font-weight: var(--font-light); }
+.font-regular { font-weight: var(--font-regular); }
+.font-medium { font-weight: var(--font-medium); }
+.font-semibold { font-weight: var(--font-semibold); }
+.font-bold { font-weight: var(--font-bold); }
+.font-extrabold { font-weight: var(--font-extrabold); }
+.font-black { font-weight: var(--font-black); }
+
+.leading-none { line-height: var(--leading-none); }
+.leading-tight { line-height: var(--leading-tight); }
+.leading-snug { line-height: var(--leading-snug); }
+.leading-normal { line-height: var(--leading-normal); }
+.leading-relaxed { line-height: var(--leading-relaxed); }
+.leading-loose { line-height: var(--leading-loose); }
+
+.tracking-tighter { letter-spacing: var(--tracking-tighter); }
+.tracking-tight { letter-spacing: var(--tracking-tight); }
+.tracking-normal { letter-spacing: var(--tracking-normal); }
+.tracking-wide { letter-spacing: var(--tracking-wide); }
+.tracking-wider { letter-spacing: var(--tracking-wider); }
+.tracking-widest { letter-spacing: var(--tracking-widest); }
+
+/* Text color utilities */
+.text-primary { color: var(--text-primary); }
+.text-secondary { color: var(--text-secondary); }
+.text-muted { color: var(--text-muted); }
+.text-brand { color: var(--primary-500); }
+.text-accent { color: var(--accent-500); }
+
+/* Background utilities */
+.bg-primary { background-color: var(--primary-500); }
+.bg-accent { background-color: var(--accent-500); }
+.bg-surface { background-color: var(--surface); }
+.bg-surface-raised { background-color: var(--surface-raised); }
+.bg-background { background-color: var(--background); }
+.bg-background-alt { background-color: var(--background-alt); }
+
+/* Heading styles with consistent typography and theme-aware colors */
+.heading-1 {
+  font-size: var(--text-4xl);
+  font-weight: var(--font-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--primary-500);
+}
+
+.heading-2 {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--primary-500);
+}
+
+.heading-3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-tight);
+  color: var(--primary-500);
+}
+
+.heading-4 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-snug);
+  letter-spacing: var(--tracking-normal);
+  color: var(--primary-500);
+}
+
+.heading-5 {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--primary-500);
+}
+
+.heading-6 {
+  font-size: var(--text-md);
+  font-weight: var(--font-medium);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--primary-500);
+}
+
+/* Body text styles */
+.body-large {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  letter-spacing: var(--tracking-normal);
+  color: var(--text-primary);
+}
+
+.body {
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--text-primary);
+}
+
+.body-small {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-normal);
+  color: var(--text-secondary);
+}
+
+.caption {
+  font-size: var(--text-xs);
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  color: var(--text-muted);
+}
+
+/* With media queries for responsive typography */
+@media (max-width: 768px) {
+  .heading-1 { font-size: var(--text-3xl); }
+  .heading-2 { font-size: var(--text-2xl); }
+  .heading-3 { font-size: var(--text-xl); }
+  .heading-4 { font-size: var(--text-lg); }
+  .heading-5 { font-size: var(--text-md); }
+  .heading-6 { font-size: var(--text-base); }
+  
+  .body-large { font-size: var(--text-md); }
+} 

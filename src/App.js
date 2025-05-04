@@ -153,7 +153,7 @@ function App() {
     };
 
     return (
-        <div className="min-vh-100 bg-white">
+        <div className="min-vh-100 bg-background">
             {/* Add Helmet for dynamic meta tags */}
             <Helmet>
                 <title>Lucas Chan - {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</title>
@@ -186,7 +186,7 @@ function App() {
                             style={{
                                 width: "300px",
                                 height: "300px",
-                                background: "var(--primary)",
+                                background: "var(--primary-500)",
                                 borderRadius: "50%",
                                 top: "10%",
                                 right: "-150px",
@@ -207,10 +207,10 @@ function App() {
 
                         {/* Navigation */}
                         <Nav
-                            className="sticky-top py-3 mb-5 bg-white border-bottom overflow-auto no-scrollbar glass-effect"
+                            className="sticky-top py-3 mb-5 border-bottom overflow-auto no-scrollbar glass-effect"
                             style={{
                                 top: "0",
-                                zIndex: 1020,
+                                zIndex: "var(--z-header)",
                                 backdropFilter: "blur(8px)",
                             }}
                             as="nav"
@@ -301,7 +301,7 @@ function App() {
                                         <FaLaptopCode
                                             className="me-2"
                                             style={{
-                                                color: "var(--primary)",
+                                                color: "var(--primary-500)",
                                                 opacity: 0.8,
                                             }}
                                         />
@@ -331,7 +331,7 @@ function App() {
                                         <FaChartLine
                                             className="me-2"
                                             style={{
-                                                color: "var(--accent)",
+                                                color: "var(--accent-500)",
                                                 opacity: 0.8,
                                             }}
                                         />
@@ -356,7 +356,7 @@ function App() {
                                         <FaBrain
                                             className="me-2"
                                             style={{
-                                                color: "var(--primary)",
+                                                color: "var(--primary-500)",
                                                 opacity: 0.8,
                                             }}
                                         />
