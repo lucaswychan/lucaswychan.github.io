@@ -1,0 +1,78 @@
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  padding: 0;
+  color: var(--primary);
+}
+
+.theme-toggle:hover {
+  background-color: rgba(26, 110, 160, 0.08);
+  transform: translateY(-2px);
+}
+
+.dark .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.toggle-icon-wrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-icon {
+  position: absolute;
+  font-size: 20px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.toggle-icon.sun {
+  color: var(--accent);
+}
+
+.toggle-icon.moon {
+  color: #c3c9d5;
+}
+
+.dark .toggle-icon.moon {
+  color: #f3f3f3;
+}
+
+.toggle-icon.active {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+}
+
+.toggle-icon.hidden {
+  transform: translateY(20px) rotate(90deg);
+  opacity: 0;
+}
+
+/* Animation for toggle transition */
+.theme-toggle.dark {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle.light {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Fixed position for the toggle when in the sidebar */
+.theme-toggle-container {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+} 

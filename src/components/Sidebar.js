@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "./Footer";
 import DynamicIcon from "./DynamicIcon";
 import ClusterMap from "./ClusterMap";
+import ThemeToggle from "./ThemeToggle";
 import "../styles/Sidebar.css";
 import { FaMusic, FaUser, FaProjectDiagram, FaBriefcase, FaGraduationCap, FaCamera } from "react-icons/fa";
 
@@ -113,6 +114,11 @@ function Sidebar({ skills, links, photoUrl, activeSection, handleSectionClick, t
                                     </span>
                                 </a>
                             ))}
+                            
+                            {/* Theme Toggle */}
+                            <div className="theme-toggle-container">
+                                <ThemeToggle />
+                            </div>
                         </div>
                     </div>
                 </div>

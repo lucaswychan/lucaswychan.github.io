@@ -1,5 +1,5 @@
 // App.js
-import React, { useState, useRef, useEffect, useMemo, useCallback, lazy, Suspense } from "react";
+import React, { useState, useRef, useEffect, useMemo, useCallback, lazy, Suspense, useContext } from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import Section from "./components/Section";
 import DynamicIcon from "./components/DynamicIcon";
+import { ThemeContext } from './contexts/ThemeContext';
 import "./styles/Biography.css";
 import "./styles/Project.css";
 import "./styles/Experience.css";
@@ -26,6 +27,9 @@ const MusicPlayer = lazy(() => import("./components/MusicPlayer"));
 const Gallery = lazy(() => import("./components/Gallery"));
 
 function App() {
+    const { theme } = useContext(ThemeContext);
+    const isDark = theme === 'dark';
+    
     const [activeSection, setActiveSection] = useState("biography");
     const [isHeaderExpanded, setIsHeaderExpanded] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
@@ -153,7 +157,7 @@ function App() {
     };
 
     return (
-        <div className="min-vh-100 bg-white">
+        <div className={`min-vh-100 ${isDark ? 'dark-theme' : ''}`}>
             {/* Add Helmet for dynamic meta tags */}
             <Helmet>
                 <title>Lucas Chan - {activeSection.charAt(0).toUpperCase() + activeSection.slice(1)}</title>
@@ -190,7 +194,7 @@ function App() {
                                 borderRadius: "50%",
                                 top: "10%",
                                 right: "-150px",
-                                opacity: "0.02",
+                                opacity: isDark ? "0.05" : "0.02",
                                 zIndex: "0",
                             }}
                             aria-hidden="true"
@@ -207,7 +211,7 @@ function App() {
 
                         {/* Navigation */}
                         <Nav
-                            className="sticky-top py-3 mb-5 bg-white border-bottom overflow-auto no-scrollbar glass-effect"
+                            className={`sticky-top py-3 mb-5 border-bottom overflow-auto no-scrollbar glass-effect`}
                             style={{
                                 top: "0",
                                 zIndex: 1020,

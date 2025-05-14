@@ -1,7 +1,11 @@
 // components/Header.js
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../contexts/ThemeContext";
 
 function Header({ isExpanded, setIsExpanded, activeSection, scrollToSection, visible }) {
+    const { theme } = useContext(ThemeContext);
+    const isDark = theme === 'dark';
+
     return (
         <header className={`mb-5 pb-2`}>
             <div className="position-relative">
@@ -13,7 +17,7 @@ function Header({ isExpanded, setIsExpanded, activeSection, scrollToSection, vis
                             width: '50px',
                             height: '50px',
                             background: 'var(--accent)',
-                            opacity: '0.1',
+                            opacity: isDark ? '0.2' : '0.1',
                             borderRadius: 'var(--border-radius-xl)',
                             top: '-10px',
                             left: '-15px',
@@ -25,7 +29,7 @@ function Header({ isExpanded, setIsExpanded, activeSection, scrollToSection, vis
                     width: '120px',
                     height: '120px',
                     background: 'var(--primary)',
-                    opacity: '0.05',
+                    opacity: isDark ? '0.1' : '0.05',
                     borderRadius: 'var(--border-radius-xl)',
                     bottom: '-30px',
                     right: '10%',
@@ -33,7 +37,7 @@ function Header({ isExpanded, setIsExpanded, activeSection, scrollToSection, vis
                 }}></div>
             </div>
             
-            <p className="lead" style={{ color: 'var(--light-text)' }}>
+            <p className="lead" style={{ color: 'var(--text-secondary)' }}>
                 <span style={{ position: 'relative', display: 'inline-block' }}>
                     MPhil in Computer Science
                     <span 
@@ -50,7 +54,7 @@ function Header({ isExpanded, setIsExpanded, activeSection, scrollToSection, vis
                     />
                 </span>
                 <span className="ms-2 badge" style={{
-                    backgroundColor: 'rgba(26, 110, 160, 0.1)', 
+                    backgroundColor: isDark ? 'rgba(58, 148, 197, 0.2)' : 'rgba(26, 110, 160, 0.1)', 
                     color: 'var(--primary)',
                     fontWeight: '400',
                     paddingTop: '0.15rem',
