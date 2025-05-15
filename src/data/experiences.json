@@ -10,8 +10,9 @@
         "company": "Rivermap Limited",
         "duration": "Jun 2024 - Aug 2024",
         "descriptions": [
-            "Implemented a Natural Language Processing (NLP) system to extract company revenue information from reports, achieving 83% accuracy.",
-            "Architected a custom knowledge graph and algorithms from scratch, boosting data retrieval rates by over 50%.",
+            "Developed an advanced NLP system to extract company revenue data from unstructured financial reports, achieving an 83% accuracy rate and enabling precise market insights for strategic decision-making.",
+            "Led quantitative research and strategy formulation for US market revenue trends and SGX-listed companies, delivering actionable insights to drive investment decisions.",
+            "Spearheaded knowledge graph completion initiatives for business entities, optimizing data connectivity and enabling robust predictive modeling.",
             "Collaborated with cross-functional teams to design and implement data extraction workflows."
         ]
     },
@@ -21,7 +22,7 @@
         "duration": "Jun 2023 - Aug 2023",
         "descriptions": [
             "Established NLP applications for document entities extraction, attaining 94% accuracy in data retrieval.",
-            "Developed a business product incorporating GenAI features through full stack development with Python and React.js, improving proposal writing efficiency.",
+            "Developed a business product incorporating GenAI features through full stack development with Python Flask and React.js, improving proposal writing efficiency.",
             "Conducted in-depth research on emerging AI technologies, identifying potential implementation strategies."
         ]
     },

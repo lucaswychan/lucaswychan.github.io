@@ -37,6 +37,7 @@ body {
   line-height: 1.7;
   letter-spacing: 0.01em;
   overflow-x: hidden;
+  overflow-y: auto;
   background-image: 
     radial-gradient(circle at 100% 0%, rgba(58, 148, 197, 0.03) 0%, transparent 25%),
     radial-gradient(circle at 0% 100%, rgba(248, 169, 120, 0.03) 0%, transparent 25%);
