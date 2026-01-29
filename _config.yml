@@ -95,7 +95,7 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: lucaswychan # blog_name will be displayed in your blog page
 blog_description: A blog about my experiences and life.
-permalink: /blog/:2026/:title/
+permalink: /blog/:year/:title/
 lsi: true # produce an index for related posts
 
 # Pagination
