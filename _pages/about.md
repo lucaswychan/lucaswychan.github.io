@@ -32,6 +32,6 @@ latest_posts:
 <br>
 <br>
 
-I’m Lucas Chan, an MPhil student at HKUST, working under the guidance of Professor [Yangqiu Song](https://www.cse.ust.hk/~yqsong/). My research spans embedding models and LLM reasoning. I hold a Bachelor’s degree in Computer Science & Electronic Engineering (First Class Honours) from HKUST.
+I’m Lucas Chan, an MPhil student at [HKUST](https://hkust.edu.hk), working under the guidance of Professor [Yangqiu Song](https://www.cse.ust.hk/~yqsong/). My research spans embedding models and LLM reasoning. I hold a Bachelor’s degree with double major in [Computer Science](https://cse.hkust.edu.hk) & [Electronic Engineering](https://ece.hkust.edu.hk) (First Class Honours) from HKUST.
 
 I have been working as an AI Research Intern at [Amber Group](https://ambergroup.io), where my work focuses on LLM training and AI Agent applications. In my spare time, I also build some interesting projects. View my [GitHub](https://github.com/lucaswychan) to explore those gripping projects.

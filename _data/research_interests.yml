@@ -1,8 +1,8 @@
-- area: Large Language Models
-  description: Reasoning, training, and alignment
+- area: Representation Learning
+  description: Latent Space, Representation Similarity, and Manifold
 
-- area: Embedding Models
-  description: Dense retrieval and representation learning
+- area: Large Language Models
+  description: Reasoning, training, alignment, and safety
 
 - area: AI Agents
-  description: Autonomous systems and tool use
+  description: Autonomous systems, tool use, and multi-agent cooperation
