@@ -1,0 +1,13 @@
+github_users:
+  - lucaswychan
+
+repo_description_lines_max: 2
+
+github_repos:
+  - HKUST-KnowComp/Reasoning-Embedding
+  - lucaswychan/gritlm-re
+  - lucaswychan/Federated-Edge-AI-For-6G
+  - lucaswychan/neural-stock-prophet
+  - lucaswychan/neuralnet-cpp
+  - lucaswychan/quant-lvlm
+  - lucaswychan/contrastive-resnet50 

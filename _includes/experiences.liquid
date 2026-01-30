@@ -1,0 +1,25 @@
+{% if site.data.experiences.size > 0 %}
+<div class="experiences-timeline" role="list" aria-label="Work experiences">
+  {% for exp in site.data.experiences %}
+    <div class="experience-item" role="listitem">
+      <div class="experience-marker"></div>
+      <div class="experience-content">
+        <div class="experience-header">
+          <span class="experience-duration badge font-weight-bold">{{ exp.duration }}</span>
+        </div>
+        <h3 class="experience-position">{{ exp.position }}</h3>
+        <h4 class="experience-company">{{ exp.company }}</h4>
+        {% if exp.descriptions.size > 0 %}
+          <ul class="experience-descriptions">
+            {% for desc in exp.descriptions %}
+              <li>{{ desc }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+<p>No experiences to display.</p>
+{% endif %}

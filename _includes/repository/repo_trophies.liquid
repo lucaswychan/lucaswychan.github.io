@@ -1,0 +1,55 @@
+<div class="repo repo-trophies p-2 text-center" data-username="{{ include.username }}">
+  <a href="https://github.com/{{ include.username }}">
+    <span class="d-none d-sm-none d-md-block">
+      <img
+        class="only-light trophy-img"
+        alt="{{ include.username }}"
+        src="{{ site.external_services.github_profile_trophy_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6"
+        onerror="this.style.display='none'; var fb=this.closest('.repo-trophies').querySelector('.trophy-fallback'); if(fb) fb.style.display='flex';"
+      >
+      <img
+        class="only-dark trophy-img"
+        alt="{{ include.username }}"
+        src="{{ site.external_services.github_profile_trophy_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=6"
+        onerror="this.style.display='none'; var fb=this.closest('.repo-trophies').querySelector('.trophy-fallback'); if(fb) fb.style.display='flex';"
+      >
+    </span>
+
+    <span class="d-none d-sm-block d-md-none">
+      <img
+        class="only-light trophy-img"
+        alt="{{ include.username }}"
+        src="{{ site.external_services.github_profile_trophy_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4"
+        onerror="this.style.display='none'; var fb=this.closest('.repo-trophies').querySelector('.trophy-fallback'); if(fb) fb.style.display='flex';"
+      >
+      <img
+        class="only-dark trophy-img"
+        alt="{{ include.username }}"
+        src="{{ site.external_services.github_profile_trophy_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=4"
+        onerror="this.style.display='none'; var fb=this.closest('.repo-trophies').querySelector('.trophy-fallback'); if(fb) fb.style.display='flex';"
+      >
+    </span>
+
+    <span class="d-block d-sm-none">
+      <img
+        class="only-light trophy-img"
+        alt="{{ include.username }}"
+        src="{{ site.external_services.github_profile_trophy_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_light }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3"
+        onerror="this.style.display='none'; var fb=this.closest('.repo-trophies').querySelector('.trophy-fallback'); if(fb) fb.style.display='flex';"
+      >
+      <img
+        class="only-dark trophy-img"
+        alt="{{ include.username }}"
+        src="{{ site.external_services.github_profile_trophy_url }}/?username={{ include.username }}&theme={{ site.repo_trophies.theme_dark }}&locale={{ site.lang }}&margin-w=15&margin-h=15&no-bg=true&rank=-C&column=3"
+        onerror="this.style.display='none'; var fb=this.closest('.repo-trophies').querySelector('.trophy-fallback'); if(fb) fb.style.display='flex';"
+      >
+    </span>
+
+    <div class="trophy-fallback" style="display: none;">
+      <div class="trophy-fallback-card">
+        <i class="fa-solid fa-trophy"></i>
+        <span>View {{ include.username }}'s GitHub achievements</span>
+      </div>
+    </div>
+  </a>
+</div>
