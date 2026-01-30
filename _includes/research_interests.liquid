@@ -1,0 +1,16 @@
+<div class="research-interests">
+  {% if site.data.research_interests.size > 0 %}
+    <ul class="research-interests-list">
+      {% for item in site.data.research_interests %}
+        <li>
+          <span class="research-area">{{ item.area }}</span>
+          {% if item.description %}
+            <span class="research-description">{{ item.description }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No research interests listed.</p>
+  {% endif %}
+</div>

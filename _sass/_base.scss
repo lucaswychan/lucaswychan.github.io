@@ -659,6 +659,41 @@ footer.sticky-bottom {
   }
 }
 
+// Research Interests
+.research-interests {
+  margin-bottom: 1rem;
+}
+
+.research-interests-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--global-divider-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.research-area {
+  font-weight: 600;
+  color: var(--global-theme-color);
+}
+
+.research-description {
+  color: var(--global-text-color);
+  margin-left: 0.5rem;
+
+  &::before {
+    content: "— ";
+    opacity: 0.5;
+  }
+}
+
 // Blog
 
 .header-bar {
