@@ -430,6 +430,16 @@ ninja.data = [{
           description: "",
           section: "Gallery",handler: () => {
               window.location.href = "/gallery/fuji-mountain/";
+            },},{id: "gallery-melbourne",
+          title: 'Melbourne',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/australia/";
+            },},{id: "gallery-who-is-adam",
+          title: 'Who is Adam?',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/adam/";
             },},{id: "news-my-paper-an-effective-and-cost-efficient-agentic-framework-for-ethereum-smart-contract-auditing-is-published-on-arxiv-a-work-during-the-internship-in-amber-group-feel-free-to-check-out-the-paper",
           title: 'My paper “An Effective and Cost-Efficient Agentic Framework for Ethereum Smart Contract Auditing”...',
           description: "",
@@ -503,7 +513,7 @@ ninja.data = [{
         title: 'Google Scholar',
         section: 'Socials',
         handler: () => {
-          window.open("https://scholar.google.com/citations?user=qc6CJjYAAAAJ", "_blank");
+          window.open("https://scholar.google.com/citations?user=oDjx2-IAAAAJ", "_blank");
         },
       },{
         id: 'social-linkedin',
