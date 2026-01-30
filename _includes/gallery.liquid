@@ -1,0 +1,21 @@
+<div class="col">
+  <div class="card h-100 hoverable">
+    {% if item.img %}
+      {%
+        include figure.liquid
+        loading="eager"
+        path=item.img
+        sizes="(min-width: 768px) 250px, 100vw"
+        alt=item.title
+        class="card-img-top"
+        zoomable=true
+      %}
+    {% endif %}
+    <div class="card-body">
+      <h2 class="card-title">{{ item.title }}</h2>
+      {% if item.caption %}
+        <p class="card-text">{{ item.caption }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

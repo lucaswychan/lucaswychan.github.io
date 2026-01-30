@@ -54,7 +54,7 @@ external_services:
 # -----------------------------------------------------------------------------
 
 navbar_fixed: true
-footer_fixed: true
+footer_fixed: false
 search_enabled: true
 socials_in_search: true
 posts_in_search: true
@@ -246,6 +246,11 @@ defaults:
       path: "assets"
     values:
       sitemap: false
+  - scope:
+      path: ""
+      type: gallery
+    values:
+      layout: page
 
 sass:
   style: compressed

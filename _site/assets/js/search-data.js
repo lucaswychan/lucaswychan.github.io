@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
+        },{id: "nav-gallery",
+          title: "Gallery",
+          description: "A collection of memorable moments and experiences",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/gallery/";
+          },
         },{id: "dropdown-gallery",
               title: "gallery",
               description: "",
@@ -38,7 +45,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/plotly/";
+            window.location.href = "/blog/2025/plotly/";
           
         },
       },{id: "post-a-post-with-image-galleries",
@@ -49,7 +56,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/photo-gallery/";
+            window.location.href = "/blog/2024/photo-gallery/";
           
         },
       },{id: "post-google-gemini-updates-flash-1-5-gemma-2-and-project-astra",
@@ -71,7 +78,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/tabs/";
+            window.location.href = "/blog/2024/tabs/";
           
         },
       },{id: "post-a-post-with-typograms",
@@ -82,7 +89,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/typograms/";
+            window.location.href = "/blog/2024/typograms/";
           
         },
       },{id: "post-a-post-that-can-be-cited",
@@ -93,7 +100,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/post-citation/";
+            window.location.href = "/blog/2024/post-citation/";
           
         },
       },{id: "post-a-post-with-pseudo-code",
@@ -104,7 +111,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/pseudocode/";
+            window.location.href = "/blog/2024/pseudocode/";
           
         },
       },{id: "post-a-post-with-code-diff",
@@ -115,7 +122,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/code-diff/";
+            window.location.href = "/blog/2024/code-diff/";
           
         },
       },{id: "post-a-post-with-advanced-image-components",
@@ -126,7 +133,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/advanced-images/";
+            window.location.href = "/blog/2024/advanced-images/";
           
         },
       },{id: "post-a-post-with-vega-lite",
@@ -137,7 +144,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/vega-lite/";
+            window.location.href = "/blog/2024/vega-lite/";
           
         },
       },{id: "post-a-post-with-geojson",
@@ -148,7 +155,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/geojson-map/";
+            window.location.href = "/blog/2024/geojson-map/";
           
         },
       },{id: "post-a-post-with-echarts",
@@ -159,7 +166,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/echarts/";
+            window.location.href = "/blog/2024/echarts/";
           
         },
       },{id: "post-a-post-with-chart-js",
@@ -170,7 +177,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/chartjs/";
+            window.location.href = "/blog/2024/chartjs/";
           
         },
       },{id: "post-a-post-with-tikzjax",
@@ -181,7 +188,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/tikzjax/";
+            window.location.href = "/blog/2023/tikzjax/";
           
         },
       },{id: "post-a-post-with-bibliography",
@@ -192,7 +199,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/post-bibliography/";
+            window.location.href = "/blog/2023/post-bibliography/";
           
         },
       },{id: "post-a-post-with-jupyter-notebook",
@@ -203,7 +210,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/jupyter-notebook/";
+            window.location.href = "/blog/2023/jupyter-notebook/";
           
         },
       },{id: "post-a-post-with-custom-blockquotes",
@@ -214,7 +221,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/custom-blockquotes/";
+            window.location.href = "/blog/2023/custom-blockquotes/";
           
         },
       },{id: "post-a-post-with-table-of-contents-on-a-sidebar",
@@ -225,7 +232,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/sidebar-table-of-contents/";
+            window.location.href = "/blog/2023/sidebar-table-of-contents/";
           
         },
       },{id: "post-a-post-with-audios",
@@ -236,7 +243,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/audios/";
+            window.location.href = "/blog/2023/audios/";
           
         },
       },{id: "post-a-post-with-videos",
@@ -247,7 +254,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/videos/";
+            window.location.href = "/blog/2023/videos/";
           
         },
       },{id: "post-displaying-beautiful-tables-with-bootstrap-tables",
@@ -258,7 +265,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/tables/";
+            window.location.href = "/blog/2023/tables/";
           
         },
       },{id: "post-a-post-with-table-of-contents",
@@ -269,7 +276,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/table-of-contents/";
+            window.location.href = "/blog/2023/table-of-contents/";
           
         },
       },{id: "post-a-post-with-giscus-comments",
@@ -280,7 +287,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/giscus-comments/";
+            window.location.href = "/blog/2022/giscus-comments/";
           
         },
       },{id: "post-displaying-external-posts-on-your-al-folio-blog",
@@ -313,7 +320,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/diagrams/";
+            window.location.href = "/blog/2021/diagrams/";
           
         },
       },{id: "post-a-distill-style-blog-post",
@@ -324,7 +331,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/distill/";
+            window.location.href = "/blog/2021/distill/";
           
         },
       },{id: "post-a-post-with-twitter",
@@ -335,7 +342,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/twitter/";
+            window.location.href = "/blog/2020/twitter/";
           
         },
       },{id: "post-a-post-with-disqus-comments",
@@ -346,7 +353,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/disqus-comments/";
+            window.location.href = "/blog/2015/disqus-comments/";
           
         },
       },{id: "post-a-post-with-math",
@@ -357,7 +364,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/math/";
+            window.location.href = "/blog/2015/math/";
           
         },
       },{id: "post-a-post-with-code",
@@ -368,7 +375,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/code/";
+            window.location.href = "/blog/2015/code/";
           
         },
       },{id: "post-a-post-with-images",
@@ -379,7 +386,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/images/";
+            window.location.href = "/blog/2015/images/";
           
         },
       },{id: "post-a-post-with-formatting-and-links",
@@ -390,13 +397,53 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/:2026/formatting-and-links/";
+            window.location.href = "/blog/2015/formatting-and-links/";
           
         },
-      },{id: "news-my-paper-an-effective-and-cost-efficient-agentic-framework-for-ethereum-smart-contract-auditing-is-published-on-arxiv-feel-free-to-check-out-the-paper",
+      },{id: "gallery-wine-tasting",
+          title: 'Wine Tasting',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/wine/";
+            },},{id: "gallery-project-car",
+          title: 'Project Car',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/project-car/";
+            },},{id: "gallery-larp",
+          title: 'LARP',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/larp/";
+            },},{id: "gallery-dodgeball",
+          title: 'Dodgeball',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/dodgeball/";
+            },},{id: "gallery-o-camp",
+          title: 'O-Camp',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/ocamp/";
+            },},{id: "gallery-mt-fuji",
+          title: 'Mt. Fuji',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/fuji-mountain/";
+            },},{id: "gallery-japan-ship",
+          title: 'Japan Ship',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/japan-ship/";
+            },},{id: "gallery-graduation",
+          title: 'Graduation',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/graduation/";
+            },},{id: "news-my-paper-an-effective-and-cost-efficient-agentic-framework-for-ethereum-smart-contract-auditing-is-published-on-arxiv-a-work-during-the-internship-in-amber-group-feel-free-to-check-out-the-paper",
           title: 'My paper “An Effective and Cost-Efficient Agentic Framework for Ethereum Smart Contract Auditing”...',
           description: "",
-          section: "News",},{id: "news-my-paper-do-reasoning-models-enhance-embedding-models-is-published-on-arxiv-feel-free-to-check-out-the-paper-and-repository",
+          section: "News",},{id: "news-my-paper-do-reasoning-models-enhance-embedding-models-is-published-on-arxiv-feel-free-to-check-out-the-paper-and-the-repository",
           title: 'My paper “Do Reasoning Models Enhance Embedding Models” is published on Arxiv! Feel...',
           description: "",
           section: "News",},{id: "projects-project-1",
