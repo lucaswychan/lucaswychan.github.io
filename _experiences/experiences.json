@@ -1,42 +1,42 @@
 [
-    {
-        "position": "AI Research Intern",
-        "company": "Amber Group",
-        "duration": "Jun 2025 - Jan 2026",
-        "descriptions": [
-            "Productionized smart contract audit framework with GitLab CI/CD, reducing internal audit time by 50% while achieving 93.66% detection precision and eliminating manual auditing bottlenecks.",
-            "Fine-tuned LLMs using SFT, GRPO, DPO, and CFT algorithms to optimize model performance for domain-specific security analysis tasks.",
-            "Generated 10K synthetic training data for an LLM agent, enhancing a crypto trading platform's user experience."
-        ]
-    },
-    {
-        "position": "Research Analyst",
-        "company": "Rivermap Limited",
-        "duration": "Jun 2024 - Aug 2024",
-        "descriptions": [
-            "Built NLP extraction system achieving 83% accuracy on unstructured financial reports, automating revenue data collection across 1,000+ companies for strategic market analysis.",
-            "Led quantitative research and strategy formulation for US market revenue trends and SGX-listed companies, delivering actionable insights to drive investment decisions.",
-            "Designed custom knowledge graph with optimized algorithms that improved data retrieval efficiency by 50% and enabled scalable entity relationship analysis.",
-            "Collaborated with cross-functional teams to design and implement data extraction workflows to streamline business operations."
-        ]
-    },
-    {
-        "position": "AI R&D Intern",
-        "company": "Optix Solutions Limited",
-        "duration": "Jun 2023 - Aug 2023",
-        "descriptions": [
-            "Developed full-stack GenAI proposal writing product (Python, React.js) that reduced document generation time by 60% for enterprise clients.",
-            "Implemented NLP entity extraction system achieving 94% accuracy, automating data retrieval from legal and business documents.",
-            "Conducted in-depth research on emerging AI technologies, identifying potential implementation strategies."
-        ]
-    },
-    {
-        "position": "System Engineer",
-        "company": "Azeus Systems Limited",
-        "duration": "Apr 2023 - May 2024",
-        "descriptions": [
-            "Architected, maintained, and supported complex system and network infrastructures.",
-            "Administered operating systems, managed server configurations, and oversaw Oracle database server operations."
-        ]
-    }
+  {
+    "position": "AI Research Intern",
+    "company": "Amber Group",
+    "duration": "Jun 2025 - Jan 2026",
+    "descriptions": [
+      "Productionized smart contract audit framework with GitLab CI/CD, reducing internal audit time by 50% while achieving 93.66% detection precision and eliminating manual auditing bottlenecks.",
+      "Fine-tuned LLMs using SFT, GRPO, DPO, and CFT algorithms to optimize model performance for domain-specific security analysis tasks.",
+      "Generated 10K synthetic training data for an LLM agent, enhancing a crypto trading platform's user experience."
+    ]
+  },
+  {
+    "position": "Research Analyst",
+    "company": "Rivermap Limited",
+    "duration": "Jun 2024 - Aug 2024",
+    "descriptions": [
+      "Built NLP extraction system achieving 83% accuracy on unstructured financial reports, automating revenue data collection across 1,000+ companies for strategic market analysis.",
+      "Led quantitative research and strategy formulation for US market revenue trends and SGX-listed companies, delivering actionable insights to drive investment decisions.",
+      "Designed custom knowledge graph with optimized algorithms that improved data retrieval efficiency by 50% and enabled scalable entity relationship analysis.",
+      "Collaborated with cross-functional teams to design and implement data extraction workflows to streamline business operations."
+    ]
+  },
+  {
+    "position": "AI R&D Intern",
+    "company": "Optix Solutions Limited",
+    "duration": "Jun 2023 - Aug 2023",
+    "descriptions": [
+      "Developed full-stack GenAI proposal writing product (Python, React.js) that reduced document generation time by 60% for enterprise clients.",
+      "Implemented NLP entity extraction system achieving 94% accuracy, automating data retrieval from legal and business documents.",
+      "Conducted in-depth research on emerging AI technologies, identifying potential implementation strategies."
+    ]
+  },
+  {
+    "position": "System Engineer",
+    "company": "Azeus Systems Limited",
+    "duration": "Apr 2023 - May 2024",
+    "descriptions": [
+      "Architected, maintained, and supported complex system and network infrastructures.",
+      "Administered operating systems, managed server configurations, and oversaw Oracle database server operations."
+    ]
+  }
 ]
