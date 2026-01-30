@@ -1,7 +1,7 @@
 ---
 title: Wine Tasting
 img: assets/img/gallery/wine.png
-caption: Enjoying fine wines and good company
-date: 2024-01-01
+caption: I love wine btw.
+date: 2023-04-01
 importance: 8
 ---

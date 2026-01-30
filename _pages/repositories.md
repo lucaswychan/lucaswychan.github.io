@@ -45,3 +45,5 @@ nav_order: 4
   {% endfor %}
 </div>
 {% endif %}
+
+<script src="{{ '/assets/js/repo-fallback.js' | relative_url }}"></script>

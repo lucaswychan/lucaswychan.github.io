@@ -16,6 +16,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/publications/";
           },
+        },{id: "nav-experiences",
+          title: "Experiences",
+          description: "My professional journey and work experiences",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/experiences/";
+          },
         },{id: "nav-repositories",
           title: "Repositories",
           description: "My GitHub Repositories",
@@ -30,14 +37,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/gallery/";
           },
-        },{id: "dropdown-gallery",
-              title: "gallery",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/gallery/";
-              },
-            },{id: "post-a-post-with-plotly-js",
+        },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
@@ -400,7 +400,12 @@ ninja.data = [{
             window.location.href = "/blog/2015/formatting-and-links/";
           
         },
-      },{id: "gallery-wine-tasting",
+      },{id: "gallery-dodgeball",
+          title: 'Dodgeball',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/dodgeball/";
+            },},{id: "gallery-wine-tasting",
           title: 'Wine Tasting',
           description: "",
           section: "Gallery",handler: () => {
@@ -415,31 +420,16 @@ ninja.data = [{
           description: "",
           section: "Gallery",handler: () => {
               window.location.href = "/gallery/larp/";
-            },},{id: "gallery-dodgeball",
-          title: 'Dodgeball',
-          description: "",
-          section: "Gallery",handler: () => {
-              window.location.href = "/gallery/dodgeball/";
-            },},{id: "gallery-o-camp",
-          title: 'O-Camp',
-          description: "",
-          section: "Gallery",handler: () => {
-              window.location.href = "/gallery/ocamp/";
-            },},{id: "gallery-mt-fuji",
-          title: 'Mt. Fuji',
-          description: "",
-          section: "Gallery",handler: () => {
-              window.location.href = "/gallery/fuji-mountain/";
-            },},{id: "gallery-japan-ship",
-          title: 'Japan Ship',
-          description: "",
-          section: "Gallery",handler: () => {
-              window.location.href = "/gallery/japan-ship/";
             },},{id: "gallery-graduation",
           title: 'Graduation',
           description: "",
           section: "Gallery",handler: () => {
               window.location.href = "/gallery/graduation/";
+            },},{id: "gallery-mt-fuji",
+          title: 'Mt. Fuji',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/fuji-mountain/";
             },},{id: "news-my-paper-an-effective-and-cost-efficient-agentic-framework-for-ethereum-smart-contract-auditing-is-published-on-arxiv-a-work-during-the-internship-in-amber-group-feel-free-to-check-out-the-paper",
           title: 'My paper “An Effective and Cost-Efficient Agentic Framework for Ethereum Smart Contract Auditing”...',
           description: "",

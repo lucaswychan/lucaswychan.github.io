@@ -31,17 +31,29 @@
   {% assign max_lines = 2 %}
 {% endif %}
 
-<div class="repo p-2 text-center">
-  <a href="https://github.com/{{ include.repository }}">
+<div class="repo p-2 text-center" data-repo="{{ include.repository }}" data-username="{{ repo_url[0] }}" data-reponame="{{ repo_url[1] }}">
+  <a href="https://github.com/{{ include.repository }}" class="repo-link">
     <img
-      class="only-light w-100"
+      class="only-light w-100 repo-img"
       alt="{{ include.repository }}"
       src="{{ site.external_services.github_readme_stats_url }}/api/pin?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_light }}&locale={{ lang }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
+      onerror="this.style.display='none'; fetchRepoData(this.closest('.repo'));"
     >
     <img
-      class="only-dark w-100"
+      class="only-dark w-100 repo-img"
       alt="{{ include.repository }}"
       src="{{ site.external_services.github_readme_stats_url }}/api/pin?username={{ repo_url[0] }}&repo={{ repo_url[1] }}&theme={{ site.repo_theme_dark }}&locale={{ lang }}&show_owner={{ show_owner }}&description_lines_count={{ max_lines }}"
+      onerror="this.style.display='none'; fetchRepoData(this.closest('.repo'));"
     >
+    <div class="repo-fallback" style="display: none;">
+      <div class="repo-fallback-card">
+        <div class="repo-fallback-header">
+          <i class="fa-solid fa-book-bookmark"></i>
+          <span class="repo-fallback-name">{{ repo_url[0] }}/{{ repo_url[1] }}</span>
+        </div>
+        <p class="repo-fallback-desc">Loading repository info...</p>
+        <div class="repo-fallback-stats"></div>
+      </div>
+    </div>
   </a>
 </div>
