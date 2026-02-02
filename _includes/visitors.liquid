@@ -1,19 +1,23 @@
 <div class="visitors">
-  {% if site.visitor_map and site.visitor_map.clustrmaps and site.visitor_map.clustrmaps.id != "" %}
+  {% if site.visitor_map and site.visitor_map.clustrmaps and site.visitor_map.clustrmaps.id != '' %}
     <div class="clustrmaps-container text-center">
       {% assign map_id = site.visitor_map.clustrmaps.id | url_encode %}
       {% assign map_width = site.visitor_map.clustrmaps.width | default: 300 %}
-      {% assign map_type = site.visitor_map.clustrmaps.type | default: "map" %}
+      {% assign map_type = site.visitor_map.clustrmaps.type | default: 'map' %}
 
-      {% if map_type == "globe" %}
+      {% if map_type == 'globe' %}
         <script type="text/javascript" id="clstr_globe" src="https://clustrmaps.com/globe.js?d={{ map_id }}"></script>
       {% else %}
-        {% assign cl = site.visitor_map.clustrmaps.colors.cluster | default: "080808" %}
-        {% assign co = site.visitor_map.clustrmaps.colors.background | default: "ffffff" %}
-        {% assign cmo = site.visitor_map.clustrmaps.colors.most_visits | default: "ff3636" %}
-        {% assign cmn = site.visitor_map.clustrmaps.colors.new_visits | default: "00f500" %}
-        {% assign ct = site.visitor_map.clustrmaps.colors.text | default: "808080" %}
-        <script type="text/javascript" id="clustrmaps" src="https://cdn.clustrmaps.com/map_v2.js?cl={{ cl }}&w={{ map_width }}&t=tt&d={{ map_id }}&co={{ co }}&cmo={{ cmo }}&cmn={{ cmn }}&ct={{ ct }}"></script>
+        {% assign cl = site.visitor_map.clustrmaps.colors.cluster | default: '080808' %}
+        {% assign co = site.visitor_map.clustrmaps.colors.background | default: 'ffffff' %}
+        {% assign cmo = site.visitor_map.clustrmaps.colors.most_visits | default: 'ff3636' %}
+        {% assign cmn = site.visitor_map.clustrmaps.colors.new_visits | default: '00f500' %}
+        {% assign ct = site.visitor_map.clustrmaps.colors.text | default: '808080' %}
+        <script
+          type="text/javascript"
+          id="clustrmaps"
+          src="https://cdn.clustrmaps.com/map_v2.js?cl={{ cl }}&w={{ map_width }}&t=tt&d={{ map_id }}&co={{ co }}&cmo={{ cmo }}&cmn={{ cmn }}&ct={{ ct }}"
+        ></script>
       {% endif %}
     </div>
     <noscript>
