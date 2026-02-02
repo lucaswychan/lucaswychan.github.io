@@ -1662,3 +1662,23 @@ figure.cover {
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;
 }
+
+// Visitor Map
+.visitors {
+  .clustrmaps-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    max-width: 130px;
+    margin-left: auto;
+    margin-right: auto;
+
+    iframe,
+    script,
+    img,
+    canvas {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

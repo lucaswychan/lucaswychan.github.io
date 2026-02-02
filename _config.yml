@@ -152,6 +152,25 @@ newsletter:
   # https://loops.so/docs/forms/custom-form
 
 # -----------------------------------------------------------------------------
+# Visitor Map
+# -----------------------------------------------------------------------------
+
+visitor_map:
+  enabled: true
+  clustrmaps:
+    # Map configuration from clustrmaps.com
+    id: "CLddyvsHpYP9Jl_fQtgbkzTcCDMiYnw5xcjmbONhFrY"
+    width: 30
+    type: "globe" # "map" for 2D map, "globe" for 3D globe
+    # Color settings (hex without #)
+    colors:
+      cluster: "080808"      # Dot/cluster color
+      background: "ffffff"   # Background color
+      most_visits: "ff3636"  # Color for most visits
+      new_visits: "00f500"   # Color for new visits
+      text: "808080"         # Text color
+
+# -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
 
