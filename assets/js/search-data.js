@@ -95,6 +95,11 @@ ninja.data = [{
           description: "",
           section: "Gallery",handler: () => {
               window.location.href = "/gallery/adam/";
+            },},{id: "gallery-whale-shark",
+          title: 'Whale Shark',
+          description: "",
+          section: "Gallery",handler: () => {
+              window.location.href = "/gallery/whale-shark/";
             },},{id: "news-my-paper-an-effective-and-cost-efficient-agentic-framework-for-ethereum-smart-contract-auditing-is-published-on-arxiv-a-work-during-the-internship-in-amber-group-feel-free-to-check-out-the-paper",
           title: 'My paper “An Effective and Cost-Efficient Agentic Framework for Ethereum Smart Contract Auditing”...',
           description: "",
