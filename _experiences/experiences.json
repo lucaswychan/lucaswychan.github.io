@@ -2,11 +2,11 @@
   {
     "position": "AI Research Intern",
     "company": "Amber Group",
-    "duration": "Jun 2025 - Jan 2026",
+    "duration": "Jun 2025 - May 2026",
     "descriptions": [
-      "Accelerated data-driven decisions by engineering a Text-to-SQL system using LangGraph that cut data retrieval times from 0.5 day to under 10s, achieving 95% accuracy and empowering users with immediate data access.",
+      "Productionized a Text-to-SQL agent using LangGraph, FastAPI, LangFuse and Qwen3-Next-80B-A3B to query PostgreSQL databases, reducing data retrieval time from 12 hours to under 10 seconds with 95% accuracy.",
       "Slashed smart contract audit time from 2 days to just 15 mins by building a proprietary audit framework with LangGraph, saving over 95% in labor costs while maintaining 93.66% accuracy.",
-      "Enhanced trading platform interaction by 25% by post-training LLMs with SFT and Agentic-RL, leading to a more intuitive user experience and a significant reduction in operational costs from expensive models."
+      "Post-trained Qwen2.5-series models via SFT and Agentic-RL (GRPO, PPO) using PyTorch, verl, and DeepSpeed across an multi-GPU cluster, improving trading platform interaction by 25% and reducing inference costs."
     ]
   },
   {
@@ -14,8 +14,8 @@
     "company": "Rivermap Limited",
     "duration": "Jun 2024 - Aug 2024",
     "descriptions": [
-      "Enabled quantitative investment strategies by building an NLP extraction system that automated data collection from 100,000+ unstructured financial reports with 83% accuracy.",
-      "Sped up company-wide quantitative research by 52% through the design of a custom knowledge graph using NetworkX, providing instant access to interconnected business and relationship data.",
+      "Enabled quantitative investment strategies by a distributed NLP extraction pipeline using Ray and YOLOv8 to parse 100,000+ unstructured financial reports, utilizing Llama 3.1 to structure revenue tables with 83% accuracy.",
+      "Constructed a financial knowledge graph from unstructured text using NetworkX, applying PageRank and Louvain algorithms to accelerate quantitative research signal generation by 52%.",
       "Collaborated with cross-functional teams to design and implement data extraction workflows to streamline business operations."
     ]
   },
@@ -24,8 +24,8 @@
     "company": "Optix Solutions Limited",
     "duration": "Jun 2023 - Aug 2023",
     "descriptions": [
-      "Reduced funding proposal generation time by 65% by developing a full-stack GenAI writing product with React.js, enabling clients to pursue more growth opportunities.",
-      "Saved significant time and cost in quantitative analysis by implementing an NLP entity extraction system for lending reports, achieving 94% accuracy to provide immediate business insights."
+      "Built a full-stack GenAI application using React.js, Flask, and the OpenAI API to automate funding proposal creation, reducing generation time by 65%.",
+      "Implemented a Zero-Shot QA entity extraction pipeline for lending reports using Hugging Face Transformers, achieving 94% accuracy to accelerate downstream quantitative analysis."
     ]
   },
   {
