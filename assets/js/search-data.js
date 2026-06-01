@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/gallery/";
           },
-        },{id: "post-the-surprising-truth-about-embeddings-trained-with-rlvr",
+        },{id: "post-a-model-trained-on-200m-samples-still-collapses-and-one-constant-fixes-it",
+        
+          title: 'A Model Trained on 200M Samples Still Collapses — And One Constant Fixes... <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.open("https://medium.com/@lucaswychan/a-model-trained-on-200m-samples-still-collapses-and-one-constant-fixes-it-2c00fc5a8ebc?source=rss-d32f8f653013------2", "_blank");
+          
+        },
+      },{id: "post-the-surprising-truth-about-embeddings-trained-with-rlvr",
         
           title: 'The Surprising Truth About Embeddings trained with RLVR <svg width="1.2rem" height="1.2rem" top=".5rem" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><path d="M17 13.5v6H5v-12h6m3-3h6v6m0-6-9 9" class="icon_svg-stroke" stroke="#999" stroke-width="1.5" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"></path></svg>',
         
