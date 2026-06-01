@@ -1,8 +1,5 @@
 - area: Representation Learning
-  description: Embedding Model, Representation Similarity Analysis, Manifold Learning
+  description: Embedding Model, Embedding Space Geometry, Representation Similarity Analysis, Manifold Learning
 
 - area: Large Language Models
-  description: Reasoning, Training, Safety
-
-- area: AI Agents
-  description: Multi-Agent System, Self-Evolving Agent, Memory
+  description: Latent Reasoning, LLM Safety
