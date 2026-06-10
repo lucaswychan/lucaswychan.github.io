@@ -1,11 +1,11 @@
 metadata:
-  last_updated: '2026-04-20'
+  last_updated: '2026-06-10'
 papers:
   oDjx2-IAAAAJ:u-x6o8ySG0sC:
-    citations: 0
+    citations: 1
     title: Do Reasoning Models Enhance Embedding Models?
     year: '2026'
   oDjx2-IAAAAJ:u5HHmVD_uO8C:
-    citations: 1
+    citations: 2
     title: An Effective and Cost-Efficient Agentic Framework for Ethereum Smart Contract Auditing
     year: '2026'
