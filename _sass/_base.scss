@@ -1665,30 +1665,12 @@ mjx-container[jax="CHTML"][display="true"] {
 
 // Visitor Map
 .visitors {
+  margin: 1rem 0;
+  text-align: center;
+
   .visitor-map-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    width: fit-content;
-    margin: 1rem auto;
+    display: block;
+    margin-top: 0.5rem;
     font-size: 0.875rem;
-  }
-
-  .clustrmaps-container {
-    display: flex;
-    justify-content: center;
-    margin: 1rem 0;
-    max-width: 130px;
-    margin-left: auto;
-    margin-right: auto;
-
-    iframe,
-    script,
-    img,
-    canvas {
-      max-width: 100%;
-      height: auto;
-    }
   }
 }
