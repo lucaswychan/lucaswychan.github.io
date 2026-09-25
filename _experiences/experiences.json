@@ -1,12 +1,31 @@
 [
   {
+    "position": "Quantitative Research Intern",
+    "company": "Alpha Sherpa Capital",
+    "duration": "Sep 2026 - Present",
+    "descriptions": [
+      "Refined a broker-report sentiment backtester, correcting Calmar and adding Sharpe and Sortino ratios; ran grid tests and backtests on Nomura reports spanning 2024-2026.",
+      "Implemented DeepSeek and GLM alternatives to o3-mini and compared sentiment distributions on historical MongoDB reports; added API-key fallback, tolerant JSON parsing, and Langfuse observability.",
+      "Set up and stress-tested local Qwen3.5-4B report classification on a Mac mini, tested the MLX variant, and connected LLM classification to the existing research pipeline."
+    ]
+  },
+  {
+    "position": "Quantitative Research Intern",
+    "company": "Tykhe Capital",
+    "duration": "May 2026 - Jun 2026",
+    "descriptions": [
+      "Constructed and validated BTC/USDT alpha signals with LightGBM; built a 10-factor library from 1-minute order-book snapshots, using correlation filtering to reduce redundancy.",
+      "Prototyped a LangGraph alpha-ideation pipeline, reducing research iteration cycles by 60%."
+    ]
+  },
+  {
     "position": "AI Research Intern",
     "company": "Amber Group",
     "duration": "Jun 2025 - May 2026",
     "descriptions": [
-      "Productionized a Text-to-SQL agent using LangGraph, FastAPI, LangFuse and Qwen3-Next-80B-A3B to query PostgreSQL databases, reducing data retrieval time from 12 hours to under 10 seconds with 95% accuracy.",
-      "Slashed smart contract audit time from 2 days to just 15 mins by building a proprietary audit framework with LangGraph, saving over 95% in labor costs while maintaining 93.66% accuracy.",
-      "Post-trained Qwen2.5-series models via SFT and Agentic-RL (GRPO, PPO) using PyTorch, verl, and DeepSpeed across an multi-GPU cluster, improving trading platform interaction by 25% and reducing inference costs."
+      "Built a LangGraph smart-contract audit framework that cut audit time from 2 days to 15 minutes, saving over 95% in labor costs while maintaining 93.66% accuracy.",
+      "Fine-tuned 7B-72B LLMs with SFT and RLVR (GRPO/PPO) on multi-GPU DeepSpeed clusters; reduced inference latency by 12% and serving costs by 50%.",
+      "Built a LangGraph/Qwen3-Next text-to-SQL agent for PostgreSQL, cutting retrieval from 12 hours to under 10 seconds with 95% accuracy."
     ]
   },
   {
@@ -14,9 +33,8 @@
     "company": "Rivermap Limited",
     "duration": "Jun 2024 - Aug 2024",
     "descriptions": [
-      "Enabled quantitative investment strategies by a distributed NLP extraction pipeline using Ray and YOLOv8 to parse 100,000+ unstructured financial reports, utilizing Llama 3.1 to structure revenue tables with 83% accuracy.",
-      "Constructed a financial knowledge graph from unstructured text using NetworkX, applying PageRank and Louvain algorithms to accelerate quantitative research signal generation by 52%.",
-      "Collaborated with cross-functional teams to design and implement data extraction workflows to streamline business operations."
+      "Built a Ray/Llama 3.1 pipeline extracting revenue and earnings signals from 100,000+ reports with 83% accuracy.",
+      "Built a 500,000+ entity financial knowledge graph with PageRank and Louvain clustering, accelerating quantitative signal generation by 52%."
     ]
   },
   {
@@ -24,8 +42,8 @@
     "company": "Optix Solutions Limited",
     "duration": "Jun 2023 - Aug 2023",
     "descriptions": [
-      "Built a full-stack GenAI application using React.js, Flask, and the OpenAI API to automate funding proposal creation, reducing generation time by 65%.",
-      "Implemented a Zero-Shot QA entity extraction pipeline for lending reports using Hugging Face Transformers, achieving 94% accuracy to accelerate downstream quantitative analysis."
+      "Built a React.js/Flask application with the OpenAI API to automate funding-proposal creation, reducing generation time by 65%.",
+      "Built zero-shot QA entity extraction for lending reports with Hugging Face Transformers, achieving 94% accuracy."
     ]
   },
   {

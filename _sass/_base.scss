@@ -1665,6 +1665,16 @@ mjx-container[jax="CHTML"][display="true"] {
 
 // Visitor Map
 .visitors {
+  .visitor-map-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    width: fit-content;
+    margin: 1rem auto;
+    font-size: 0.875rem;
+  }
+
   .clustrmaps-container {
     display: flex;
     justify-content: center;
