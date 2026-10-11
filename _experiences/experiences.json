@@ -4,9 +4,10 @@
     "company": "Alpha Sherpa Capital",
     "duration": "Sep 2026 - Present",
     "descriptions": [
-      "Refined a broker-report sentiment backtester, correcting Calmar and adding Sharpe and Sortino ratios; ran grid tests and backtests on Nomura reports spanning 2024-2026.",
-      "Implemented DeepSeek and GLM alternatives to o3-mini and compared sentiment distributions on historical MongoDB reports; added API-key fallback, tolerant JSON parsing, and Langfuse observability.",
-      "Set up and stress-tested local Qwen3.5-4B report classification on a Mac mini, tested the MLX variant, and connected LLM classification to the existing research pipeline."
+      "Built a text-based scraper and classification pipeline to generate trading signals from broker reports.",
+      "Integrated Jev text classification into the trading system for signal generation, with user-reported 99% accuracy and sub-0.5-second latency.",
+      "Applied machine-learning meta-labeling to generated signals and developed an ML-based long/short strategy.",
+      "Maintained trading infrastructure on Microsoft Azure with Celery and Redis; deployed an MLX-optimized local model on a Mac mini using Ollama."
     ]
   },
   {
